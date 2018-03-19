@@ -1,0 +1,82 @@
+{
+  "concert": "Spring Concert 2018",
+  "venue": "City of Edinburgh Methodist Church",
+  "conductor": "Beth Appelquist",
+  "pieces": [
+    {
+      "title": "Light Cavalry Overture",
+      "composer": "Franz von Suppé",
+      "arranger": "James Shaw"
+    },
+    {
+      "title": "Ticket to Ride",
+      "composer": "John Lennon & Paul McCartney",
+      "arranger": "Harold East"
+    },
+    {
+      "title": "Highlights from Carnival of the Animals",
+      "composer": "Camille Saint-Saens",
+      "arranger": "Alard de Boer"
+    },
+    {
+      "title": "Blue Danube Waltz",
+      "composer": "Johann Strauss II",
+      "arranger": "Mike Walton"
+    },
+    {
+      "title": "Jupiter",
+      "subtitle": "from 'The Planets'",
+      "composer": "Gustav Holst",
+      "arranger": "Matt Johnson"
+    },
+    {
+      "title": "Hungarian Dance No. 5",
+      "composer": "Johannes Brahms",
+      "arranger": "Frank J. Halferty"
+    },
+    {
+      "title": "Clarinet Poem",
+      "composer": "Lucien Cailliet"
+    },
+    {
+      "title": "Send Me On My Way",
+      "composer": "Michael Glabicki, Liz Berlin, John Buynak, Jim Dispirito, Jim Donovan, Patrick Norman and Jennifer Wertz",
+      "arranger": "Sam Tovey"
+    }
+  ],
+  "performers": {
+    "E Flat": [
+      "Sarah Hall"
+    ],
+    "B Flat 1": [
+      "Franz Lichauco",
+      "James Shaw",
+      "Megan Campbell"
+    ],
+    "B Flat 2": [
+      "Abigail Buchan",
+      "Gemma King",
+      "Laurie Mulder",
+      "Murray Wham"
+    ],
+    "B Flat 3": [
+      "Miranda Jarrett",
+      "Gemma Hayward",
+      "Rachael Moffat",
+      "Tori ..?"
+    ],
+    "B Flat 4": [
+      "Jack Tait",
+      "Natsuki Kohama",
+      "Eleanor Hutcheon",
+      "Katelin Donaldson"
+    ],
+    "Alto": [
+      "Joe Cooper"
+    ],
+    "Bass": [
+      "Elly Brookfield",
+      "Heather Holligan"
+    ]
+  }
+}

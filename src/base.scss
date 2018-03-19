@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Neuton');
+$height: 100px;
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Neuton", serif;
+}
+
+#omnibar {
+  width: 1920px;
+  height: $height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background: black;
+  border-top: 0.5ex white solid;
+  border-bottom: 0.5ex white solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20pt;
+
+  .logotype {
+    @include row;
+    justify-content: space-between;
+  }
+  #logo {
+    $logo-size: $height*0.8;
+    background: url("../images/logo.svg");
+    background-size: ($logo-size) ($logo-size);
+    width: $logo-size;
+    height: $logo-size;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+
+  .vstack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+  }
+
+  #conductor {
+    &:before {
+      content: "Conductor: ";
+      font-variant: small-caps;
+    }
+  }
+
+  #nowplaying {
+    max-width: 80%;
+    overflow: hidden;
+    text-align: center;
+
+    #title {
+      font-size: 18pt;
+    }
+    #composer {
+      font-size: 16pt;
+    }
+  }
+}
+
+div.central-item{
+  overflow: hidden;
+  text-align: center;
+
+  &.hidden {
+    display: none;
+  }
+
+}
+
+div#controls {
+  display: none;
+}

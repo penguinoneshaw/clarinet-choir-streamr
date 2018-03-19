@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/base.css"/>
+<meta name="viewport" content="width=device-width">
+
+<script src="/socket.io/socket.io.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<body>
+<h1 id="title"></h1>
+<form>
+  <label>Password for control</label>
+  <input id="password" autocomplete="off" />
+</form>
+<div id="nowplaying">
+<h1 id="title"></h1>
+<h2 id="composer"></h1>
+</div>
+<div id=controls>
+<button data-selector="interval" class="controller">Go to Interval</button>
+<button data-selector="preroll" class="controller">Return to Preroll</button>
+
+<ul id="nowplayingselector">
+</ul>
+</div>
+<script src="/scripts/index.js"></script>
+</body>
+</html>

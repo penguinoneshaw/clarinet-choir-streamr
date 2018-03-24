@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+  block head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', href="css/base.css")
+    meta(name='viewport', content='width=1920px, initial-scale=1, shrink-to-fit=no')
+    title= concert + " overlay"
+
+  body
+    #omnibar
+      #logo
+        
+      .central-item
+        #nowplaying.vstack.hidden
+          span#title
+          span#composer
+        #other-states
+        
+      .vstack
+        span#concert-title=concert
+        span#conductor=conductor
+          
+          
+    block scripts 
+      script(src='/socket.io/socket.io.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
+      script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+      script(src="scripts/omnibar.js")

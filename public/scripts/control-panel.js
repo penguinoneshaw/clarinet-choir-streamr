@@ -28,19 +28,16 @@ socket.on("nowplaying-update", function (nowplaying) {
 
 })
 
-$("input#password").on("change keyup submit", (e) => {
+$("input#password").on("keyup submit", (e) => {
+
+  console.log(e.type)
   if ($("input#password").val() == "rain always reminds me of you") {
-    $("form").hide()
+    $("form").remove()
     $("#controls").show()
 
     $("#controls a").on("click", function(event){
       event.preventDefault();
-
-      if ( !(Number.isNaN(parseInt($(event.currentTarget).data("selector"))))) {
-        omniConcert.nowplaying = parseInt($(event.currentTarget).data("selector"))
-      } else {
-        omniConcert.nowplaying = $(event.currentTarget).data("selector")
-      }
+      omniConcert.nowplaying = $(event.currentTarget).data("selector")
       socket.emit("nowplaying-update", omniConcert.nowplaying)
       updatePiece(omniConcert)
     });

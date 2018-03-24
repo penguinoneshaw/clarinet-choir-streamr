@@ -13,15 +13,15 @@ var concert_file = process.argv[2]
 
 concert = JSON.parse(fs.readFileSync(concert_file, "utf8"));
 console.log("This is the file for: " +  concert.concert + " being held at " + concert.venue + ".")
-concert.nowplaying = "preroll";
+concert.nowplaying = "state-preroll";
 
 
 app.get('/control-panel', function(req, res){
   res.render("control-panel", concert);
 });
 
-app.get('/omnibar', function(req, res){
-  res.sendFile(__dirname + "/omnibar.html")
+app.get('/overlay', function(req, res){
+  res.render("overlay", concert)
 });
 
 app.get('/', (req, res) => {
@@ -30,7 +30,8 @@ app.get('/', (req, res) => {
 
 io.on('connection', function(socket){
   console.log("A page connected")
-  socket.emit('concert-details', concert)
+
+  socket.emit('concert-details', concert);
 
   socket.on('nowplaying-update', function (nowPlaying) {
     socket.broadcast.emit('nowplaying-update', nowPlaying)

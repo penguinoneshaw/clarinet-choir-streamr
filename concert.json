@@ -92,5 +92,23 @@
     "name": "Sense Scotland",
     "registration number": "SC022097",
     "url": "http://www.sensescotland.org.uk/"
+  },
+  "otherStates": {
+    "interval": {
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    "preroll": {
+      "stream": "We'll be starting soon",
+      "controls": "Show Preroll"
+    },
+    "postroll": {
+      "stream": "We've now finished",
+      "controls": "Show Postroll"
+    },
+    "empty": {
+      "stream": "",
+      "controls": "Show Blank"
+    }
   }
 }

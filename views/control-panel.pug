@@ -9,12 +9,21 @@ block content
     label(for="password") Password for control
     input#password.form-control(type=text,autocomplete='off')
 
-  div#controls.list-group(style="display:none")
-    a.list-group-item-action.list-group-item.list-group-item-primary(data-selector='interval', href="#") Interval
-    a.list-group-item-action.list-group-item.list-group-item-primary(data-selector='preroll', href="#") Preroll
-
-    each piece, index in pieces
-      a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=index)= `${piece.title}: ${piece.composer}`
+  #controls(style="display:none")
+    #states.list-group
+      h2 States
+      each state, index in otherStates
+        a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${index}` , href="#")= state.controls
+    
+    #pieces.list-group
+      h2 Pieces
+      each piece, index in pieces
+        a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= `${piece.title}: ${piece.composer}`
+    
+    #committee.list-group
+      h2 Committee
+      each person, index in committee
+        a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
 
 append scripts
   script(src='/scripts/control-panel.js')

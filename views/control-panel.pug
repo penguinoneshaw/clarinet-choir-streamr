@@ -12,26 +12,26 @@ block content
   .container.controlpanel(style="display:none")
     #controls
       #states
-        h1 States
+        h2 States
         .list-group
           each state, index in otherStates
             a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${index}` , href="#")= state.controls
       
       #pieces
-        h1 Pieces
+        h2 Pieces
         .list-group
           each piece, index in pieces
             a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= `${piece.title}: ${piece.composer}`
       
       #committee
-        h1 Committee
+        h2 Committee
         .list-group
           each person, index in committee
             a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
       
     #toggles
       #charity
-        h1 Charity Banner
+        h2 Charity Banner
         .list-group
           a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-charity="true") Show
           a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-charity="false") Hide

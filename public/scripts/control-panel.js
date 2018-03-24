@@ -12,13 +12,13 @@ socket.on("concert-details", (concert) => {
 });
 
 socket.on("disconnect", (s) => {
-  $("#controls").hide()
+  $(".controlpanel").hide()
   $("#maincontent").prepend(`<div id="connection-warning" class="alert alert-warning">Server disconnected!</div>`)
 })
 
 socket.on("reconnect", (s) => {
   $("#connection-warning").remove()
-  $('#controls').show()
+  $('.controlpanel').show()
 })
 
 socket.on("nowplaying-update", function (nowplaying) {

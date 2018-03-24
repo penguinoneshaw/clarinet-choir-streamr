@@ -108,15 +108,19 @@ div.central-item{
 #charity {
   position: absolute;
   background-color: black;
-  width:1000px;
-  height: 400px;
-  top: ($window-height - 2 * $bar-height - 400px)/2;
-  left: ($window-width - 1000px)/2;
+  width:500px;
+  max-height: ($window-height - 2 * $bar-height - 200px);
+  top: 100px;
+  left: 100px;
   border: 0.5ex white solid;
   text-align: center;
   color: white;
-  font-size: 40px;
+  padding: 2em;
   p {
-    vertical-align: center
+    font-size: 30px;
+    vertical-align: center;
+  }
+  h1 {
+    font-size: 45px;
   }
 }

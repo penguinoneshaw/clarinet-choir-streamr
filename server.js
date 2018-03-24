@@ -15,6 +15,8 @@ concert = JSON.parse(fs.readFileSync(concert_file, "utf8"));
 console.log("This is the file for: " +  concert.concert + " being held at " + concert.venue + ".")
 concert.nowplaying = "state-preroll";
 
+var show_charity_notice = false;
+
 
 app.get('/control-panel', function(req, res){
   res.render("control-panel", concert);
@@ -32,11 +34,19 @@ io.on('connection', function(socket){
   console.log("A page connected")
 
   socket.emit('concert-details', concert);
+  socket.emit('charity-display-update', show_charity_notice)
 
   socket.on('nowplaying-update', function (nowPlaying) {
     socket.broadcast.emit('nowplaying-update', nowPlaying)
     concert.nowplaying = nowPlaying;
-  })
+  });
+
+  socket.on('charity-display-update', (newState) => {
+    if (show_charity_notice != newState){
+      show_charity_notice = newState;
+      socket.broadcast.emit('charity-display-update', show_charity_notice)
+    }
+  });
 
 
   socket.on('disconnect', function(){

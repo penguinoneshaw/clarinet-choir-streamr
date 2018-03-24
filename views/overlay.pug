@@ -8,6 +8,10 @@ html(lang='en')
     title= concert + " overlay"
 
   body
+    #charity
+      h1 Charity Notice
+      p= `We are raising money at the interval of this concert for ${charity.name} (${charity['registration number']}). If you're watching this stream, please consider donating the amount you would've paid for a ticket (${price}) to them or an equivalent charity in your area! Their website is ${charity.url} where a direct donation can be made.`
+    
     #omnibar
       #logo
         

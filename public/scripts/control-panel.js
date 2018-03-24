@@ -29,17 +29,20 @@ socket.on("nowplaying-update", function (nowplaying) {
 })
 
 $("input#password").on("keyup submit", (e) => {
-
-  console.log(e.type)
   if ($("input#password").val() == "rain always reminds me of you") {
     $("form").remove()
-    $("#controls").show()
+    $(".controlpanel").show()
 
     $("#controls a").on("click", function(event){
       event.preventDefault();
       omniConcert.nowplaying = $(event.currentTarget).data("selector")
       socket.emit("nowplaying-update", omniConcert.nowplaying)
       updatePiece(omniConcert)
+    });
+
+    $("#charity a").on("click", function(event){
+      event.preventDefault();
+      socket.emit("charity-display-update", $(event.currentTarget).data("charity"))
     });
 }
 })

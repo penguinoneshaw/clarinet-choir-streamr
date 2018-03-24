@@ -3,6 +3,8 @@ $(function() {
   var omniConcert;
   var general = new TimelineLite();
 
+  TweenLite.set("#charity", {scaleX: 0, opacity: 0})
+
   socket.on("concert-details", function(concert) {
     omniConcert = concert;
 
@@ -16,6 +18,14 @@ $(function() {
     omniConcert.nowplaying = nowplaying;
     updatePiece(omniConcert, general);
   })
+
+  socket.on("charity-display-update", function(state){
+    if (state) {
+      TweenLite.to("#charity", 1, {scaleX: 1, opacity: 1, ease:Sine.easeOut})
+    } else {
+      TweenLite.to("#charity", 1, {scaleX: 0, opacity: 0, ease:Sine.easeIn})
+    }
+  })
 });
 
 function updatePiece(concert, tl) {
@@ -28,7 +38,7 @@ function updatePiece(concert, tl) {
     }).set(currentactive, {clearProps: "all", className: "+=hidden"}).add("fade-out-complete");
   }
   var elem;
-  console.log(concert.nowplaying)
+
   var state = concert.nowplaying.split("-")
 
   switch (state.shift()) {
@@ -47,7 +57,7 @@ function updatePiece(concert, tl) {
     case "piece":
       elem = $("#nowplaying");
       var piece = concert.pieces[parseInt(state[0])];
-      updateNowPlaying(piece)
+      tl.call(updateNowPlaying, [piece])
 
       break;
     default:

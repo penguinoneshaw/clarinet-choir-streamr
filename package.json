@@ -22,7 +22,7 @@
     "socket.io": "^2.0.4"
   },
   "scripts": {
-    "start": "grunt dist && node server.js concert.json"
+    "start": "grunt && node server.js concert.json"
   },
   "bugs": {
     "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"

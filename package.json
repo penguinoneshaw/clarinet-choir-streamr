@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "All of the assets required for the Spring 2018 concert stream of the Edinburgh University Clarinet Choir, hopefully in some sort of extensible manner.",
   "license": "GPL-3.0+",
+  "repository": "https://github.com/penguinoneshaw/clarinet-choir-streamr",
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-watch": "^1.0.0",

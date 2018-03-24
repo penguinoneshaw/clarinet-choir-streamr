@@ -1,9 +1,15 @@
 {
-  "name": "clarinet-choir-stream-assets",
-  "version": "0.0.1",
+  "name": "clarinet-choir-streamr",
+  "version": "0.0.2",
   "description": "All of the assets required for the Spring 2018 concert stream of the Edinburgh University Clarinet Choir, hopefully in some sort of extensible manner.",
   "license": "GPL-3.0+",
-  "repository": "https://github.com/penguinoneshaw/clarinet-choir-streamr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penguinoneshaw/clarinet-choir-streamr.git"
+  },
+  "engines": {
+    "node": "9.8.0"
+  },
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-watch": "^1.0.0",
@@ -14,5 +20,19 @@
     "express": "^4.16.3",
     "pug": "^2.0.3",
     "socket.io": "^2.0.4"
-  }
+  },
+  "scripts": {
+    "start": "node server.js concert.json"
+  },
+  "bugs": {
+    "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"
+  },
+  "homepage": "https://github.com/penguinoneshaw/clarinet-choir-streamr#readme",
+  "main": "server.js",
+  "keywords": [
+    "websockets",
+    "concert",
+    "io"
+  ],
+  "author": "James Shaw <penguinoneshaw@gmail.com>"
 }

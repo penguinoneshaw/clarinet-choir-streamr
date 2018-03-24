@@ -1,1 +1,1 @@
-web: node server.js concert.json
+web: grunt dist && node server.js concert.json

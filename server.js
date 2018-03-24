@@ -4,6 +4,11 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.use(express.static('public'))
+
+app.set('view engine', 'pug')
+app.set('views', './views')
+
 var concert_file = process.argv[2]
 
 concert = JSON.parse(fs.readFileSync(concert_file, "utf8"));
@@ -11,24 +16,25 @@ console.log("This is the file for: " +  concert.concert + " being held at " + co
 concert.nowplaying = "preroll";
 
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + "/index.html");
+app.get('/control-panel', function(req, res){
+  res.render("control-panel", concert);
 });
 
 app.get('/omnibar', function(req, res){
   res.sendFile(__dirname + "/omnibar.html")
 });
 
-app.use(express.static('public'))
+app.get('/', (req, res) => {
+  res.render("index", concert)
+})
 
 io.on('connection', function(socket){
   console.log("A page connected")
   socket.emit('concert-details', concert)
 
-
-  socket.on('nowplaying-update', function (num) {
-    socket.broadcast.emit('nowplaying-update', num)
-    concert.nowplaying = num;
+  socket.on('nowplaying-update', function (nowPlaying) {
+    socket.broadcast.emit('nowplaying-update', nowPlaying)
+    concert.nowplaying = nowPlaying;
   })
 
 
@@ -36,6 +42,10 @@ io.on('connection', function(socket){
     console.log('page disconnected');
   });
 });
+
+io.on("reconnect", (socket) => {
+  socket.emit('concert-details', concert)
+})
 
 
 http.listen(3000, function(){

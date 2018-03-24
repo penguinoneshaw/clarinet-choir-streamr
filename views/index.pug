@@ -1,0 +1,12 @@
+extends template
+
+block title
+  = group + "'s " + concert
+
+block content
+  h1 Performers
+  each part, index in performers
+    h2=index
+    ul
+      each person in part
+        li=person

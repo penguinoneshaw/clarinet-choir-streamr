@@ -1,0 +1,20 @@
+extends template.pug
+
+
+block title
+  =concert + " Control Panel"
+
+block content
+  form.form-group
+    label(for="password") Password for control
+    input#password.form-control(type=text,autocomplete='off')
+
+  div#controls.list-group(style="display:none")
+    a.list-group-item-action.list-group-item.list-group-item-primary(data-selector='interval', href="#") Interval
+    a.list-group-item-action.list-group-item.list-group-item-primary(data-selector='preroll', href="#") Preroll
+
+    each piece, index in pieces
+      a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=index)= `${piece.title}: ${piece.composer}`
+
+append scripts
+  script(src='/scripts/control-panel.js')

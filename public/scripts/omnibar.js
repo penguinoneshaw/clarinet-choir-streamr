@@ -54,6 +54,12 @@ function updatePiece(concert, tl) {
       })
       elem = $("#other-states")
       break;
+    case "conductor":
+      tl.call(() => {
+        $("#other-states").text(`Currently Speaking: ${concert.conductor} (Conductor)`)
+      })
+      elem = $("#other-states")
+      break;
     case "piece":
       elem = $("#nowplaying");
       var piece = concert.pieces[parseInt(state[0])];

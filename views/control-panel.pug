@@ -28,6 +28,7 @@ block content
       #committee
         h2 Committee
         .list-group
+          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor} (Conductor)`
           each person, index in committee
             a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
       

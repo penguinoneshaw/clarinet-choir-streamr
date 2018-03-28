@@ -15,7 +15,7 @@ var concert_file = process.argv[2]
 
 concert = JSON.parse(fs.readFileSync(concert_file, "utf8"));
 console.log("This is the file for: " +  concert.concert + " being held at " + concert.venue + ".")
-concert.nowplaying = "state-preroll";
+concert.nowplaying = "state-blank";
 
 var show_charity_notice = false;
 

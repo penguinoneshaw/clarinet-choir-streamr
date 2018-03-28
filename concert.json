@@ -4,26 +4,37 @@
   "venue": "City of Edinburgh Methodist Church",
   "price": "£6/£4 Students",
   "conductor": "Beth Appelquist",
-  "pieces": [
-    {
+  "pieces": [{
       "title": "Light Cavalry Overture",
       "composer": "Franz von Suppé",
-      "arranger": "James Shaw"
+      "arranger": "James Shaw",
+      "description": ["Premiering in Vienna in 1866, the Light Cavalry Overture is one of von Suppé's most popular compositions, and has achieved a quite distinct life of its own divorced from the opera of which it originally formed a part. Many orchestras around the world have the piece in their repertoire, and the main theme of the overture has been quoted numerous times by musicians, cartoons and other media. Our arrangement was made by our president James, and features a cadenza from Sarah on E♭."]
     },
     {
       "title": "Ticket to Ride",
       "composer": "John Lennon & Paul McCartney",
-      "arranger": "Harold East"
+      "arranger": "Harold East",
+      "description": ["First released in April 1965, 'Ticket to Ride' was the Beatles' seventh consecutive number one single in the UK. Its meaning is disputed, as is its authorship. Our arrangement was an impulse purchase before Christmas, and we're still not convinced by it!"]
     },
     {
       "title": "Highlights from Carnival of the Animals",
-      "composer": "Camille Saint-Saens",
-      "arranger": "Alard de Boer"
+      "composer": "Camille Saint-Saëns",
+      "arranger": "Alard de Boer",
+      "description": [
+        "'Le Carnaval des Animaux' is a suite written in 1866 describing different animals through the use of different instruments and styles. It is widely regarded as a series of musical jokes, realised by borrowing heavily from other works, much to the annoyance of Saint-Saëns' contemporaries. Our arrangement includes five movements in no particular order.",
+        "'L'Éléphant' (the Elephant) features Elly on bass clarinet. The joke here is that the music was originally written by Mendelssohn and Berlioz for much higher instruments.",
+        "'Le Coucou au Fond des Bois' (The Cuckoo in the Depths of the Woods) featuring Franz doing his best to imitate the cuckoo, which in the original score is marked as 'offstage'.",
+        "'Les Pesonnages à longues oreilles' (Persons with Long Ears) which is a solo for E♭ Clarinet played by Sarah. ",
+        "'Le Cygne' (The Swan), one of the most famous movements of this suite, features our Alto Clarinet wielded by Joe.",
+        "'Fossiles' (Fossils) which is largely regarded as a musical joke on the composer's part as the eponymous fossils are the other composers around at the same time! It includes themes from 'Ah! vous dirai-je maman' (AKA 'Twinkle Twinkle Little Star'), other French nursery rhymes and themes from operas such as the Barber of Seville.",
+      "We are also performing it this evening with the introductory poems by Ogden Nash, which add a little more colour to an already colourful piece."
+    ]
     },
     {
-      "title": "Blue Danube Waltz",
+      "title": "On the Beautiful Blue Danube",
       "composer": "Johann Strauss II",
-      "arranger": "Mike Walton"
+      "arranger": "Mike Walton",
+      "description": ["'An der schönen blauen Donau', composed in 1866, is widely regarded to be Johann Strauss II's masterpiece. When Strauss's stepdaughter, Alice von Meyszner-Strauss, asked the composer Johannes Brahms to sign her autograph-fan, he wrote down the first bars of The Blue Danube, but adding \"Leider nicht von Johannes Brahms\" (\"Alas! not by Johannes Brahms\").", " It is most famously performed annually at the Wiener Philharmoniker's New Year's Day concert, in which it is always the penultimate piece, and is interrupted by the conductor turning to the audience during the introduction saying \"Die Wiener Philharmoniker und ich wünschen Ihnen 'Prosit Neujahr'\".", "It is a very typical Viennese Waltz, which is characterised by being a fast, rotary dance which moves quickly around the floor. It is regarded within balroom dancing circles as being the dancing equivalent of a sprint."]
     },
     {
       "title": "Jupiter",
@@ -47,36 +58,37 @@
     }
   ],
   "performers": {
-    "E Flat": [
+    "E♭ Clarinet": [
       "Sarah Hall"
     ],
-    "B Flat 1": [
+    "B♭ Clarinet 1": [
       "Franz Lichauco",
       "James Shaw",
       "Megan Campbell"
     ],
-    "B Flat 2": [
+    "B♭ Clarinet 2": [
       "Abigail Buchan",
       "Gemma King",
       "Laurie Mulder",
       "Murray Wham"
     ],
-    "B Flat 3": [
+    "B♭ Clarinet 3": [
       "Miranda Jarrett",
-      "Gemma Hayward",
+      "Ellen MacRae",
       "Rachael Moffat",
       "Tori Hair"
     ],
-    "B Flat 4": [
+    "B♭ Clarinet 4": [
       "Jack Tait",
+      "Gemma Hayward",
       "Natsuki Kohama",
       "Eleanor Hutcheon",
       "Katelin Donaldson"
     ],
-    "Alto": [
+    "Alto Clarinet": [
       "Joe Cooper"
     ],
-    "Bass": [
+    "Bass Clarinet": [
       "Elly Brookfield",
       "Heather Holligan"
     ]

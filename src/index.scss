@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Neuton');
+
+$highlights-color: black;
+$max-text-width: 900px;
+@mixin fixed-layout-width {
+  margin: 0 auto;
+  max-width: $max-text-width;
+}
+
+body {
+  font-family: 'Neuton',"Palatino Linotype", serif;
+}
+
+.site-header {
+  @include fixed-layout-width;
+  display: block;
+  box-sizing: border-box;
+  /* border-radius: 10px; */
+  text-align: center;
+
+  border-bottom: double $highlights-color 5px;
+  margin-bottom: 10px;
+
+  h1,
+  h2 {
+    a {
+      color: $highlights-color;
+      text-decoration: none;
+    }
+  }
+
+  @media print {
+    display: none
+  }
+
+}
+
+.page-wrapper {
+  @include fixed-layout-width;
+
+  blockquote {
+    border-left: 10px solid $highlights-color;
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+  @media screen and (max-width: $max-text-width) {
+    text-align: justify;
+  }
+
+  table {
+    margin: 2ex auto;
+    border-collapse: collapse;
+    vertical-align: center;
+    min-width: 60%;
+    max-width: 95%;
+
+    td, th {
+      padding: 0.5ex 1em;
+    }
+
+    thead {
+      border-bottom: thin solid $highlights-color;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba($highlights-color,0.2);
+    }
+
+    tfoot {
+      border-top: 4px double $highlights-color;
+    }
+  }
+
+  .titleblock {
+    text-align: center;
+    margin: 20px 5px;
+
+    h1 {
+      font-size: xx-large;
+      font-family: 'Shadows Into Light', cursive;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: small;
+      font-variant: small-caps;
+      font-stretch: condensed;
+    }
+  }
+
+  &:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  img {
+    margin: 10px auto;
+    max-width: 100%;
+    max-height: 50%;
+  }
+
+  a {
+    color: lighten($highlights-color, 0.5);
+    font-variant: small-caps;
+    text-decoration: none;
+  }
+}
+
+.site-footer {
+  clear: both;
+
+  a {
+    color: $highlights-color;
+    text-decoration: none;
+  }
+  text-align: center;
+  color: mix($highlights-color, white);
+  @include fixed-layout-width;
+
+  @media print {
+    display: none
+  }
+}
+
+.jumbotron {
+  margin: 1ex auto;
+  max-width: $max-text-width - 150px;
+  padding: 2ex 4em;
+  border: 2px solid $highlights-color;
+  display: block;
+  text-align: center;
+
+  @media print {
+    display: none;
+  }
+}
+
+.main-content {
+  h1 {
+    font-size: xx-large;
+    @media print {
+      &:not(:first-child){
+      page-break-before: always;
+    }
+    }
+  }
+
+  h2 {
+    font-size: x-large;
+  }
+
+  h3 {
+    font-size: larger;
+  }
+
+    @media screen and (max-width: $max-text-width) {
+        text-align: justify;
+        padding: 0 2ex;
+    }
+
+}
+#performers {
+  .part {
+    font-weight: bold;
+
+    &:after {
+      white-space: pre;
+      content: ":  "
+    }
+  }
+
+  .part-list {
+  display: flex;
+  flex-wrap: wrap;
+
+    .name:not(:last-child):after {
+      white-space: pre;
+      content: ", ";
+    }
+  }
+}
+
+.piece {
+  h1 {
+    font-size: x-large;
+  }
+
+  h2 {
+    font-size: larger;
+  }
+
+  &.active {
+      border-left: 10px solid $highlights-color;
+      margin-left: 10px;
+      padding-left: 20px;
+
+  }
+  .description{
+    overflow: hidden;
+  }
+}

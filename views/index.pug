@@ -1,12 +1,39 @@
 extends template
 
 block title
-  = group + "'s " + concert
+  =concert
+
+append header
+  h2= group
 
 block content
-  h1 Performers
-  each part, index in performers
-    h2=index
-    ul
-      each person in part
-        li=person
+  #performers
+    h1 Performers
+    each part, index in performers
+      span.part=index
+      .part-list
+        each person in part
+          span.name=person
+  
+  #pieces
+    h1 Running Order
+    each piece, index in pieces
+      .piece(data-piece=`piece-${index}`)
+        if piece.subtitle
+          h1=`${piece.title} (${piece.subtitle})`
+        else
+          h1=`${piece.title}`
+          
+        if piece.composer && piece.arranger
+          h2=`${piece.composer} arr. ${piece.arranger}`
+        else if piece.composer
+          h2=`${piece.composer}`
+        else if piece.arranger
+          h2=`arr. ${piece.arranger}`
+        .description
+          if piece.description
+            each part in piece.description
+              p= part
+          
+append scripts
+  script(src='/scripts/index.js')

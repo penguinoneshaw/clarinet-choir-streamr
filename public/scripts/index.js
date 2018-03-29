@@ -3,7 +3,7 @@ var socket = io();
 var timeline = new TimelineMax();
 
 $(function() {
-  timeline.pause()
+  //timeline.pause()
   timeline.to($(".description"), 0.3, {
     height: 0
   })

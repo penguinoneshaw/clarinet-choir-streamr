@@ -3,9 +3,10 @@ var socket = io();
 var timeline = new TimelineMax();
 
 $(function() {
-  /*timeline.to($(".description"), 0.3, {
+  timeline.pause()
+  timeline.to($(".description"), 0.3, {
     height: 0
-  })*/
+  })
 
 
   socket.on("concert-details", (concert) => {

@@ -9,6 +9,11 @@ $max-text-width: 900px;
 
 body {
   font-family: 'Neuton',"Palatino Linotype", serif;
+
+  background-image: url(/images/stream_wallpaper.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .site-header {
@@ -37,6 +42,8 @@ body {
 
 .page-wrapper {
   @include fixed-layout-width;
+  padding: 10px;
+  background-color: white;
 
   blockquote {
     border-left: 10px solid $highlights-color;

@@ -5,14 +5,17 @@ block title
 
 append header
   h2= group
+  h3 Conducted by #[= conductor]
 
 block content
   #introduction
     p= description
   #charity
-    p= `We are raising money at the interval of this concert for ${charity.name} (${charity['registration number']}), a charity which aims to provide support for people with complex communication needs, to assist their families and carers, and to raise awareness of issues surrounding deafblindness in society.`
     p.
-      Their website is #[a(href=charity.url)= charity.url] where a direct donation can be made.
+      We are raising money at the interval of this concert for #[= charity.name] (#[= charity['registration number']]), a charity which aims to provide support for people with complex communication needs, to assist their families and carers, and to raise awareness of issues surrounding deafblindness in society.`
+    p.
+      Their website is #[a(href=charity.url)= charity.url] where a direct donation can be made.    
+      
   #performers
     h1 Performers
     each part, index in performers

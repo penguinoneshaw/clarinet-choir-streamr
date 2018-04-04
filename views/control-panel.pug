@@ -35,6 +35,7 @@ block content
       
       #committee
         h2 Committee
+        p Each of these brings up a panel saying "Currently speaking: NAME (POSITION)". 
         .list-group
           a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (Conductor)`
           each person, index in committee

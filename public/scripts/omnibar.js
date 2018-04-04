@@ -7,9 +7,6 @@ $(function() {
 
   socket.on("concert-details", function(concert) {
     omniConcert = concert;
-
-    $("#concert-title").text(omniConcert.concert);
-    $("#conductor").text(omniConcert.conductor);
     updatePiece(omniConcert, general);
 
   });
@@ -56,7 +53,7 @@ function updatePiece(concert, tl) {
       break;
     case "conductor":
       tl.call(() => {
-        $("#other-states").text(`Currently Speaking: ${concert.conductor} (Conductor)`)
+        $("#other-states").text(`Currently Speaking: ${concert.conductor.name} (Conductor)`)
       })
       elem = $("#other-states")
       break;

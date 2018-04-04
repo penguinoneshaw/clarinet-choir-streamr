@@ -23,21 +23,22 @@ block content
         h2 Pieces
         .list-group
           each piece, index in pieces
-            a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= `${piece.title}: ${piece.composer}`
+            if piece.composer && piece.arranger
+              - var comp = `${piece.composer} arr. ${piece.arranger}`
+            else if piece.composer
+              - var comp = piece.composer
+            else if piece.arranger
+              - var comp = `arr. ${piece.arranger}`
+            a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= `${piece.title}: ${comp}`
+              
+          
       
       #committee
         h2 Committee
         .list-group
-          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor} (Conductor)`
+          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (Conductor)`
           each person, index in committee
-            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
-      
-    #toggles
-      #charity
-        h2 Charity Banner
-        .list-group
-          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-charity="true") Show
-          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-charity="false") Hide    
+            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`  
 append scripts
   script(src='/socket.io/socket.io.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')

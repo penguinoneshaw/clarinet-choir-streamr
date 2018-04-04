@@ -1,0 +1,202 @@
+{
+  "group": "Edinburgh University Wind Band",
+  "concert": "Spring Concert 2018",
+  "venue": "Reid Concert Hall",
+  "price": "£6/£4 Students",
+  "conductor": {
+    "name": "Morven Bell",
+    "description": ["Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Englais. Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
+      "She has a wide experience of musical teaching and orchestral coaching. She currently teaches oboe (and bassoon) at George Heriot's School, the Edinburgh Academy and Merchiston Castle School, as well as a number of private pupils of all ages.",
+      "Morven has been involved with the Edinburgh University Wind Band (or EU Wind Ensemble as it was then known) since 1990, first as a player, then as Assistant Conductor and since 1993 as Musical Director. She is proud, and amazed, to be in her 25th year as MD! This has led to her being asked to occasionally conduct other local community wind bands.",
+      "Mo, as she is known to the band, divides her time between conducting the band, teaching and looking after her son, Alexander, who is a big fan of band."
+    ]
+  },
+  "description": [
+    "Welcome to our Spring Concert 2018!",
+    "We’ve been hard at work this past semester to bring you a wide variety of tunes from Jurassic Park to Songs from the Great War. ",
+    "Over the past semester we’ve had lots to celebrate including Mo’s 25th year of conducting the band, for which we held a scratch rehearsal and ceilidh. These were attended not only by our current members but also by members from across the past 25 years and it was fantastic to see so many faces.",
+    "Committee have been busy putting together the plan for tour and we’re very excited to announce that our pre-tour concert will be held from 12:30pm on Wednesday 30th May at the Ross Band Stand in Princes Street Gardens. We’d love to see you there if you can make it!",
+    "We’ve had a fantastic time rehearsing for this evening and hope you have just as good a time listening to it!"
+  ],
+  "pieces": [{
+      "title": "First Suite For Military Band In E♭",
+      "composer": "Gustav Holst"
+    },
+    {
+      "title": "Dartmoor 1912",
+      "composer": "John Williams",
+      "arranger": "Jay Bocook"
+    },
+    {
+      "title": "Songs From The Great War",
+      "arranger": "Bruce Fraser"
+    },
+    {
+      "title": "Band Of Brothers",
+      "composer": "Michael Kamen",
+      "arranger": "Jerry Brubaker"
+    },
+    {
+      "title": "The Blues Brothers Revue",
+      "arranger": "Jay Bocook"
+    },
+    {
+      "title": "Jurassic Park",
+      "subtitle": "Soundtrack Highlights",
+      "composer": "John Williams",
+      "arranger": "Paul Lavender"
+    },
+    {
+      "title": "Irish Tune From County Derry",
+      "composer": "Percy Grainger"
+    },
+    {
+      "title": "Gaelforce",
+      "composer": "Peter Graham"
+    },
+    {
+      "title": "Michel Legrand In Concert",
+      "composer": "Michel Legrand, Marilyn & Alan Bergman",
+      "arranger": "Ian Polster"
+    },
+    {
+      "title": "Let Me Entertain You",
+      "subtitle": "A Robbie Williams Medley",
+      "arranger": "Don Campbell"
+    }
+  ],
+  "performers": {
+    "Piccolo": [
+      "Emma Elley",
+      "Ellie Edwards"
+    ],
+    "Flute": [
+      "Briony Kincaid",
+      "Anna Russell",
+      "Lucy Morris",
+      "Rachael Moffat",
+      "Navina Senthilkumar",
+      "Hannah Crozier",
+      "Sinead Mackay",
+      "Charis Duong",
+      "Katie Watson",
+      "Beth Roberts"
+    ],
+    "Oboe": [
+      "Lawrie Smith",
+      "Imesha Alawattage"
+    ],
+    "Bassoon": [
+      "Ed Whittaker",
+      "Euan Dickerson",
+      "Cedric Ludlow",
+      "Felix Saward"
+    ],
+    "E♭ Clarinet": [
+      "James Shaw"
+    ],
+    "B♭ Clarinet": [
+      "Laurie Mulder",
+      "Emilia Pettersen-Janes",
+      "Fran Lane",
+      "Charlotte Hattrell",
+      "Franz Lichauco",
+      "Kirsty Lilley",
+      "Asha Trivedy",
+      "Katelin Donaldson",
+      "Beth Appelquist",
+      "Laura Bremner",
+      "Georgia Vullinghs"
+    ],
+    "Bass Clarinet": [
+      "Elly Brookfield"
+    ],
+    "Alto Saxophone": [
+      "Joanne Kiang",
+      "Jack Tait",
+      "Amy Cook",
+      "Calum Bolland",
+      "Emily Goddard",
+      "Clare Harris",
+      "Joanne Kiang",
+      "Emily Hamilton",
+      "Hannah Gill",
+      "Amy Hughes",
+      "Eleanor Hutcheon",
+      "Mark Sandford",
+      "Hannah Marlow",
+      "Sophie Allan"
+    ],
+    "Tenor Saxophone": [
+      "Joanna Kelly",
+      "Euan Ward"
+    ],
+    "Baritone Saxophone": [
+      "Sarah Hall"
+    ],
+    "Trumpet/Cornet": [
+      "Ruaridh Alexander",
+      "Richard York",
+      "Kathleen Hargest",
+      "Robbie Campbell Hewson",
+      "Susanna Smith",
+      "Joseph Das",
+      "Jonathan Lakey"
+    ],
+    "French Horn": [
+      "Gonda Metzger",
+      "Owen Fisher",
+      "Mairi Hull",
+      "Eleanor Barber",
+      "Alexander Gordon"
+    ],
+    "Trombone": [
+      "Lisa Burnside",
+      "Liam Clark",
+      "Nathan Russell",
+      "Ben Orton"
+    ],
+    "Euphonium": [
+      "Joanne Elston"
+    ],
+    "Tuba": [
+      "Tommy Trelawney-Vernon",
+      "Emily Teo"
+    ],
+    "Percussion": [
+      "Stuart Coleman",
+      "Hamish Mackinnon",
+      "Duncan Harris"
+    ],
+    "Bass Guitar": [
+      "Mark Sandford"
+    ]
+  },
+  "committee": {
+    "president": "Emma Elley",
+    "secretary": "Navina Senthilkumar",
+    "treasurer": "Joanna Kelly"
+  },
+  "otherStates": {
+    "interval": {
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    "preroll": {
+      "stream": "We'll be starting soon",
+      "controls": "Show Preroll"
+    },
+    "postroll": {
+      "stream": "Thanks for Watching!",
+      "controls": "Show Postroll"
+    },
+    "empty": {
+      "stream": "",
+      "controls": "Show Blank"
+    },
+    "raffle": {
+      "stream": "Raffle",
+      "controls": "Show Raffle"
+    }
+  }
+}

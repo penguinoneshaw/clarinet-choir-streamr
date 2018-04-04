@@ -5,24 +5,30 @@ block title
 
 append header
   h2= group
-  h3 Conducted by #[= conductor]
 
 block content
-  #introduction
-    p= description
-  #charity
-    p.
-      We are raising money at the interval of this concert for #[= charity.name] (#[= charity['registration number']]), a charity which aims to provide support for people with complex communication needs, to assist their families and carers, and to raise awareness of issues surrounding deafblindness in society.`
-    p.
-      Their website is #[a(href=charity.url)= charity.url] where a direct donation can be made.    
-      
+  if description
+    #introduction
+      h1 Note from the President
+      each paragraph in description
+        p= paragraph  
+  
+  #conductor
+    h1 #[conductor.name]
+    h2 Musical Director
+    if conductor.description
+      each paragraph in conductor.description
+        p= paragraph
+        
+        
   #performers
     h1 Performers
     each part, index in performers
-      span.part=index
-      .part-list
-        each person in part
-          span.name=person
+      div.part
+        span#partname=index
+        .part-list
+          each person in part
+            span.name=person
   
   #pieces
     h1 Running Order
@@ -39,7 +45,8 @@ block content
           h2=`${piece.composer}`
         else if piece.arranger
           h2=`arr. ${piece.arranger}`
-        .description
-          if piece.description
+          
+        if piece.description
+          .description
             each part in piece.description
               p= part

@@ -29,7 +29,7 @@ socket.on("nowplaying-update", function (nowplaying) {
 })
 
 $("input#password").on("keyup submit", (e) => {
-  if ($("input#password").val() == "rain always reminds me of you") {
+  if ($("input#password").val() == "take band from strength to strength") {
     $("form").remove()
     $(".controlpanel").show()
 
@@ -38,11 +38,6 @@ $("input#password").on("keyup submit", (e) => {
       omniConcert.nowplaying = $(event.currentTarget).data("selector")
       socket.emit("nowplaying-update", omniConcert.nowplaying)
       updatePiece(omniConcert)
-    });
-
-    $("#charity a").on("click", function(event){
-      event.preventDefault();
-      socket.emit("charity-display-update", $(event.currentTarget).data("charity"))
     });
 }
 })

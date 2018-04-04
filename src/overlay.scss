@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Neuton');
+@import "_imports";
+
 $bar-height: 100px;
 
 $window-height:1080px;
@@ -22,7 +23,7 @@ body {
   display: block;
   width: 1920px;
   height: 1080px;
-  border: 10px black solid;
+  border: 10px $highlights-color solid;
 }
 
 #omnibar {
@@ -31,8 +32,8 @@ body {
   position: absolute;
   bottom: $bar-height;
   left: 0;
-  color: white;
-  background: black;
+  color: $contrast-color;
+  background: $highlights-color;
   border-top: 0.5ex white solid;
   border-bottom: 0.5ex white solid;
   display: flex;
@@ -107,7 +108,7 @@ div.central-item{
 
 #charity {
   position: absolute;
-  background-color: black;
+  background-color: $highlights-color;
   width:500px;
   max-height: ($window-height - 2 * $bar-height - 200px);
   top: 100px;

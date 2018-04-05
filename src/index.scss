@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Neuton');
 @import "_imports";
-
 $max-text-width: 900px;
 @mixin fixed-layout-width {
   margin: 0 auto;
@@ -162,8 +161,11 @@ body {
     font-size: larger;
   }
   @media screen and (max-width: $max-text-width) {
-    text-align: justify;
     padding: 0 2ex;
+
+    p {
+      text-align: justify;
+    }
   }
 }
 
@@ -175,6 +177,8 @@ body {
 
   #partname {
     font-weight: bold;
+    display: inline-flex;
+    text-align: left;
   }
 
   .part-list {
@@ -185,11 +189,18 @@ body {
     .name:not(:last-child):after {
       white-space: pre;
       content: ", ";
+      margin-right: 10px;
     }
   }
 }
 
 .piece {
+
+  &:not(:last-child){
+    border-bottom: thin solid transparentize($highlights-color, 0.5);
+    padding: 2rem auto;
+  }
+
   h1 {
     font-size: x-large;
   }
@@ -210,5 +221,5 @@ body {
 }
 
 .controls div {
-  margin-top: 3em
+  margin-top: 3em;
 }

@@ -27,6 +27,7 @@ block content
       div.part
         span#partname=index
         .part-list
+          - part.sort()
           each person in part
             span.name=person
   

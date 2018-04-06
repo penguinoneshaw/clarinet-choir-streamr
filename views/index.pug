@@ -9,13 +9,12 @@ append header
 block content
   if description
     #introduction
-      h1 Note from the President
+      h1= `Note from the President (${committee.president})`
       each paragraph in description
         p= paragraph  
   
   #conductor
-    h1 #[conductor.name]
-    h2 Musical Director
+    h1= `${conductor.name} (Musical Director)`
     if conductor.description
       each paragraph in conductor.description
         p= paragraph

@@ -1,11 +1,15 @@
 {
   "group": "Edinburgh University Clarinet Choir",
-  "fblink": "https://www.facebook.com/EdinburghUniversityWindBand/videos/1669971799757541/",
   "concert": "Winter Concert 2018",
   "venue": "City of Edinburgh Methodist Church",
   "price": "£6/£4 Students",
-  "conductor": {"name": "Beth Appelquist"},
-  "description": ["From Jupiter to the banks of the Danube, we present music to whisk you away to distant times and places, both on earth and beyond. This is the most ambitious concert we have put on to date — in my opinion anyway! The music this semester includes some old favourites, some new acquisitions and some pieces arranged by members of the society. Despite some unexpected interference in our rehearsal schedule due to the Beast from the East, we hope that you enjoy our concert tonight."],
+  "conductor": {
+    "title": "Musical Director",
+    "name": "Beth Appelquist",
+    "description": [
+      "Beth is a fourth year Physics and Music student in her final year at the University of Edinburgh. A clarinettist (among many other instruments) herself, she brings both knowledge and enthusiasm to rehearsals, as well as enthusiastically contributing to the social aspects and running of the society. She has been conducting Clarinet Choir since 2017."
+    ]
+  },
   "pieces": [{
       "title": "In the Hall of the Mountain King",
       "composer": "Edvard Grieg",
@@ -17,8 +21,8 @@
     },
     {
       "title": "Nimrod",
-      "composer": "Edward Elgar, Arr. J. Murrow",
-      "arranger": "J. Murrow"
+      "composer": "Edward Elgar",
+      "arranger": "Jeannie Murrow"
     },
     {
       "title": "The Lone Ar-ranger",
@@ -65,6 +69,16 @@
       "title": "Don't Stop Believin'",
       "composer": "Steve Perry, Jonathan Cain, Neal Schon",
       "arranger": "Kate Agioritis"
+    },
+    {
+      "title": "Ding Dong Merrily On High",
+      "composer": "Trad.",
+      "arranger": "David Willcocks"
+    },
+    {
+      "title": "We Wish You A Merry Christmas",
+      "composer": "Trad.",
+      "arranger": "Ioan Dobrinescu"
     }
   ],
   "performers": {

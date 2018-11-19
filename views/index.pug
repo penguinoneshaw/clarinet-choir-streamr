@@ -4,7 +4,8 @@ block title
   =concert
 
 block fblink
-  .fb-video(data-href=fblink, data-width='auto', data-show-text='false')
+  if fblink
+    .fb-video(data-href=fblink, data-width='auto', data-show-text='false')
 
 
 append header
@@ -18,10 +19,13 @@ block content
         p= paragraph  
   
   #conductor
-    h1= `${conductor.name} (Musical Director)`
     if conductor.description
+      h1= `${conductor.name} (${conductor.title})`
       each paragraph in conductor.description
         p= paragraph
+    else
+      h1=conductor.title
+      h2=conductor.name
         
         
   #performers

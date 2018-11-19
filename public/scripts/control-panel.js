@@ -29,7 +29,7 @@ socket.on("nowplaying-update", function (nowplaying) {
 })
 
 $("input#password").on("keyup submit", (e) => {
-  if ($("input#password").val() == "take band from strength to strength") {
+  if ($("input#password").val() == "cooper the society parrot") {
     $("form").remove()
     $(".controlpanel").show()
 

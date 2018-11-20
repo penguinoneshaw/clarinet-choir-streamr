@@ -12,7 +12,29 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  font-weight: 400;
+  line-height: 1.45;
 }
+
+h1, h2, h3, h4 {
+  margin: 0.8rem 0 0.5rem;
+  font-weight: inherit;
+  line-height: 1.2;
+  font-weight: 600
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.441rem;
+}
+
+h2 {font-size: 1.953rem;}
+
+h3 {font-size: 1.563rem;}
+
+h4 {font-size: 1.25rem;}
+
+small, .font_small {font-size: 0.8rem;}
 
 .site-header {
   @include fixed-layout-width;
@@ -21,15 +43,25 @@ body {
   /* border-radius: 10px; */
   text-align: center;
   border-bottom: double $highlights-color 5px;
+  padding: 1rem;
   margin-bottom: 10px;
 
   h1,
   h2 {
+    margin: 0;
     a {
       color: black;
       text-decoration: none;
     }
   }
+
+  h1 {
+    margin-top: 0;
+    font-size: 2.441rem * 1.25 * 1.25;
+  }
+  
+  h2 {font-size: 2.441rem * 1.25}
+
   @media print {
     display: none;
   }
@@ -38,7 +70,7 @@ body {
 .page-wrapper {
   box-sizing: border-box;
   @media screen and (min-width: $max-text-width) {
-    padding: 1em 3em;
+    padding: 1rem 3rem;
   }
   @include fixed-layout-width;
   padding: 10px;
@@ -62,7 +94,7 @@ body {
 
     td,
     th {
-      padding: 0.5ex 1em;
+      padding: 0.5ex 1rem;
     }
 
     thead {
@@ -75,23 +107,6 @@ body {
 
     tfoot {
       border-top: 4px double $highlights-color;
-    }
-  }
-
-  .titleblock {
-    text-align: center;
-    margin: 20px 5px;
-
-    h1 {
-      font-size: xx-large;
-      font-family: 'Shadows Into Light', cursive;
-      margin-bottom: 0;
-    }
-
-    h2 {
-      font-size: small;
-      font-variant: small-caps;
-      font-stretch: condensed;
     }
   }
 
@@ -134,7 +149,7 @@ body {
 .jumbotron {
   margin: 1ex auto;
   max-width: $max-text-width - 150px;
-  padding: 2ex 4em;
+  padding: 2ex 4rem;
   border: 2px solid $highlights-color;
   display: block;
   text-align: center;
@@ -221,5 +236,5 @@ body {
 }
 
 .controls div {
-  margin-top: 3em;
+  margin-top: 3rem;
 }

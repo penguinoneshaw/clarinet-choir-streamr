@@ -55,13 +55,6 @@ small, .font_small {font-size: 0.8rem;}
     }
   }
 
-  h1 {
-    margin-top: 0;
-    font-size: 2.441rem * 1.25 * 1.25;
-  }
-  
-  h2 {font-size: 2.441rem * 1.25}
-
   @media print {
     display: none;
   }

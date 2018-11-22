@@ -12,24 +12,25 @@ append header
   h2= group
 
 block content
+  h1 Welcome to Our Concert!
   if description
     #introduction
-      h1= `Note from the President (${committee.president})`
+      h2= `Note from the President (${committee.president})`
       each paragraph in description
         p= paragraph  
   
   #conductor
     if conductor.description
-      h1= `${conductor.name} (${conductor.title})`
+      h2= `${conductor.name} (${conductor.title})`
       each paragraph in conductor.description
         p= paragraph
     else
-      h1=conductor.title
-      h2=conductor.name
+      h2=conductor.title
+      h3=conductor.name
         
         
   #performers
-    h1 Performers
+    h2 Performers
     each part, index in performers
       div.part
         span#partname=index
@@ -37,6 +38,19 @@ block content
           - part.sort()
           each person in part
             span.name=person
+  
+
+  #charity
+    if charity
+      h2=`Charity`
+      p
+        | With this concert, we are raising money for the charity 
+        = `${charity.name} `
+        | (registered Scottish charity
+        = " " + charity.registration_number
+        | ). Please consider making a donation to them; more details can be found at 
+        a(href=charity.url)= charity.url
+        | !
   
   #pieces
     h1 Running Order

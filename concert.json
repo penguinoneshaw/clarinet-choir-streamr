@@ -3,6 +3,9 @@
   "concert": "Winter Concert 2018",
   "venue": "City of Edinburgh Methodist Church",
   "price": "£6/£4 Students",
+  "description": ["It is with the utmost pride and excitement that we present to you this year’s Winter Concert, which features a characteristically eclectic selection of tunes, including some fantastic arrangements from our conductor and musical director, Beth Appelquist. This semester marks a few milestones for Clarinet Choir. We’ve reached our highest number of current members since the society’s official beginnings in 2012 and have had the incredible honour of performing in the wedding ceremony of Clarinet Choir’s founder, Joe Cooper. For my part, it has been really enjoyable to watch our little clarinet family grow both in numbers and confidence this semester and I’m excited for what the next one will bring!", 
+    "The committee has chosen to raise money for Sistema Scotland for this concert’s bake sale by donation. Sistema Scotland is a small charity aiming to effect long-lasting social change in underprivileged Scottish communities by engaging children of all ages in ensemble music playing. The power of music to radically improve people’s quality of life is something all of us in Clarinet Choir believe in a lot and we would be very grateful for any small contribution you are able to make!", 
+    "Lastly, a huge thank you to all of you for watching our concert — we hope you have as much fun listening to us perform as we’ve had rehearsing over the past few weeks!"],
   "conductor": {
     "title": "Musical Director",
     "name": "Beth Appelquist",
@@ -145,7 +148,7 @@
   },
   "charity": {
     "name": "Sistema Scotland",
-    "registration number": "SC039119",
+    "registration_number": "SC039119",
     "url": "https://makeabignoise.org.uk/sistema-scotland/"
   },
   "otherStates": {

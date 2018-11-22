@@ -7,79 +7,94 @@
     "title": "Musical Director",
     "name": "Beth Appelquist",
     "description": [
-      "Beth is a final year Physics and Music student at the University of Edinburgh. A clarinettist (among many other instruments) herself, she brings both knowledge and enthusiasm to rehearsals, as well as enthusiastically contributing to the social aspects and running of the society. She has been conducting Clarinet Choir since 2017."
+      "Beth is a final year Physics and Music student at the University of Edinburgh. A clarinettist (among many other instruments) herself, she brings, knowledge and energy and humour to rehearsals, as well as enthusiastically contributing to the social aspects and running of the society. She has been conducting Clarinet Choir since 2017."
     ]
   },
   "pieces": [{
       "title": "In the Hall of the Mountain King",
       "composer": "Edvard Grieg",
-      "arranger": "Charles Hine"
+      "arranger": "Charles Hine",
+      "description": ["This piece was composed by Grieg in 1875 for the Danish play, Peer Gynt, written by the Norwegian playwright Henrik Ibsen in 1867. The scene in which this infamous theme is played is a dream sequence within the titular character’s mind where he meets the troll king and almost gets engaged to his daughter. It has been rearranged in many genres and is oftenused in the media."]
     },
     {
       "title": "Moonlit Waltz",
-      "composer": "Joe Cooper"
+      "composer": "Joe Cooper",
+      "description": ["This was the first piece that the founder of this clarinet choir, Joe Cooper, composed specifically for this ensemble. We chose to play it in honour of this being the first concert which he has not performed with us since its founding in 2012, and to celebrate his wedding in October for which he asked us to perform (which we did with great delight)."]
     },
     {
       "title": "Nimrod",
       "composer": "Edward Elgar",
-      "arranger": "Jeannie Murrow"
+      "arranger": "Jeannie Murrow",
+      "description": ["Elgar wrote this piece as part of his “Enigma Variations” in the late 1890s. There are fourteen variations on his original theme, each acting as a sketch for one of his friends: this one specifically telling the story of Augustus J. Jaeger encouraging Elgar to continue writing music during a period of depression. Nimrod is played annually at the Cenotaph as part of the National Service of Remembrance."]
     },
     {
       "title": "The Lone Ar-ranger",
-      "arranger": "Philip. R. Buttall"
+      "arranger": "Philip. R. Buttall",
+      "description": ["Although Philip Buttall mostly arranges pieces for orchestras and saxophone ‘saxtets’, this arrangement was written for clarinet choirs in collaboration with a Californian group called Clarinet Fusion. It features 39 recognisable traditional and Classical themes within the framework of Gioachino Rossini’s “William Tell Overture”, the piece used in the 1950s TV show, The Lone Ranger."]
     },
     {
       "title": "O Come, O Come Emmanuel",
       "composer": "Thomas Helmore",
-      "arranger": "The Piano Guys and Beth Appelquist"
+      "arranger": "The Piano Guys and Beth Appelquist",
+      "description": ["This is a traditional Advent carol, originally in Latin but translated into English in the 19th Century. It anticipates the coming of the Christian Messiah during Advent, the text coming from the traditional antiphons sung in the week leading up to Christmas. This arrangement was put together by our conductor, Beth Appelquist, who was inspired by The Piano Guys, a group primarily on YouTube who make music with the aim “to make a positive impact in the lives of people all over the world”."]
     },
     {
       "title": "Rey's Theme",
       "subtitle": "From \"Star Wars Episode VII\"",
       "composer": "John Williams",
-      "arranger": "Beth Appelquist"
+      "arranger": "Beth Appelquist",
+      "description": ["The film soundtrack composer John Williams wrote the music for the Star Wars franchise. When he was composing for the seventh episode which was released in 2015, he felt a empathy for one of the central characters in particular, Rey, which led him to compose this reflective theme which he aimed to make sound more adventurous than heroic to establish hope for her character."]
     },
     {
       "title": "Cantina Band",
       "subtitle": "From \"Star Wars Episode IV\"",
       "composer": "John Williams",
-      "arranger": "Maxwell L. Conte and Joe Cooper"
+      "arranger": "Maxwell L. Conte and Joe Cooper",
+      "description": ["As part of the soundtrack for the first film released in the Star Wars franchise, Cantina Band is one of John William’s most recognisable film themes. A group of aliens play this piece in a Cantina Bar on strange instruments, playing in the style of Benny Goodman, as suggested by director George Lucas. It is apparently called “Mad About Me” within the Star Wars universe."]
     },
     {
       "title": "Sway",
-      "composer": "Pablo Beltrán Ruíz",
-      "arranger": "A. Wagner"
+      "subtitle": "¿Quién será?",
+      "composer": "Pablo Beltrán Ruiz/Luis Demetrio",
+      "arranger": "A. Wagner",
+      "description":["Sway, also known as “¿Quién será?”, is a popular song originally written by the Mexican composer Luis Demetrio and was first recorded in 1953. Since then, versions of it have been recorded by Dean Martin, Björk, Shaft and The Pussycat Dolls among many others within many genres beyond its original Latin bolero-mambo roots."]
     },
     {
       "title": "Dark Island",
-      "composer": "Trad.",
-      "arranger": "Beth Appelquist"
+      "composer": "Iain MacLachlan",
+      "arranger": "Beth Appelquist",
+      "description": ["This piece was written for the 1963 BBC series “The Dark Island” which was filmed on the Outer Hebridean island South Uist, but set on Benbecula, where a murder takes place around the  discovery of a Naval torpedo. Sadly, the series was lost in the 1970s due to the tape wiping policy at the time and no copies of it survive today, apart from the 1969 radio series version; but the music is still popular among accordionists and pipers today."]
     },
     {
       "title": "Irish Tune from County Derry",
       "composer": "Percy Grainger",
-      "arranger": "Matt Johnston"
+      "arranger": "Matt Johnston",
+      "description": ["Percy Grainger, born in Australia in 1882, prided himself as having “the supreme virtue of never being dull”. His music explores all types of music, but he is best known in wind band circles for this arrangement of the folk song which goes by many names and has many sets of associated lyrics. Our arrangement was purchased for us buy Joe and Kari, in order be played as the introit for their wedding. It has a record for inducing tears from the choir, the conductor and audiences alike."]
     },
     {
       "title": "Alla Marcia",
       "subtitle": "From the 'Karelia Suite'",
       "composer": "Jean Sibelius",
-      "arranger": "Joe Cooper"
+      "arranger": "Joe Cooper",
+      "description": ["The third movement of Jean Sibelius’ Karelia Suite is a march based on Pontus De La Gardie, a French nobleman who was a military commander in Sweden in the 16th Century. The Suite is one of Sibelius’ first compositions and is a Finnish nationalistic work that intends to incorporate the folk tradition of Finland."]
     },
     {
       "title": "Don't Stop Believin'",
       "composer": "Steve Perry, Jonathan Cain, Neal Schon",
-      "arranger": "Kate Agioritis"
+      "arranger": "Kate Agioritis",
+      "description": ["Released in 1981, Journey’s biggest hit single “Don’t Stop Believin’” is a favourite rock song internationally. The title came from the keyboardist Jonathan Cain’s father telling him to not give up on his dreams of being a musician and the lyrics are inspired by the city of Detroit in disrepair which lead vocalist Steve Perry observed after a show one night."]
     },
     {
       "title": "Ding Dong Merrily On High",
       "composer": "Trad.",
-      "arranger": "David Willcocks"
+      "arranger": "David Willcocks",
+      "description": ["This popular Christmas carol came from a secular dance book “Orchésographie” in the 16th Century, which was a choreographed branle dance which was a contemporary popular style of line dancing. It became a Christian carol in the 1924 when the priest George Ratcliffe Woodward wrote lyrics for it. Our arrangement is a transcription of the carol's standard choral arrangement by David Willcocks taken from \"100 Carols for Choirs\""]
     },
     {
       "title": "We Wish You A Merry Christmas",
       "composer": "Trad.",
-      "arranger": "Ioan Dobrinescu"
+      "arranger": "Ioan Dobrinescu",
+      "description": ["In 1935, this popular Christmas song was first performed in Bristol by the University Madrigal Singers."]
     }
   ],
   "performers": {

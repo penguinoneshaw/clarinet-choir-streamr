@@ -6,8 +6,10 @@ prepend head
 block title
   =concert + " Control Panel"
 
-block fblink
-  .fb-video(data-href=fblink, data-width='auto', data-show-text='false')
+block fbvideo
+  if fbvideo
+    div.video
+      iframe(src=fbvideo, style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width='400', height='400', frameborder='0')
 
 block content
   form.form-group

@@ -122,12 +122,12 @@
       "Jack Tait",
       "Nathan Russell",
       "Tessa Hedstrand",
+      "Xiaochen Ma",
       "Rachael Moffat"
     ],
     "B♭ Clarinet 4": [
       "Eleanor Hutcheon",
       "Peter Jones",
-      "Xiaochen Ma",
       "Morgan Brougham",
       "Karen Po"
     ],
@@ -161,7 +161,7 @@
       "controls": "Show Preroll"
     },
     "postroll": {
-      "stream": "We've now finished",
+      "stream": "Thanks for Watching! Don't forget to check out our social media profiles!",
       "controls": "Show Postroll"
     },
     "empty": {

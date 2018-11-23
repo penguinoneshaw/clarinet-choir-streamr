@@ -1,7 +1,7 @@
 $(function() {
-  var socket = io()
-  var omniConcert;
-  var general = new TimelineLite();
+  const socket = io()
+  let omniConcert;
+  let general = new TimelineLite();
 
   TweenLite.set("#charity", {scaleX: 0, opacity: 0})
 
@@ -26,7 +26,7 @@ $(function() {
 });
 
 function updatePiece(concert, tl) {
-  var currentactive = $(".active");
+  let currentactive = $(".active");
   if ( currentactive.length != 0 ){
     tl.to(currentactive, 1, {
       ease: Sine.easeInOut,
@@ -34,9 +34,9 @@ function updatePiece(concert, tl) {
       className: "-=active"
     }).set(currentactive, {clearProps: "all", className: "+=hidden"}).add("fade-out-complete");
   }
-  var elem;
+  let elem;
 
-  var state = concert.nowplaying.split("-")
+  let state = concert.nowplaying.split("-")
 
   switch (state.shift()) {
     case "state":
@@ -59,7 +59,7 @@ function updatePiece(concert, tl) {
       break;
     case "piece":
       elem = $("#nowplaying");
-      var piece = concert.pieces[parseInt(state[0])];
+      let piece = concert.pieces[parseInt(state[0])];
       tl.call(updateNowPlaying, [piece])
 
       break;
@@ -78,9 +78,9 @@ function updatePiece(concert, tl) {
 };
 
 function updateNowPlaying(piece) {
-  var title = piece.subtitle ? piece.title + " (" + piece.subtitle + ")" : piece.title
+  let title = piece.subtitle ? piece.title + " (" + piece.subtitle + ")" : piece.title
 
-  var credits = [];
+  let credits = [];
   if (piece.composer) credits.push(piece.composer);
   if (piece.arranger) credits.push("arr. " + piece.arranger);
 

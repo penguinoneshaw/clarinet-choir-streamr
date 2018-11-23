@@ -1,5 +1,6 @@
 {
   "group": "Edinburgh University Clarinet Choir",
+  "fbvideo": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTheClarinetChoir%2Fvideos%2F1090296824480859%2F&width=400",
   "concert": "Winter Concert 2018",
   "venue": "City of Edinburgh Methodist Church",
   "price": "£6/£4 Students",
@@ -164,7 +165,7 @@
       "stream": "Thanks for Watching! Don't forget to check out our social media profiles!",
       "controls": "Show Postroll"
     },
-    "empty": {
+    "blank": {
       "stream": "",
       "controls": "Show Blank"
     }

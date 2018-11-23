@@ -19,7 +19,6 @@ concert.nowplaying = "state-blank";
 
 var show_charity_notice = false;
 
-
 app.get('/control-panel', function(req, res){
   res.render("control-panel", concert);
 });

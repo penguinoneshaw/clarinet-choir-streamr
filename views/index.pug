@@ -3,9 +3,11 @@ extends template
 block title
   =concert
 
-block fblink
-  if fblink
-    .fb-video(data-href=fblink, data-width='auto', data-show-text='false')
+block fbvideo
+  if fbvideo
+    div.video
+      iframe(src=fbvideo, style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width='400', height='400', frameborder='0')
+
 
 
 append header
@@ -28,7 +30,6 @@ block content
       h2=conductor.title
       h3=conductor.name
         
-        
   #performers
     h2 Performers
     each part, index in performers
@@ -39,7 +40,6 @@ block content
           each person in part
             span.name=person
   
-
   #charity
     if charity
       h2=`Charity`

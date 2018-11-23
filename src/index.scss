@@ -24,11 +24,15 @@ h1, h2, h3, h4 {
 }
 
 h1 {
+  font-family: 'Amatic SC', 'Aracne Regular', serif;
+
   margin-top: 0;
   font-size: 2.441rem;
 }
 
-h2 {font-size: 1.953rem;}
+h2 {
+  
+  font-size: 1.953rem;}
 
 h3 {font-size: 1.563rem;}
 
@@ -37,6 +41,8 @@ h4 {font-size: 1.25rem;}
 small, .font_small {font-size: 0.8rem;}
 
 .site-header {
+  font-family: 'Amatic SC', 'Aracne Regular', serif;
+
   @include fixed-layout-width;
   display: block;
   box-sizing: border-box;

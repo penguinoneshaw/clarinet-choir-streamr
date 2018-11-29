@@ -209,6 +209,9 @@ small, .font_small {font-size: 0.8rem;}
 }
 
 .piece {
+  @media screen and (min-width: 600px) {
+    text-align: center;
+  }
 
   &:not(:last-child){
     border-bottom: thin solid transparentize($highlights-color, 0.5);

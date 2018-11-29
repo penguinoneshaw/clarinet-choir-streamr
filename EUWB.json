@@ -1,9 +1,10 @@
 {
   "group": "Edinburgh University Wind Band",
-  "concert": "EUWB Spring Concert 2018",
+  "concert": "EUWB Winter Concert 2018",
   "venue": "Reid Concert Hall",
   "price": "£6/£4 Students",
   "conductor": {
+    "title": "Musical Director",
     "name": "Morven Bell",
     "description": ["Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Anglais. Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
       "She has a wide experience of musical teaching and orchestral coaching. She currently teaches oboe (and bassoon) at George Heriot's School, the Edinburgh Academy and Merchiston Castle School, as well as a number of private pupils of all ages.",
@@ -12,81 +13,63 @@
     ]
   },
   "description": [
-    "Welcome to our Spring Concert 2018!",
-    "We’ve been hard at work this past semester to bring you a wide variety of tunes from Jurassic Park to Songs from the Great War.",
-    "Over the past semester we’ve had lots to celebrate including Mo’s 25th year of conducting the band, for which we held a scratch rehearsal and ceilidh. These were attended not only by our current members but also by members from across the past 25 years and it was fantastic to see so many faces.",
-    "Committee have been busy putting together the plan for tour and we’re very excited to announce that our pre-tour concert will be held from 12:30pm on Wednesday 30th May at the Ross Theatre in Princes Street Gardens. We’d love to see you there if you can make it!",
-    "We’ve had a fantastic time rehearsing for this evening and hope you have just as good a time listening to it!"
+    "Welcome to our Winter Concert 2018!"
   ],
   "pieces": [{
-      "title": "First Suite In E♭ For Military Band",
-      "composer": "Gustav Holst",
-      "description": ["When it was first performed in 1920, the First Suite was Holst's first composition for a military band. At that time, it was not believed that a group of only woodwind, brass and percussion could achieve the tonal cohesiveness to perform serious works, which Holst set about disproving, as well as providing some new repertoire for groups which were often relegated to orchestral transcriptions. The wind (or concert) band we have today is a successor to the military band, and this piece is one of the classics.",
-      "The Suite is structured into three movements. These are the 'Chaconne', 'Intermezzo' and 'March', which each provide variations on the same folk-song like melody. It features many instruments in soloistic passages, such as with the flute, oboe, cornet, euphonium, and clarinet." ]
+      "title": "Fanfare — Flight to the Unknown World",
+      "composer": "Satoshi Yagisawa"
     },
     {
-      "title": "Dartmoor 1912",
-      "subtitle": "from the film \"War Horse\"",
-      "composer": "John Williams",
-      "arranger": "Jay Bocook",
-      "description": ["Written for Steven Spielberg's 2011 adaptation of the book \"War Horse\" by Michael Morpurgo, 'Dartmoor 1912' features both soloistic passages and rich ensemble sections. It particularly features a solo flautist."]
+      "title": "Battle of Britain",
+      "composer": "Ron Goodwin",
+      "arranger": "Darrol Barry"
     },
     {
-      "title": "Songs From The Great War",
-      "arranger": "Bruce Fraser",
-      "description": ["This is a medley of many songs and themes associated with WWI, featuring the military 'Reveille', 'Pack Up Your Troubles', 'Mademoiselle from Armentières', 'Hello, Hello, Who's Your Lady Friend', 'Keep The Home Fires Burning' and 'It's A Long Way To Tipperary'.", "Bruce Fraser sadly died in February of 2017, having composed some of our favourite pieces, including the ever popular \"King Across The Water\"."]
+      "title": "The Eve of the War",
+      "composer": "Jeff Wayne",
+      "arranger": "Steve Sykes"
     },
     {
-      "title": "Band Of Brothers",
-      "composer": "Michael Kamen",
-      "arranger": "Jerry Brubaker",
-      "description": ["'Band of Brothers' was a 2001 US Miniseries based on a book of the same name by Steven A. Ambrose which depicts the account of an army company's exploits towards the end of WWII. The composer, Michael Kamen, opted to write a sombre, reflective score to depict the human tragedy in war."]
+      "title": "A Bernstein Tribute",
+      "composer": "Leonard Bernstein",
+      "arranger": "Clare Grundman"
     },
     {
-      "title": "The Blues Brothers Revue",
-      "arranger": "Jay Bocook",
-      "description": ["This medley from the 1980 classic film 'The Blues Brothers' features \"I Can't Turn You Loose\", \"Soul Man\", \"Soul Finger\", and \"Everybody Needs Somebody to Love\"."]
+      "title": "Symphonic Dances",
+      "subtitle": "From 'Fiddler on the Roof'",
+      "composer": "Jerry Bock & Sheldon Hearnick",
+      "arranger": "Ira Hearshen"
     },
     {
-      "title": "Jurassic Park",
-      "subtitle": "Soundtrack Highlights",
-      "composer": "John Williams",
-      "arranger": "Paul Lavender",
-      "description": ["The score from 1993's 'Jurassic Park' attempts \"to capture the awesome beauty and sublimity of the dinosaurs in nature\", and has become a true classic of modern film music, especially its main theme."]
+      "title": "The Magnificent Seven",
+      "composer": "Elmer Bernstein",
+      "arranger": "Roy Phillip"
     },
     {
-      "title": "Irish Tune From County Derry",
-      "composer": "Percy Grainger",
-      "description": ["Percy Grainger, born in Australia in 1882, prided himself as having “the supreme virtue of never being dull”. His music explores all types of music, but he is best known in wind band circles for this arrangement of the folk song which goes by many names and has many sets of associated lyrics. 'Irish Tune' highlights each group in the symphonic wind band in turn, leading to a final rendition of the theme with a crescendo which has a record for inducing tears from the band, the conductor and audiences alike."]
+      "title": "James Bond 007",
+      "arranger": "Johan de Meij"
     },
     {
-      "title": "Gaelforce",
-      "composer": "Peter Graham",
-      "description": ["Originally commissioned by the Fodens brass band, 'Gaelforce' is a medley of three folk songs, 'The Rocky Road to Dublin', 'The Minstrel Boy' and 'Tossing the Feathers'. It features quick articulation and interesting rhythms, especially in the jig and reel sections.", "Peter Graham (born 1958) is from Lanarkshire and completed his undergraduate degree at Edinburgh, and is a prolific composer on the modern wind and brass band competition circuits."]
+      "title": "Pentland Hills",
+      "composer": "Major J. W. Howe"
     },
     {
-      "title": "Michel Legrand In Concert",
-      "composer": "Michel Legrand, Marilyn & Alan Bergman",
-      "arranger": "Ian Polster",
-      "description": ["French composer Michel Legrand has composed more than two hundred film and television scores during his career. In this arrangement, we feature \"Windmills of your Mind\" (from 'The Thomas Crown Affair'), \"Sweet Gingerbread Man\" (from 'The Magic Garden of Stanley Sweetheart') and many others, all of which have become better known as songs in their own right."]
+      "title": "Loch Lomond",
+      "arranger": "Frank Ticheli"
     },
     {
-      "title": "Let Me Entertain You",
-      "subtitle": "A Robbie Williams Medley",
-      "composer": "Robbie Williams",
-      "arranger": "Don Campbell",
-      "description": [
-        "This arrangement, featuring music written by Williams, rounds off the concert in a fine fashion. It includes 'Let Me Entertain You', 'Road to Mandalay', 'Supreme' and 'Angels', and needs no other introduction."
-      ]
+      "title": "Mr Blue Sky",
+      "composer": "Jeff Lynne",
+      "arranger": "Gilbert Tinner"
     }
   ],
   "performers": {
     "Piccolo": [
       "Emma Elley",
+      "Hilde Metzger",
       "Ellie Edwards"
     ],
     "Flute": [
-      "Briony Kincaid",
       "Anna Russell",
       "Lucy Morris",
       "Rachael Moffat",
@@ -98,30 +81,24 @@
       "Beth Roberts"
     ],
     "Oboe": [
-      "Lawrie Smith",
-      "Imesha Alawattage"
+      "Lawrie Smith"
     ],
     "Bassoon": [
       "Ed Whittaker",
-      "Euan Dickerson",
-      "Cedric Ludlow",
       "Felix Saward"
     ],
     "E♭ Clarinet": [
-      "James Shaw"
+      "Beth Appelquist"
     ],
     "B♭ Clarinet": [
-      "Laurie Mulder",
-      "Emilia Pettersen-Janes",
-      "Fran Lane",
-      "Charlotte Hattrell",
-      "Franz Lichauco",
-      "Kirsty Lilley",
       "Asha Trivedy",
       "Katelin Donaldson",
-      "Beth Appelquist",
-      "Laura Bremner",
-      "Georgia Vullinghs"
+      "Franz Lichauco",
+      "Abby Lear",
+      "Rebecca Pimblett",
+      "Clare Harris",
+      "Sarah Hall",
+      "James Shaw"
     ],
     "Bass Clarinet": [
       "Elly Brookfield"
@@ -132,22 +109,21 @@
       "Amy Cook",
       "Calum Bolland",
       "Emily Goddard",
-      "Clare Harris",
       "Joanne Kiang",
       "Emily Hamilton",
       "Hannah Gill",
       "Amy Hughes",
       "Eleanor Hutcheon",
       "Mark Sandford",
-      "Hannah Marlow",
       "Sophie Allan"
     ],
     "Tenor Saxophone": [
       "Joanna Kelly",
-      "Euan Ward"
+      "Peter Jones",
+      "Katharine Gwynne"
     ],
     "Baritone Saxophone": [
-      "Sarah Hall"
+      "Lydia Zioupos"
     ],
     "Trumpet/Cornet": [
       "Ruaridh Alexander",
@@ -155,8 +131,7 @@
       "Kathleen Hargest",
       "Robbie Campbell Hewson",
       "Susanna Smith",
-      "Joseph Das",
-      "Jonathan Lakey"
+      "Joseph Das"
     ],
     "French Horn": [
       "Gonda Metzger",
@@ -166,8 +141,7 @@
       "Alexander Gordon"
     ],
     "Trombone": [
-      "Lisa Burnside",
-      "Liam Clark",
+      "Ed Whyton",
       "Nathan Russell",
       "Ben Orton"
     ],
@@ -188,9 +162,9 @@
     ]
   },
   "committee": {
-    "president": "Emma Elley",
+    "president": "Joanna Kelly",
     "secretary": "Navina Senthilkumar",
-    "treasurer": "Joanna Kelly"
+    "treasurer": "Clare Harris"
   },
   "otherStates": {
     "interval": {
@@ -205,12 +179,12 @@
       "stream": "Thanks for Watching!",
       "controls": "Show Postroll"
     },
-    "empty": {
+    "blank": {
       "stream": "",
       "controls": "Show Blank"
     },
     "raffle": {
-      "stream": "Raffle: We are raising money for the Bethany Christian Trust and Alzheimer's UK!",
+      "stream": "Raffle: We are raising money for the Samaritans (SC040604) and Drake Music Scotland (SC026908)!",
       "controls": "Show Raffle"
     }
   }

@@ -38,29 +38,29 @@ function updatePiece(concert, tl) {
 
     let state = concert.nowplaying.split('-');
 
-    switch (state.shift()) {
-    case 'state':
-        tl.call(() => {
-            $('#other-states').text(concert.otherStates[state.join()].stream);
-        });
-        elem = $('#other-states');
-        break;
-    case 'committee':
-        tl.call(() => {
-            $('#other-states').text('Currently Speaking: ' +  concert.committee[state.join()] + ` (${titleCase(state.join())})`);
-        });
-        elem = $('#other-states');
-        break;
-    case 'conductor':
-        tl.call(() => {
-            $('#other-states').text(`Currently Speaking: ${concert.conductor.name} (Conductor)`);
-        });
-        elem = $('#other-states');
-        break;
-    case 'piece':
-        elem = $('#nowplaying');
-        let piece = concert.pieces[parseInt(state[0])];
-        tl.call(updateNowPlaying, [piece]);
+  switch (state.shift()) {
+    case "state":
+      tl.call(() => {
+        $("#other-states").text(concert.otherStates[state.join()].stream)
+      })
+      elem = $("#other-states")
+      break;
+    case "committee":
+      tl.call(() => {
+        $("#other-states").text("Currently Speaking: " +  concert.committee[state.join()] + ` (${titleCase(state.join())})`)
+      })
+      elem = $("#other-states")
+      break;
+    case "conductor":
+      tl.call(() => {
+        $("#other-states").text(`Currently Speaking: ${concert.conductor.name} (${concert.conductor.title})`)
+      })
+      elem = $("#other-states")
+      break;
+    case "piece":
+      elem = $("#nowplaying");
+      let piece = concert.pieces[parseInt(state[0])];
+      tl.call(updateNowPlaying, [piece])
 
         break;
     default:

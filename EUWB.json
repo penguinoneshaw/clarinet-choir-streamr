@@ -13,7 +13,8 @@
     ]
   },
   "description": [
-    "Welcome to our Winter Concert 2018!"
+    "I am thrilled to welcome you all to EUWB’s winter concert! Band had a very successful recruitment drive back at the fresher’s fair in September which has taken us from strength to strength, resulting in us having over 100 registered members. This semester, along with our weekly rehearsals, we ran many successful social events including our Sectional meals, an exciting Stags' and Hens’ Pub crawl and of course our annual weekend away to Loch Lochy in the Scottish Highlands.", 
+    "We are now looking forward to next semester and are already getting excited for our Scratch Rehearsal and Joint Societies Ceilidh in February with Brass Band, Clarinet Choir and Female Voice Choir. For our annual Tour this summer everyone is excited to be taking in the sights of Brussels , Belgium as well as entertaining our European audience at two concerts"
   ],
   "pieces": [{
       "title": "Fanfare — Flight to the Unknown World",
@@ -70,15 +71,22 @@
       "Ellie Edwards"
     ],
     "Flute": [
+      "Navina Senthilkumar",
+      "Bethany Hickling",
+      "Rachael Moffat",
+      "Carrie Hammond",
+      "Emily Lee",
       "Anna Russell",
       "Lucy Morris",
-      "Rachael Moffat",
-      "Navina Senthilkumar",
-      "Hannah Crozier",
-      "Sinead Mackay",
+      "Grace Davidson",
       "Charis Duong",
+      "Sinead Mackay",
+      "Sarah Kayser",
+      "NG Zi Zan",
+      "Liradie Allen",
       "Katie Watson",
-      "Beth Roberts"
+      "Anna Mouat",
+      "Joanna Park"
     ],
     "Oboe": [
       "Lawrie Smith"
@@ -91,31 +99,40 @@
       "Beth Appelquist"
     ],
     "B♭ Clarinet": [
-      "Asha Trivedy",
-      "Katelin Donaldson",
-      "Franz Lichauco",
-      "Abby Lear",
-      "Rebecca Pimblett",
-      "Clare Harris",
       "Sarah Hall",
-      "James Shaw"
+      "Issy Cornwell",
+      "Clare Harris",
+      "Franz Lichauco",
+      "James Shaw",
+      "Tessa Hedstrand",
+      "Abbie Lear",
+      "Renée Willenborg",
+      "Mhairi Paterson",
+      "Rebecca Pimblett",
+      "Asha Trivedy",
+      "Abigail Hettrick",
+      "Abbie Lear",
+      "Liu Rongxing",
+      "Chris Jardine"
     ],
     "Bass Clarinet": [
       "Elly Brookfield"
     ],
     "Alto Saxophone": [
-      "Joanne Kiang",
       "Jack Tait",
-      "Amy Cook",
-      "Calum Bolland",
-      "Emily Goddard",
-      "Joanne Kiang",
-      "Emily Hamilton",
-      "Hannah Gill",
-      "Amy Hughes",
       "Eleanor Hutcheon",
+      "Kirsty MacArthur",
+      "Claire Jameson",
+      "Emily Goddard",
+      "Adam Wake",
+      "Molly Paton",
+      "Ewan Bain",
+      "Jemimah Morris",
+      "Russell Gair",
       "Mark Sandford",
-      "Sophie Allan"
+      "Nathan Inatimi",
+      "Calum Bolland",
+      "Sophie Gray"
     ],
     "Tenor Saxophone": [
       "Joanna Kelly",
@@ -126,39 +143,51 @@
       "Lydia Zioupos"
     ],
     "Trumpet/Cornet": [
-      "Ruaridh Alexander",
+      "Eve Goolden",
+      "Naomi Shilliday",
+      "Hannah Duncan",
       "Richard York",
-      "Kathleen Hargest",
       "Robbie Campbell Hewson",
-      "Susanna Smith",
-      "Joseph Das"
+      "Ruaridh Alexander",
+      "Felicity Knighton",
+      "David Varga",
+      "Susanna Smith"
     ],
     "French Horn": [
       "Gonda Metzger",
-      "Owen Fisher",
       "Mairi Hull",
       "Eleanor Barber",
       "Alexander Gordon"
     ],
+    "Tenor Horn": [
+      "Molly Lees"
+    ],
     "Trombone": [
       "Ed Whyton",
       "Nathan Russell",
-      "Ben Orton"
+      "Ben Orton",
+      "Amy Lockhart",
+      "Becca Puxley"
     ],
     "Euphonium": [
       "Joanne Elston"
     ],
     "Tuba": [
-      "Tommy Trelawney-Vernon",
-      "Emily Teo"
+      "Emily Teo Le"
     ],
     "Percussion": [
-      "Stuart Coleman",
+      "Fyntan Shaw",
+      "Ana Stewart",
       "Hamish Mackinnon",
-      "Duncan Harris"
+      "Grace Moran",
+      "Hibiki Kono",
+      "Anna Lynch"
     ],
     "Bass Guitar": [
       "Mark Sandford"
+    ], 
+    "Piano": [
+      "Ed Whyton"
     ]
   },
   "committee": {

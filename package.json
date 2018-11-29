@@ -1,6 +1,6 @@
 {
   "name": "stream-overlayr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "All of the assets required for the Spring 2018 concert stream of the Edinburgh University Clarinet Choir, hopefully in some sort of extensible manner.",
   "license": "GPL-3.0+",
   "repository": {
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "postinstall": "grunt",
-    "start": "nodemon server.js concert.json"
+    "start": "nodemon server.js euwb.json"
   },
   "bugs": {
     "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"

@@ -53,7 +53,7 @@ function updatePiece(concert, tl) {
       break;
     case "conductor":
       tl.call(() => {
-        $("#other-states").text(`Currently Speaking: ${concert.conductor.name} (Conductor)`)
+        $("#other-states").text(`Currently Speaking: ${concert.conductor.name} (${concert.conductor.title})`)
       })
       elem = $("#other-states")
       break;

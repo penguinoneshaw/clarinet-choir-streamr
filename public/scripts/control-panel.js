@@ -36,22 +36,19 @@ $(function () {
       updatePiece(omniConcert)
     });
   }
-  if (document.cookie.split(';').filter((item) => item.includes('signed-in=WelcomeToTheClub')).length) {
+  if (document.cookie.split(';').filter((item) => item.includes('signed-in=BlowHarderTongueQuickerFingerFaster')).length) {
     console.log("DONE")
     update_interface_after_signin();
   } else {
     $("input#password").on("keyup submit", (e) => {
-      if ($("input#password").val() == "cooper the society parrot") {
-        document.cookie = "signed-in=WelcomeToTheClub;max-age=3600";
+      if ($("input#password").val() == "from strength to strength") {
+        document.cookie = "signed-in=BlowHarderTongueQuickerFingerFaster;max-age=3600";
         update_interface_after_signin();
       }
     })
   }
 
 });
-
-
-
 
 function updatePiece(concert) {
   /* Changes the piece currently marked as active on the control panel */

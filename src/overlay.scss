@@ -1,6 +1,6 @@
 @import "_imports";
 
-$bar-height: 100px;
+$bar-height: 108px;
 
 $window-height:1080px;
 $window-width:1920px;
@@ -23,18 +23,20 @@ body {
   display: block;
   width: 1920px;
   height: 1080px;
-  border: 10px $highlights-color solid;
   position: relative;
   background-color: rgba(0,0,0,0);
   z-index: 10;
 }
 
 #omnibar {
-  width: 1920px;
+  width: 100%;
   height: $bar-height;
   position: absolute;
-  bottom: $bar-height;
+  bottom: 108px;
   left: 0;
+
+padding: 1ex 1em;
+
   color: $contrast-color;
   background: $highlights-color;
   border-top: 0.5ex white solid;
@@ -50,7 +52,7 @@ body {
     justify-content: space-between;
   }
   #logo {
-    $logo-size: $bar-height*0.8;
+    $logo-size: $bar-height*0.7;
     background: url("../images/logo.svg");
     background-size: ($logo-size) ($logo-size);
     width: $logo-size;
@@ -71,7 +73,7 @@ body {
 
   #conductor {
     &:before {
-      content: "Conductor: ";
+      content: "Musical Director: ";
       font-variant: small-caps;
     }
   }
@@ -107,7 +109,6 @@ div.central-item{
   .hidden {
     display: none !important;
   }
-
 }
 
 #charity {

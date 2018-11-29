@@ -24,7 +24,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-family: 'Aracne Regular', 'Neuton', 'Palatino Linotype', serif;
+  font-family: 'Neuton', 'Palatino Linotype', serif;
 
   margin-top: 0;
   font-size: 2.441rem;
@@ -41,7 +41,7 @@ h4 {font-size: 1.25rem;}
 small, .font_small {font-size: 0.8rem;}
 
 .site-header {
-  font-family: 'Amatic SC', 'Aracne Regular', serif;
+  font-family: 'Neuton', 'Palatino Linotype', serif;
 
   @include fixed-layout-width;
   display: block;

@@ -13,55 +13,81 @@
     ]
   },
   "description": [
-    "I am thrilled to welcome you all to EUWB’s winter concert! Band had a very successful recruitment drive back at the fresher’s fair in September which has taken us from strength to strength, resulting in us having over 100 registered members. This semester, along with our weekly rehearsals, we ran many successful social events including our Sectional meals, an exciting Stags' and Hens’ Pub crawl and of course our annual weekend away to Loch Lochy in the Scottish Highlands.", 
+    "I am thrilled to welcome you all to EUWB’s winter concert! Band had a very successful recruitment drive back at the fresher’s fair in September which has taken us from strength to strength, resulting in us having over 100 registered members. This semester, along with our weekly rehearsals, we ran many successful social events including our Sectional meals, an exciting Stags' and Hens’ Pub crawl and of course our annual weekend away to Loch Lochy in the Scottish Highlands.",
     "We are now looking forward to next semester and are already getting excited for our Scratch Rehearsal and Joint Societies Ceilidh in February with Brass Band, Clarinet Choir and Female Voice Choir. For our annual Tour this summer everyone is excited to be taking in the sights of Brussels , Belgium as well as entertaining our European audience at two concerts"
   ],
   "pieces": [{
       "title": "Fanfare — Flight to the Unknown World",
-      "composer": "Satoshi Yagisawa"
+      "composer": "Satoshi Yagisawa",
+      "description": ["Yagisawa wrote this piece for a friend whose concert band was celebrating its anniversary. It features fanfare and chorale sections, using each instrument of the band to great effect."]
     },
     {
       "title": "Battle of Britain",
       "composer": "Ron Goodwin",
-      "arranger": "Darrol Barry"
+      "arranger": "Darrol Barry",
+      "description": ["Featuring music from the 1969 film of the same name, 'Battle of Britain' features the popular march 'Aces High', originally the opening 'Luftwaffe March' in the score. The music was written to replace the first version of the score by Sir William Walton which was deemed to be unsuitable by the producers for being too overtly patriotic. 'Aces High' is followed by other themes from the film, finishing with its main theme.",
+        "Ron Goodwin was an English composer, particularly known for film scores such as those for 'Where Eagles Dare' and '633 Squadron'. Darrol Barry is better known for his brass band transcriptions and arrangements. He sadly passed away on 6th June this year."
+      ]
     },
     {
       "title": "The Eve of the War",
+      "subtitle": "From \"Jeff Wayne's Musical Version of 'The War of the Worlds'\"",
       "composer": "Jeff Wayne",
-      "arranger": "Steve Sykes"
+      "arranger": "Steve Sykes",
+      "description": [
+        "\"No one would have believed in the last years of the nineteenth century that human affairs were being watched from the timeless worlds of space...\"",
+        "Written in 1978 for Jeff Wayne's progressive rock concept album adapting H. G. Wells' novel 'The War of the Worlds', 'Eve of the War' depicts the initial arrival of the Martian tripods on a planet which had previously stated that \"the chances of anything coming from Mars are a million to one\". In 2009, the album became the 40th bestselling album in the UK of all time."
+      ]
     },
     {
       "title": "A Bernstein Tribute",
       "composer": "Leonard Bernstein",
-      "arranger": "Clare Grundman"
+      "arranger": "Clare Grundman",
+      "description": [
+        "This tribute features music from Bernstein's 'West Side Story' (including \"Prologue\", \"Somewhere\", \"Scherzo\" and \"Mambo\") and from 'On the Town' (\"The Great Lover\", \"Times Square: 1944\" and \"Lonely Town\"). It is arranged by the American Clare Grundman, who is better known to the band for having written tour favourite 'The Hebrides Suite'."
+      ]
     },
     {
       "title": "Symphonic Dances",
       "subtitle": "From 'Fiddler on the Roof'",
-      "composer": "Jerry Bock & Sheldon Hearnick",
-      "arranger": "Ira Hearshen"
+      "composer": "Jerry Bock & Sheldon Harnick",
+      "arranger": "Ira Hearshen",
+      "description": [
+        "The 1964 musical 'Fiddler on the Roof' depicts its main character Tevye's struggle to reconcile the traditions of his faith and his people with the changing world around him in 1900s Imperial Russia, including the desire of his daughters to marry for love and the pogrom from which they are eventually forced to flee. The score marries the Jewish klezmer style of music with modern western musical theatre constructs.",
+        "'Symphonic Dances' features some of the dances from the musical, including the opening number 'Tradition', 'The Bottle Dance', 'Perchik and Hodel Dance', 'Chava Sequence' and 'To Life (L'chaim)."
+      ]
     },
     {
       "title": "The Magnificent Seven",
       "composer": "Elmer Bernstein",
-      "arranger": "Roy Phillip"
+      "arranger": "Roy Phillippe",
+      "description": ["The music from the 1960 Western film of the same name, 'The Magnificent Seven' is an instantly recognisable theme due to its having been used several times in popular media since. The film was a remake for western audiences of a Japanese film 'The Seven Samurai' and featured stars such as Steve McQueen and Yul Brynner.", "Elmer Bernstein (who was not related in any way to Leonard) composed over 150 musical scores for films and television, including those of 'Ghostbusters' and 'The Black Cauldron'."]
     },
     {
       "title": "James Bond 007",
-      "arranger": "Johan de Meij"
+      "arranger": "Johan de Meij",
+      "description": ["Featuring the main theme by John Barry, 'All Time High', 'For Your Eyes Only' and 'Goldfinger', this arrangement covers several of the most memorable themes from the James Bond films. Its arranger, Johan de Meij, is better known to the band for having arranged EUWB favourite 'Moment for Morricone'. "]
     },
     {
       "title": "Pentland Hills",
-      "composer": "Major J. W. Howe"
+      "composer": "Major J. W. Howe",
+      "description": ["Named after the hills to the south-west of Edinburgh, 'Pentland Hills' features several traditional Scottish songs, including 'The Rowan Tree' among others."]
     },
     {
       "title": "Loch Lomond",
-      "arranger": "Frank Ticheli"
+      "arranger": "Frank Ticheli",
+      "description": [
+        "Originally published in 1841, \"The Bonnie Banks o' Loch Lomond\" is a traditional Scottish song, the current lyrics for which are thought to be a lament after the Battle of Culloden in 1745 for those who had been lost in the rebellion and those who had been subsequently executed by the English.",
+        "This arrangement marries the main theme with that of 'Londonderry Air' in its last section, which works to great effect."
+      ]
     },
     {
-      "title": "Mr Blue Sky",
+      "title": "Mr. Blue Sky",
       "composer": "Jeff Lynne",
-      "arranger": "Gilbert Tinner"
+      "arranger": "Gilbert Tinner",
+      "description": [
+        "'Mr. Blue Sky' was written in 1977 for the Electric Light Orchestra (ELO) by its frontman Jeff Lynne. It is reported to have been written after Lynne spent two weeks in a chalet in Switzerland trying to write an album during which it was entirely dark and misty, until suddenly it cleared and he was struck with how beautiful the Alps were. It has been used several times in popular media, including 'Guardians of the Galaxy, Vol. 2'. The original track finished the first side of the record, thus the often misheard final line \"Please turn me over!\", played in this arrangement on the glockenspiel."
+      ]
     }
   ],
   "performers": {
@@ -176,11 +202,12 @@
       "Hamish Mackinnon",
       "Grace Moran",
       "Hibiki Kono",
-      "Anna Lynch"
+      "Anna Lynch",
+      "Morgan Brougham"
     ],
     "Bass Guitar": [
       "Mark Sandford"
-    ], 
+    ],
     "Piano": [
       "Ed Whyton"
     ]

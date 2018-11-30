@@ -3,13 +3,15 @@
   "concert": "EUWB Winter Concert 2018",
   "venue": "Reid Concert Hall",
   "price": "£6/£4 Students",
+  "fbvideo": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FEdinburghUniversityWindBand%2Fvideos%2F781980815482666%2F&width=400",
   "conductor": {
     "title": "Musical Director",
     "name": "Morven Bell",
-    "description": ["Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Anglais. Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
+    "description": ["Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Anglais.", 
+      "Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
       "She has a wide experience of musical teaching and orchestral coaching. She currently teaches oboe (and bassoon) at George Heriot's School, the Edinburgh Academy and Merchiston Castle School, as well as a number of private pupils of all ages.",
-      "Morven has been involved with the Edinburgh University Wind Band (or EU Wind Ensemble as it was then known) since 1990, first as a player, then as Assistant Conductor and since 1993 as Musical Director. She is proud, and amazed, to be in her 25th year as MD! This has led to her being asked to occasionally conduct other local community wind bands.",
-      "Mo, as she is known to the band, divides her time between conducting the band, teaching and looking after her son, Alexander, who is a big fan of band."
+      "Her experience of conducting EUWB has led her conducting the Merchiston Castle School wind band, assisting the GHS Junior School Wind Ensemble and being asked to occasionally conduct other local communit wind bands. Morven has been involved with the Edinburgh University Wind Band (or Edinburgh University Wind Ensemble as it was then known) since 1990, first as a player, then as Assistant Conductor and since 1993 as Musical Director.",
+      "Mo, as she is known to the band, had an amazing 25th year with band and had such fun celebrating with banders old and new. This academic year sees band celebrating 20 years of our first annual tour and she is very much looking forward to our first concert in Newcastle with Bede Wind and then onwards to Brussels."
     ]
   },
   "description": [

@@ -7,16 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/penguinoneshaw/clarinet-choir-streamr.git"
   },
-  "engines": {
-    "node": "11.2.0",
-    "yarn": "1.12.3"
-  },
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-watch": "*",
     "grunt-sass": "*",
     "load-grunt-tasks": "*",
-    "node-sass": ">=4.10.0"
+    "node-sass": ">=4.10.0",
+    "nodemon": "*"
   },
   "dependencies": {
     "express": "*",

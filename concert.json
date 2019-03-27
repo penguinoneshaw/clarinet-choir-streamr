@@ -1,12 +1,12 @@
 {
   "group": "Edinburgh University Clarinet Choir",
   "fbvideo": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTheClarinetChoir%2Fvideos%2F1090296824480859%2F&width=400",
-  "concert": "Winter Concert 2018",
+  "concert": "Spring Concert 2019",
   "venue": "City of Edinburgh Methodist Church",
   "price": "£6/£4 Students",
-  "description": ["It is with the utmost pride and excitement that we present to you this year’s Winter Concert, which features a characteristically eclectic selection of tunes, including some fantastic arrangements from our conductor and musical director, Beth Appelquist. This semester marks a few milestones for Clarinet Choir. We’ve reached our highest number of current members since the society’s official beginnings in 2012 and have had the incredible honour of performing in the wedding ceremony of Clarinet Choir’s founder, Joe Cooper. For my part, it has been really enjoyable to watch our little clarinet family grow both in numbers and confidence this semester and I’m excited for what the next one will bring!", 
-    "The committee has chosen to raise money for Sistema Scotland for this concert’s bake sale by donation. Sistema Scotland is a small charity aiming to effect long-lasting social change in underprivileged Scottish communities by engaging children of all ages in ensemble music playing. The power of music to radically improve people’s quality of life is something all of us in Clarinet Choir believe in a lot and we would be very grateful for any small contribution you are able to make!", 
-    "Lastly, a huge thank you to all of you for watching our concert — we hope you have as much fun listening to us perform as we’ve had rehearsing over the past few weeks!"],
+  "description": [
+    "This semester, our chosen charity is the Edinburgh NE Food Bank (SCO44944) which is part of the Trussell Trust, which works to combat poverty and hunger across the UK. The Edinburgh NE Food Bank provide three days’ nutritionally balanced emergency food and support to local people who are referred to us in crisis. The Food Bank is a project founded by local churches and community groups, working together towards stopping hunger in our local area. A simple box of food makes a big difference, with foodbanks helping prevent crime, housing loss, family breakdown and mental health problems. We believe that this is a great cause, and we would encourage you to give as generously as you are able to support this wonderful charity."
+  ],
   "conductor": {
     "title": "Musical Director",
     "name": "Beth Appelquist",
@@ -14,131 +14,88 @@
       "Beth is a final year Physics and Music student at the University of Edinburgh. A clarinettist (among many other instruments) herself, she brings expertise, energy and enthusiasm to rehearsals, as well as tirelessly helping with the social aspects and running of the society. She has been conducting Clarinet Choir since 2017."
     ]
   },
-  "pieces": [{
-      "title": "In the Hall of the Mountain King",
-      "composer": "Edvard Grieg",
-      "arranger": "Charles Hine",
-      "description": ["This piece was composed by Grieg in 1875 for the Danish play, Peer Gynt, written by the Norwegian playwright Henrik Ibsen in 1867. The scene in which this infamous theme is played is a dream sequence within the titular character’s mind where he meets the troll king and almost gets engaged to his daughter. It has been rearranged in many genres and is often used in the media."]
+  "pieces": [
+    {
+      "title": "King Cotton March",
+      "composer": "John Philip Sousa",
+      "arranger": "R. Upton-Holder"
     },
     {
-      "title": "Moonlit Waltz",
-      "composer": "Joe Cooper",
-      "description": ["This was the first piece that the founder of this clarinet choir, Joe Cooper, composed specifically for this ensemble. We chose to play it in honour of this being the first concert which he has not performed with us since its founding in 2012, and to celebrate his wedding in October for which he asked us to perform (which we did with great delight)."]
+      "title": "Adagio",
+      "subtitle": "from \"Concierto de Aranjuez\"",
+      "composer": "Joaquin Rodrigo",
+      "arranger": "B. Jong and J. Cooper"
     },
     {
-      "title": "Nimrod",
-      "composer": "Edward Elgar",
-      "arranger": "Jeannie Murrow",
-      "description": ["Elgar wrote this piece as part of his “Enigma Variations” in the late 1890s. There are fourteen variations on his original theme, each acting as a sketch for one of his friends: this one specifically telling the story of Augustus J. Jaeger encouraging Elgar to continue writing music during a period of depression. Nimrod is played annually at the Cenotaph as part of the National Service of Remembrance."]
+      "title": "Somewhere",
+      "composer": "Leonard Bernstein",
+      "arranger": "W. Bex"
     },
     {
-      "title": "The Lone Ar-ranger",
-      "arranger": "Philip. R. Buttall",
-      "description": ["Although Philip Buttall mostly arranges pieces for orchestras and saxophone ‘saxtets’, this arrangement was written for clarinet choirs in collaboration with a Californian group called Clarinet Fusion. It features 39 recognisable traditional and Classical themes within the framework of Gioachino Rossini’s “William Tell Overture”, the piece used in the 1950s TV show, The Lone Ranger."]
+      "title": "Insecta Clarinetistae",
+      "composer": "Markku Kopisto"
     },
     {
-      "title": "O Come, O Come Emmanuel",
-      "composer": "Thomas Helmore",
-      "arranger": "The Piano Guys and Beth Appelquist",
-      "description": ["This is a traditional Advent carol, originally in Latin but translated into English in the 19th Century. It anticipates the coming of the Christian Messiah during Advent, the text coming from the traditional antiphons sung in the week leading up to Christmas. This arrangement was put together by our conductor, Beth Appelquist, who was inspired by The Piano Guys, a group primarily on YouTube who make music with the aim “to make a positive impact in the lives of people all over the world”."]
+      "title": "St. Paul's Suite",
+      "composer": "Gustav Holst",
+      "arranger": "M. Johnston"
     },
     {
-      "title": "Rey's Theme",
-      "subtitle": "From \"Star Wars Episode VII\"",
-      "composer": "John Williams",
-      "arranger": "Beth Appelquist",
-      "description": ["The film soundtrack composer John Williams wrote the music for the Star Wars franchise. When he was composing for the seventh episode which was released in 2015, he felt a empathy for one of the central characters in particular, Rey, which led him to compose this reflective theme which he aimed to make sound more adventurous than heroic to establish hope for her character."]
+      "title": "Entrance of the Gladiators",
+      "subtitle": "Thunder and Blazes",
+      "composer": "Julius Fučík",
+      "arranger": "J. Shaw"
     },
     {
-      "title": "Cantina Band",
-      "subtitle": "From \"Star Wars Episode IV\"",
-      "composer": "John Williams",
-      "arranger": "Maxwell L. Conte and Joe Cooper",
-      "description": ["As part of the soundtrack for the first film released in the Star Wars franchise, 'Cantina Band' is one of John William’s most recognisable film themes. A group of aliens play this piece in a Cantina Bar on strange instruments, playing in the style of Benny Goodman, as suggested by director George Lucas. It is apparently called “Mad About Me” within the Star Wars universe."]
+      "title":"Somebody to Love",
+      "composer": "Freddie Mercury",
+      "arranger": "K. Agioritis"
     },
     {
-      "title": "Sway",
-      "subtitle": "¿Quién será?",
-      "composer": "Pablo Beltrán Ruiz/Luis Demetrio",
-      "arranger": "A. Wagner",
-      "description":["Sway, also known as “¿Quién será?”, is a popular song originally written by the Mexican composer Luis Demetrio and was first recorded in 1953. Since then, versions of it have been recorded by Dean Martin, Björk, Shaft and The Pussycat Dolls among many others within many genres beyond its original Latin bolero-mambo roots."]
+      "title": "My Way",
+      "composer": "Claude François",
+      "arranger": "W. Bex"
     },
     {
-      "title": "Dark Island",
-      "composer": "Iain MacLachlan",
-      "arranger": "Beth Appelquist",
-      "description": ["This piece was written for the 1963 BBC series “The Dark Island” which was filmed on the Outer Hebridean island South Uist, but set on Benbecula, where a murder takes place around the  discovery of a Naval torpedo. Sadly, the series was lost in the 1970s due to the tape wiping policy at the time and no copies of it survive today, apart from the 1969 radio series version; but the music is still popular among accordionists and pipers today."]
-    },
-    {
-      "title": "Irish Tune from County Derry",
-      "composer": "Percy Grainger",
-      "arranger": "Matt Johnston",
-      "description": ["Percy Grainger, born in Australia in 1882, prided himself as having “the supreme virtue of never being dull”. His music explores all types of music, but he is best known in wind band circles for this arrangement of the folk song which goes by many names and has many sets of associated lyrics. Our arrangement was purchased for us by Joe and Kari to be played as the introit for their wedding. It has a record for inducing tears from the choir, the conductor and audiences alike."]
-    },
-    {
-      "title": "Alla Marcia",
-      "subtitle": "From the 'Karelia Suite'",
-      "composer": "Jean Sibelius",
-      "arranger": "Joe Cooper",
-      "description": ["The third movement of Jean Sibelius’ Karelia Suite is a march based on Pontus De La Gardie, a French nobleman who was a military commander in Sweden in the 16th Century. The Suite is one of Sibelius’ first compositions and is a Finnish nationalistic work that intends to incorporate the folk tradition of Finland."]
-    },
-    {
-      "title": "Don't Stop Believin'",
-      "composer": "Steve Perry, Jonathan Cain, Neal Schon",
-      "arranger": "Kate Agioritis",
-      "description": ["Released in 1981, Journey’s biggest hit single “Don’t Stop Believin’” is a favourite rock song internationally. The title came from the keyboardist Jonathan Cain’s father telling him to not give up on his dreams of being a musician and the lyrics are inspired by the city of Detroit in disrepair which lead vocalist Steve Perry observed after a show one night."]
-    },
-    {
-      "title": "Ding Dong Merrily On High",
-      "composer": "Trad.",
-      "arranger": "David Willcocks",
-      "description": ["This popular Christmas carol came from a secular dance book “Orchésographie” in the 16th Century, which was a choreographed branle dance which was a contemporary popular style of line dancing. It became a Christian carol in the 1924 when the priest George Ratcliffe Woodward wrote lyrics for it. Our arrangement is a transcription of the carol's standard choral arrangement by David Willcocks taken from \"100 Carols for Choirs\""]
-    },
-    {
-      "title": "We Wish You A Merry Christmas",
-      "composer": "Arthur Warrell",
-      "arranger": "Ioan Dobrinescu",
-      "description": ["In 1935, this popular Christmas song was first performed in Bristol by the University Madrigal Singers. That original version by Arthur Warrell took inspiration from other carols found in contemporary books such as the “New Oxford Books of Carols”."]
+      "title":"Vengaboys! For Clarinet Choir",
+      "composer": "Wessel van Diepen and Dennis van den Driesschen",
+      "arranger": "F. Lichauco"
     }
   ],
   "performers": {
-    "E♭ Clarinet": [
-      "Sarah Hall"
-    ],
+    "E♭ Clarinet": ["Sarah Hall"],
     "B♭ Clarinet 1": [
+      "Katie Sadoff",
       "Franz Lichauco",
-      "Miranda Jarrett",
-      "Rebecca Pimblett",
+      "James Shaw",
       "Abbie Lear"
     ],
     "B♭ Clarinet 2": [
       "Abigail Buchan",
       "Megan Campbell",
-      "Heather Holligan",
-      "Renée Willenborg",
-      "Georgia Vullinghs"
+      "Mary Festa",
+      "Harry Nicol",
+      "Heather Holligan"
     ],
     "B♭ Clarinet 3": [
-      "Ellen MacRae",
-      "Jack Tait",
-      "Nathan Russell",
       "Tessa Hedstrand",
       "Xiaochen Ma",
-      "Rachael Moffat"
+      "Ellen MacRae",
+      "Georgia Vullinghs",
+      "Rachael Moffat",
+      "Jack Tait"
     ],
     "B♭ Clarinet 4": [
+      "Miranda Jarrett",
       "Eleanor Hutcheon",
       "Peter Jones",
       "Morgan Brougham",
-      "Karen Po"
+      "Karen Po",
+      "Naomi Shilliday"
     ],
-    "Alto Clarinet": [
-      "Murray Wham"
-    ],
-    "Bass Clarinet": [
-      "Elly Brookfield",
-      "James Shaw"
-    ]
+      
+    "Alto Clarinet": ["Rebecca Pimblett"],
+    "Bass Clarinet": ["Elly Brookfield", "Nathan Russell"]
   },
   "committee": {
     "president": "Miranda Jarrett",
@@ -148,9 +105,9 @@
     "ordinary member": "Ellen MacRae"
   },
   "charity": {
-    "name": "Sistema Scotland",
-    "registration_number": "SC039119",
-    "url": "https://makeabignoise.org.uk/sistema-scotland/"
+    "name": "Edinburgh NE Food Bank",
+    "registration_number": "SCO44944",
+    "url": "https://edinburghne.foodbank.org.uk/"
   },
   "otherStates": {
     "interval": {

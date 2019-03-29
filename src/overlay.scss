@@ -2,13 +2,13 @@
 
 $bar-height: 100px;
 
-$window-height:1080px;
-$window-width:1920px;
+$window-height: 1080px;
+$window-width: 1920px;
 
 @mixin row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 * {
@@ -25,12 +25,12 @@ body {
   height: 1080px;
   border: 10px $highlights-color solid;
   position: relative;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   z-index: 10;
 }
 
 #omnibar {
-  width: 1920px;
+  width: 100%;
   height: $bar-height;
   position: absolute;
   bottom: $bar-height;
@@ -50,14 +50,14 @@ body {
     justify-content: space-between;
   }
   #logo {
-    $logo-size: $bar-height*0.8;
+    $logo-size: $bar-height * 0.8;
     background: url("../images/logo.svg");
     background-size: ($logo-size) ($logo-size);
     width: $logo-size;
     height: $logo-size;
     text-indent: -9999px;
     overflow: hidden;
-    flex-shrink: 0
+    flex-shrink: 0;
   }
 
   .vstack {
@@ -66,7 +66,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
   }
 
   #conductor {
@@ -89,7 +89,7 @@ body {
   }
 }
 
-div.central-item{
+div.central-item {
   flex-grow: 1;
   display: inline-block;
   overflow: hidden;
@@ -99,7 +99,7 @@ div.central-item{
   div {
     white-space: nowrap;
     margin: 0 auto;
-    width:100%;
+    width: 100%;
 
     text-align: center;
     align-items: center;
@@ -107,13 +107,12 @@ div.central-item{
   .hidden {
     display: none !important;
   }
-
 }
 
 #charity {
   position: absolute;
   background-color: $highlights-color;
-  width:500px;
+  width: 500px;
   max-height: ($window-height - 2 * $bar-height - 200px);
   top: 100px;
   left: 100px;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Neuton');
+@import url('https://fonts.googleapis.com/css?family=Neuton|Amatic+SC');
 @import "_imports";
 $max-text-width: 900px;
 @mixin fixed-layout-width {
@@ -24,8 +24,6 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-family: 'Aracne Regular', 'Neuton', 'Palatino Linotype', serif;
-
   margin-top: 0;
   font-size: 2.441rem;
 }
@@ -236,6 +234,28 @@ small, .font_small {font-size: 0.8rem;}
 
 .controls div {
   margin-top: 3rem;
+
+}
+
+
+.list-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  & > .list-group-item {
+    &:not(:last-child) {
+      border-bottom: $highlights-color 2px solid;
+    }
+
+    &.active {
+      background: $highlights-color;
+      color: $contrast-color;
+    }
+
+    display:block;
+    padding: 10px;
+  }
 }
 
 .video {
@@ -248,7 +268,8 @@ small, .font_small {font-size: 0.8rem;}
     height: 100%;
     border:none;
     overflow:hidden;
-  position: relative;
+    position: relative;
   }
   
 }
+

@@ -1,1 +1,1 @@
-web: node server.js EUWB.json
+web: node server.js euwb.json

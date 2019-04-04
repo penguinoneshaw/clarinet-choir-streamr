@@ -1,0 +1,164 @@
+{
+  "group": "Edinburgh University Wind Band",
+  "concert": "EUWB Winter Concert 2018",
+  "venue": "Reid Concert Hall",
+  "price": "£6/£4 Students",
+  "fbvideo": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FEdinburghUniversityWindBand%2Fvideos%2F781980815482666%2F&width=400",
+  "conductor": {
+    "title": "Musical Director",
+    "name": "Morven Bell",
+    "description": ["Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Anglais.", 
+      "Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
+      "She has a wide experience of musical teaching and orchestral coaching. She currently teaches oboe (and bassoon) at George Heriot's School, the Edinburgh Academy and Merchiston Castle School, as well as a number of private pupils of all ages.",
+      "Her experience of conducting EUWB has led her conducting the Merchiston Castle School wind band, assisting the GHS Junior School Wind Ensemble and being asked to occasionally conduct other local community wind bands. Morven has been involved with the Edinburgh University Wind Band (or Edinburgh University Wind Ensemble as it was then known) since 1990, first as a player, then as Assistant Conductor and since 1993 as Musical Director.",
+      "Mo, as she is known to the band, had an amazing 25th year with band and had such fun celebrating with banders old and new. This academic year sees band celebrating 20 years of our first annual tour and she is very much looking forward to our first concert in Newcastle with Bede Wind and then onwards to Brussels."
+    ]
+  },
+  "description": [
+    "I am thrilled to welcome you all to EUWB’s winter concert! Band had a very successful recruitment drive back at the fresher’s fair in September which has taken us from strength to strength, resulting in us having over 100 registered members. This semester, along with our weekly rehearsals, we ran many successful social events including our Sectional meals, an exciting Stags' and Hens’ Pub crawl and of course our annual weekend away to Loch Lochy in the Scottish Highlands.",
+    "We are now looking forward to next semester and are already getting excited for our Scratch Rehearsal and Joint Societies Ceilidh in February with Brass Band, Clarinet Choir and Female Voice Choir. For our annual Tour this summer everyone is excited to be taking in the sights of Brussels , Belgium as well as entertaining our European audience at two concerts"
+  ],
+  "pieces": [
+    {
+      "title": "Overture to \"The Marriage of Figaro\"",
+      "composer": "Wolfgang Amadeus Mozart",
+      "arranger": "Earl Slocum"
+    },
+    {
+      "title": "Second Suite in F for Military Band",
+      "subtitle": "Op. 28, No. 2"
+    }
+  ],
+  "performers": {
+    "Piccolo": [
+      "Emma Elley",
+      "Hilde Metzger"
+    ],
+    "Flute": [
+      "Liradie Allen",
+      "Charis Duong",
+      "Carrie Hammond",
+      "Bethany Hickling",
+      "Sarah Kayser",
+      "Emily Lee",
+      "Sinead Mackay",
+      "Lucy Morris",
+      "Anna Mouat",
+      "Joanna Park",
+      "Anna Russell",
+      "Dom Sadczuk",
+      "Navina Senthilkumar",
+      "Katie Watson"
+    ],
+    "Oboe": [
+      "Imesha Alawattage"
+    ],
+    "Bassoon": [
+      "Elisa Ramil Brick",
+      "Ed Whittaker",
+      "Felix Saward"
+    ],
+    "E♭ Clarinet": [
+      "Beth Appelquist"
+    ],
+    "B♭ Clarinet": [
+      "Abigail Buchan",
+      "Megan Campbell",
+      "Sam Ditkovsky",
+      "Clare Harris",
+      "Tessa Hedstrand",
+      "Abigail Hettrick",
+      "Abbie Lear",
+      "Franz Lichauco",
+      "Rachael Moffat",
+      "Harry Nicol",
+      "Katie Sadoff",
+      "Rebecca Pimblett",
+      "James Shaw"
+    ],
+    "Bass Clarinet": [
+      "Elly Brookfield"
+    ],
+    "Alto Saxophone": [
+      "Ewan Bain",
+      "Calum Bolland",
+      "Emily Goddard",
+      "Adam Grace",
+      "Sophie Gray",
+      "Eleanor Hutcheon",
+      "Nathan Inatimi",
+      "Kirsty MacArthur",
+      "Jemimah Morris",
+      "Molly Paton",
+      "Jack Tait"
+    ],
+    "Tenor Saxophone": [
+      "Joanna Kelly",
+      "Peter Jones",
+      "Katharine Gwynne"
+    ],
+    "Baritone Saxophone": [
+      "Lydia Zioupos"
+    ],
+    "Trumpet/Cornet": [
+      "Richard York",
+      "Naomi Shilliday",
+      "Robbie Campbell Hewson",
+      "Ruaridh Alexander",
+      "Eve Goolden",
+      "Alice Huseyinoglu",
+      "Felicity Knighton",
+      "Susanna Smith"
+    ],
+    "French Horn": [
+      "Gonda Metzger",
+      "Mairi Hull",
+      "Ellie Barber",
+      "Alexander Gordon"
+    ],
+    "Trombone": [
+      "Ed Whyton",
+      "Nathan Russell",
+      "Ben Orton",
+      "Becca Puxley"
+    ],
+    "Tuba": [
+      "Marcello Rufo"
+    ],
+    "Percussion": [
+      "Fyntan Shaw",
+      "Ana Stewart Tamariz",
+      "Hamish Mackinnon",
+      "Grace Moran",
+      "Anna Lynch",
+      "Morgan Brougham"
+    ]
+  },
+  "committee": {
+    "president": "Joanna Kelly",
+    "secretary": "Navina Senthilkumar",
+    "treasurer": "Clare Harris"
+  },
+  "otherStates": {
+    "interval": {
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    "preroll": {
+      "stream": "We'll be starting soon",
+      "controls": "Show Preroll"
+    },
+    "postroll": {
+      "stream": "Thanks for Watching!",
+      "controls": "Show Postroll"
+    },
+    "blank": {
+      "stream": "",
+      "controls": "Show Blank"
+    },
+    "raffle": {
+      "stream": "Raffle: We are raising money for the Samaritans (SC040604) and Drake Music Scotland (SC026908)!",
+      "controls": "Show Raffle"
+    }
+  }
+}

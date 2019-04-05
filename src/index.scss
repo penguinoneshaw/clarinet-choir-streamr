@@ -6,7 +6,7 @@ $max-text-width: 900px;
 }
 
 body {
-  font-family: 'Neuton',"Palatino Linotype", serif;
+  font-family: "Neuton", "Palatino Linotype", serif;
   background-color: $highlights-color;
   background-attachment: fixed;
   background-size: cover;
@@ -15,11 +15,14 @@ body {
   line-height: 1.45;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0.8rem 0 0.5rem;
   font-weight: inherit;
   line-height: 1.2;
-  font-weight: 600
+  font-weight: 600;
 }
 
 h1 {
@@ -28,17 +31,24 @@ h1 {
 }
 
 h2 {
-  
-  font-size: 1.953rem;}
+  font-size: 1.953rem;
+}
 
-h3 {font-size: 1.563rem;}
+h3 {
+  font-size: 1.563rem;
+}
 
-h4 {font-size: 1.25rem;}
+h4 {
+  font-size: 1.25rem;
+}
 
-small, .font_small {font-size: 0.8rem;}
+small,
+.font_small {
+  font-size: 0.8rem;
+}
 
 .site-header {
-  font-family: 'Neuton', 'Palatino Linotype', serif;
+  font-family: "Neuton", "Palatino Linotype", serif;
 
   @include fixed-layout-width;
   display: block;
@@ -98,7 +108,7 @@ small, .font_small {font-size: 0.8rem;}
     }
 
     tbody tr:nth-child(even) {
-      background-color: rgba($highlights-color,0.2);
+      background-color: rgba($highlights-color, 0.2);
     }
 
     tfoot {
@@ -210,9 +220,17 @@ small, .font_small {font-size: 0.8rem;}
     text-align: center;
   }
 
-  &:not(:last-child){
-    border-bottom: thin solid transparentize($highlights-color, 0.5);
-    padding: 2rem auto;
+  &:not(:last-child)::after {
+    content: "";
+    width: 2em;
+    height: 2em;
+    display: block;
+    background-image: url("/images/logo.svg");
+    color: black;
+    background-size: contain;
+    margin: 1em auto 0.5em;
+    background-repeat: no-repeat;
+    background-position: center
   }
 
   h1 {
@@ -236,9 +254,7 @@ small, .font_small {font-size: 0.8rem;}
 
 .controls div {
   margin-top: 3rem;
-
 }
-
 
 .list-group {
   display: flex;
@@ -255,7 +271,7 @@ small, .font_small {font-size: 0.8rem;}
       color: $contrast-color;
     }
 
-    display:block;
+    display: block;
     padding: 10px;
   }
 }
@@ -263,15 +279,13 @@ small, .font_small {font-size: 0.8rem;}
 .video {
   margin: 0 auto;
   width: 400px;
-  height: calc(400px * 10/16);
+  height: calc(400px * 10 / 16);
 
   iframe {
     width: 100%;
     height: 100%;
-    border:none;
-    overflow:hidden;
+    border: none;
+    overflow: hidden;
     position: relative;
   }
-  
 }
-

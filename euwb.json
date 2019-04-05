@@ -1,6 +1,6 @@
 {
   "group": "Edinburgh University Wind Band",
-  "concert": "EUWB Winter Concert 2018",
+  "concert": "EUWB Spring Concert 2019",
   "venue": "Reid Concert Hall",
   "price": "£6/£4 Students",
   "fbvideo": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FEdinburghUniversityWindBand%2Fvideos%2F781980815482666%2F&width=400",
@@ -15,8 +15,7 @@
     ]
   },
   "description": [
-    "I am thrilled to welcome you all to EUWB’s winter concert! Band had a very successful recruitment drive back at the fresher’s fair in September which has taken us from strength to strength, resulting in us having over 100 registered members. This semester, along with our weekly rehearsals, we ran many successful social events including our Sectional meals, an exciting Stags' and Hens’ Pub crawl and of course our annual weekend away to Loch Lochy in the Scottish Highlands.",
-    "We are now looking forward to next semester and are already getting excited for our Scratch Rehearsal and Joint Societies Ceilidh in February with Brass Band, Clarinet Choir and Female Voice Choir. For our annual Tour this summer everyone is excited to be taking in the sights of Brussels , Belgium as well as entertaining our European audience at two concerts"
+    "I am thrilled to welcome you all to EUWB’s Spring Concert!"
   ],
   "pieces": [
     {
@@ -26,7 +25,46 @@
     },
     {
       "title": "Second Suite in F for Military Band",
-      "subtitle": "Op. 28, No. 2"
+      "subtitle": "Op. 28, No. 2",
+      "composer": "Gustav Holst"
+    },
+    {
+      "title": "Dances with Wolves",
+      "composer": "John Barry",
+      "arranger": "Frank Bernaerts"
+    }, 
+    {
+      "title": "Toccata in D Minor",
+      "composer": "J.S. Bach",
+      "arranger": "Ray Farr & Kevin Lamb"
+    },
+    {
+      "title": "Me and My Girl",
+      "composer": "Noel Gay",
+      "arranger": "Trevor L. Sharpe"
+    },
+    {
+      "title": "Children's March: \"Over the Hills and Far Away\"",
+      "composer": "Percy Grainger",
+      "arranger": "Frank Erikson"
+    },
+    {
+      "title": "Bandology",
+      "composer": "Eric Osterling"
+    },
+    {
+      "title": "Conquest of Paradise",
+      "composer": "Vangelis",
+      "arranger": "Frank Bernaerts"
+    },
+    {
+      "title": "The Producers",
+      "composer": "Mel Brooks",
+      "arranger": "Ted Ricketts"
+    },
+    {
+      "title": "Pop and Rock Legends: Stevie Wonder",
+      "arranger": "John Wasson"
     }
   ],
   "performers": {

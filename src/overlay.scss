@@ -11,7 +11,7 @@ $window-width: 1920px;
   align-items: center;
 }
 
-* {
+* { 
   box-sizing: border-box;
 }
 
@@ -34,9 +34,7 @@ body {
   position: absolute;
   bottom: 108px;
   left: 0;
-
-padding: 1ex 1em;
-
+  padding: 1ex 1em;
   color: black;
   background: $highlights-color;
   border-top: 0.5ex $contrast-color solid;

@@ -37,10 +37,10 @@ body {
 
 padding: 1ex 1em;
 
-  color: $contrast-color;
+  color: black;
   background: $highlights-color;
-  border-top: 0.5ex white solid;
-  border-bottom: 0.5ex white solid;
+  border-top: 0.5ex $contrast-color solid;
+  border-bottom: 0.5ex $contrast-color solid;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@ padding: 1ex 1em;
     text-indent: -9999px;
     overflow: hidden;
     flex-shrink: 0;
-    color: $contrast-color;
+    color: black;
   }
 
   .vstack {
@@ -119,9 +119,9 @@ div.central-item {
   max-height: ($window-height - 2 * $bar-height - 200px);
   top: 100px;
   left: 100px;
-  border: 0.5ex white solid;
+  border: 0.5ex $contrast-color solid;
   text-align: center;
-  color: white;
+  color: black;
   padding: 2em;
   p {
     font-size: 30px;

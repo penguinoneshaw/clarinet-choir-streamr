@@ -1,55 +1,41 @@
 var omniConcert;
-var socket = io();
+const socket = io();
 
-$(function () {
-
-
-});
-
-socket.on("concert-details", (concert) => {
-  omniConcert = concert;
-  updatePiece(concert)
-});
-
-socket.on("disconnect", (s) => {
-  $(".controlpanel").hide()
-  $("#maincontent").prepend(`<div id="connection-warning" class="alert alert-warning">Server disconnected!</div>`)
-})
-
-socket.on("reconnect", (s) => {
-  $("#connection-warning").remove()
-  $('.controlpanel').show()
-})
-
-socket.on("nowplaying-update", function (nowplaying) {
-  omniConcert.nowplaying = nowplaying;
-
-  updatePiece(omniConcert)
-
-})
-
-$("input#password").on("keyup submit", (e) => {
-  if ($("input#password").val() == "rain always reminds me of you") {
-    $("form").remove()
-    $(".controlpanel").show()
-
-    $("#controls a").on("click", function(event){
-      event.preventDefault();
-      omniConcert.nowplaying = $(event.currentTarget).data("selector")
-      socket.emit("nowplaying-update", omniConcert.nowplaying)
-      updatePiece(omniConcert)
+$(function() {
+    socket.on('concert-details', (concert) => {
+        omniConcert = concert;
+        updatePiece(concert);
     });
 
-    $("#charity a").on("click", function(event){
-      event.preventDefault();
-      socket.emit("charity-display-update", $(event.currentTarget).data("charity"))
+    socket.on('disconnect', (s) => {
+        $('.controlpanel').hide();
+        $('#maincontent').prepend('<div id="connection-warning" class="alert alert-warning">Server disconnected!</div>');
     });
-}
-})
 
-function updatePiece(concert){
-  /* Changes the piece currently marked as active on the control panel */
+    socket.on('reconnect', (s) => {
+        $('#connection-warning').remove();
+        $('.controlpanel').show();
+    });
 
-  $("a.active").removeClass("active")
-  $(`#controls a[data-selector|="${concert.nowplaying}"]`).addClass("active")
+    socket.on('nowplaying-update', function(nowplaying) {
+        omniConcert.nowplaying = nowplaying;
+
+        updatePiece(omniConcert);
+    });
+
+    $('#controls a').on('click', function(event) {
+        event.preventDefault();
+        omniConcert.nowplaying = $(event.currentTarget).data('selector');
+        socket.emit('nowplaying-update', omniConcert.nowplaying);
+        updatePiece(omniConcert);
+    });
+});
+
+
+
+function updatePiece(concert) {
+    /* Changes the piece currently marked as active on the control panel */
+
+    $('a.active').removeClass('active');
+    $(`#controls a[data-selector|="${concert.nowplaying}"]`).addClass('active');
 }

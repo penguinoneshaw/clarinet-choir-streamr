@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Neuton');
-$bar-height: 100px;
+@import "_imports";
 
-$window-height:1080px;
-$window-width:1920px;
+$bar-height: 108px;
+
+$window-height: 1080px;
+$window-width: 1920px;
 
 @mixin row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-* {
+* { 
   box-sizing: border-box;
 }
 
@@ -22,37 +23,42 @@ body {
   display: block;
   width: 1920px;
   height: 1080px;
-  border: 10px black solid;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
 }
 
 #omnibar {
-  width: 1920px;
+  width: 100%;
   height: $bar-height;
   position: absolute;
-  bottom: $bar-height;
+  bottom: 108px;
   left: 0;
-  color: white;
-  background: black;
-  border-top: 0.5ex white solid;
-  border-bottom: 0.5ex white solid;
+  padding: 1ex 1em;
+  color: black;
+  background: $highlights-color;
+  border-top: 0.5ex $contrast-color solid;
+  border-bottom: 0.5ex $contrast-color solid;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20pt;
+  z-index: 1;
 
   .logotype {
     @include row;
     justify-content: space-between;
   }
   #logo {
-    $logo-size: $bar-height*0.8;
+    $logo-size: $bar-height*0.7;
     background: url("../images/logo.svg");
     background-size: ($logo-size) ($logo-size);
     width: $logo-size;
     height: $logo-size;
     text-indent: -9999px;
     overflow: hidden;
-    flex-shrink: 0
+    flex-shrink: 0;
+    color: black;
   }
 
   .vstack {
@@ -61,12 +67,12 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
   }
 
   #conductor {
     &:before {
-      content: "Conductor: ";
+      content: "Musical Director: ";
       font-variant: small-caps;
     }
   }
@@ -84,7 +90,7 @@ body {
   }
 }
 
-div.central-item{
+div.central-item {
   flex-grow: 1;
   display: inline-block;
   overflow: hidden;
@@ -94,7 +100,7 @@ div.central-item{
   div {
     white-space: nowrap;
     margin: 0 auto;
-    width:100%;
+    width: 100%;
 
     text-align: center;
     align-items: center;
@@ -102,19 +108,18 @@ div.central-item{
   .hidden {
     display: none !important;
   }
-
 }
 
 #charity {
   position: absolute;
-  background-color: black;
-  width:500px;
+  background-color: $highlights-color;
+  width: 500px;
   max-height: ($window-height - 2 * $bar-height - 200px);
   top: 100px;
   left: 100px;
-  border: 0.5ex white solid;
+  border: 0.5ex $contrast-color solid;
   text-align: center;
-  color: white;
+  color: black;
   padding: 2em;
   p {
     font-size: 30px;

@@ -1,0 +1,21 @@
+extends template
+
+prepend head
+  link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+
+block title
+  =concert + " Control Panel Login"
+
+block content
+    if message
+        div
+            h1.text-center.error-message #{message}
+    form.form-group(action="/login", method="POST")
+        p To sign up and gain admin access, you must provide the Registration Key
+        label(for="username") Username
+        input#username.form-control(name="username",type='text',autocomplete='off',required)
+        label(for="password") Password
+        input#password.form-control(name="password",type='password',autocomplete='off',required)
+        label(for="secretkey") Admin Registration Key
+        input#secretkey.form-control(name="secretkey",autocomplete='off')
+        button(type=submit) login or signup

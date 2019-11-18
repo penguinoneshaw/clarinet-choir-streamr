@@ -33,6 +33,16 @@
     {
       "title": "One in a Million",
       "arranger": "F. Lichauco"
+    },
+    {
+      "title": "Florentiner March",
+      "arranger": "Rodney Parker",
+      "composer": "Julius Fučík"
+    },
+    {
+      "title": "The Cakewalk",
+      "composer": "Claude Debussy",
+      "arranger": "Rebecca Pimblett"
     }
   ],
   "performers": {
@@ -85,7 +95,7 @@
     "ordinary member": "Megan Campbell"
   },
   "charity": {
-    "name": "Bethany Christian Trust Winter Shelters",
+    "name": "Bethany Christian Trust Night Shelter",
     "registration_number": "SC003783",
     "url": "https://www.bethanychristiantrust.com/services/emergency-resettlement/"
   },

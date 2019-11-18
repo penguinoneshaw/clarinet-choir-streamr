@@ -1,0 +1,136 @@
+{
+  "group": "Edinburgh University Clarinet Choir",
+  "concert": "Spring Concert 2019",
+  "venue": "City of Edinburgh Methodist Church",
+  "price": "£6/£4 Students",
+  "description": [
+    "A very warm welcome to this year’s Spring Concert! After the success of our first ever Arrangements Concert earlier this semester, we are delighted to present our final offering of lovingly crafted clarinett-y eclecticism of the academic year. The choir have worked extra hard to put on two concerts and I am extremely proud of what they have achieved! I am grateful to this year’s new members who have absolutely thrown themselves into the society and already feel like such a core part of the group and our sound. A huge thank you to my superlatively fantastic fellow committee members for bringing this all together with sheer enthusiasm and joy. And thank you, as always, to our conductor and musical director, Beth Appelquist, under whose talented guidance we are able to achieve our best possible sound! We hope you enjoy the musical journey and look forward to seeing you next time!",
+    "This semester, our chosen charity is the Edinburgh NE Food Bank (SCO44944) which is part of the Trussell Trust, which works to combat poverty and hunger across the UK. The Edinburgh NE Food Bank provide three days’ nutritionally balanced emergency food and support to local people who are referred to us in crisis. The Food Bank is a project founded by local churches and community groups, working together towards stopping hunger in our local area. A simple box of food makes a big difference, with foodbanks helping prevent crime, housing loss, family breakdown and mental health problems. We believe that this is a great cause, and we would encourage you to give as generously as you are able to support this wonderful charity."
+  ],
+  "conductor": {
+    "title": "Musical Director",
+    "name": "Beth Appelquist",
+    "description": [
+      "Beth is a final year Physics and Music student at the University of Edinburgh. A clarinettist (among many other instruments) herself, she brings expertise, energy and enthusiasm to rehearsals, as well as tirelessly helping with the social aspects and running of the society. She has been conducting Clarinet Choir since 2017."
+    ]
+  },
+  "pieces": [
+    {
+      "title": "King Cotton March",
+      "composer": "John Philip Sousa",
+      "arranger": "R. Upton-Holder"
+    },
+    {
+      "title": "Adagio",
+      "subtitle": "from \"Concierto de Aranjuez\"",
+      "composer": "Joaquin Rodrigo",
+      "arranger": "B. Jong and J. Cooper"
+    },
+    {
+      "title": "Somewhere",
+      "composer": "Leonard Bernstein",
+      "arranger": "W. Bex"
+    },
+    {
+      "title": "Insecta Clarinetistae",
+      "composer": "Markku Kopisto"
+    },
+    {
+      "title": "St. Paul's Suite",
+      "composer": "Gustav Holst",
+      "arranger": "M. Johnston"
+    },
+    {
+      "title": "Entrance of the Gladiators",
+      "subtitle": "Thunder and Blazes",
+      "composer": "Julius Fučík",
+      "arranger": "J. Shaw"
+    },
+    {
+      "title": "Somebody to Love",
+      "composer": "Freddie Mercury",
+      "arranger": "K. Agioritis"
+    },
+    {
+      "title": "My Way",
+      "composer": "Claude François",
+      "arranger": "W. Bex"
+    },
+    {
+      "title": "Vengaboys! For Clarinet Choir",
+      "composer": "Wessel van Diepen and Dennis van den Driesschen",
+      "arranger": "F. Lichauco"
+    }
+  ],
+  "performers": {
+    "E♭ Clarinet": [
+      "Sarah Hall"
+    ],
+    "B♭ Clarinet 1": [
+      "Katie Sadoff",
+      "Franz Lichauco",
+      "James Shaw",
+      "Abbie Lear"
+    ],
+    "B♭ Clarinet 2": [
+      "Abigail Buchan",
+      "Megan Campbell",
+      "Mary Festa",
+      "Harry Nicol",
+      "Heather Holligan"
+    ],
+    "B♭ Clarinet 3": [
+      "Tessa Hedstrand",
+      "Xiaochen Ma",
+      "Ellen MacRae",
+      "Georgia Vullinghs",
+      "Rachael Moffat",
+      "Jack Tait"
+    ],
+    "B♭ Clarinet 4": [
+      "Miranda Jarrett",
+      "Eleanor Hutcheon",
+      "Peter Jones",
+      "Morgan Brougham",
+      "Karen Po",
+      "Naomi Shilliday"
+    ],
+    "Alto Clarinet": [
+      "Rebecca Pimblett"
+    ],
+    "Bass Clarinet": [
+      "Elly Brookfield",
+      "Nathan Russell"
+    ]
+  },
+  "committee": {
+    "president": "Miranda Jarrett",
+    "secretary": "Elly Brookfield",
+    "treasurer": "Jack Tait",
+    "librarian": "Rachael Moffat",
+    "ordinary member": "Ellen MacRae"
+  },
+  "charity": {
+    "name": "Edinburgh NE Food Bank",
+    "registration_number": "SCO44944",
+    "url": "https://edinburghne.foodbank.org.uk/"
+  },
+  "otherStates": {
+    "interval": {
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    "preroll": {
+      "stream": "We'll be starting soon",
+      "controls": "Show Preroll"
+    },
+    "postroll": {
+      "stream": "Thanks for Watching! Don't forget to check out our social media profiles!",
+      "controls": "Show Postroll"
+    },
+    "blank": {
+      "stream": "",
+      "controls": "Show Blank"
+    }
+  }
+}

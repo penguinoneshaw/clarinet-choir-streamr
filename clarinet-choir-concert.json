@@ -16,49 +16,22 @@
   },
   "pieces": [
     {
-      "title": "King Cotton March",
-      "composer": "John Philip Sousa",
-      "arranger": "R. Upton-Holder"
+      "title": "Pennsylvania 65000",
+      "composer": "Jerry Gray",
+      "arranger": "David Knox, trans. Rachael Moffat"
     },
     {
-      "title": "Adagio",
-      "subtitle": "from \"Concierto de Aranjuez\"",
-      "composer": "Joaquin Rodrigo",
-      "arranger": "B. Jong and J. Cooper"
+      "title": "English Folk Song Suite",
+      "composer": "Ralph Vaughan Williams",
+      "arranger": "Matt Johnson"
     },
     {
-      "title": "Somewhere",
-      "composer": "Leonard Bernstein",
-      "arranger": "W. Bex"
+      "title": "Danse Macabre",
+      "composer": "Camille Saint-Saëns",
+      "arranger": "Rodney Parker & Rebecca Pimblett"
     },
     {
-      "title": "Insecta Clarinetistae",
-      "composer": "Markku Kopisto"
-    },
-    {
-      "title": "St. Paul's Suite",
-      "composer": "Gustav Holst",
-      "arranger": "M. Johnston"
-    },
-    {
-      "title": "Entrance of the Gladiators",
-      "subtitle": "Thunder and Blazes",
-      "composer": "Julius Fučík",
-      "arranger": "J. Shaw"
-    },
-    {
-      "title": "Somebody to Love",
-      "composer": "Freddie Mercury",
-      "arranger": "K. Agioritis"
-    },
-    {
-      "title": "My Way",
-      "composer": "Claude François",
-      "arranger": "W. Bex"
-    },
-    {
-      "title": "Vengaboys! For Clarinet Choir",
-      "composer": "Wessel van Diepen and Dennis van den Driesschen",
+      "title": "One in a Million",
       "arranger": "F. Lichauco"
     }
   ],

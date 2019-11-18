@@ -28,7 +28,7 @@
   },
   "scripts": {
     "postinstall": "grunt",
-    "start": "nodemon server.js euwb.json"
+    "start": "nodemon server.js clarinet-choir-programme.json"
   },
   "bugs": {
     "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"

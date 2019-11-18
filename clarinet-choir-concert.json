@@ -43,38 +43,37 @@
       "title": "The Cakewalk",
       "composer": "Claude Debussy",
       "arranger": "Rebecca Pimblett"
+    },
+    {
+      "title": "Christmas Jingle",
+      "arranger": "Jack Tait"
+    },
+    {
+      "title": "Rockin' Around the Christmas Tree",
+      "arranger": "Rachael Moffat"
     }
   ],
   "performers": {
     "E♭ Clarinet": [
-      "Sarah Hall"
-    ],
-    "B♭ Clarinet 1": [
-      "Katie Sadoff",
-      "Franz Lichauco",
-      "James Shaw",
       "Abbie Lear"
     ],
+    "B♭ Clarinet 1": [
+      "Elly Brookfield",
+      "Rachael Moffat",
+      "Abigail Buchan"
+    ],
     "B♭ Clarinet 2": [
-      "Abigail Buchan",
-      "Megan Campbell",
-      "Mary Festa",
-      "Harry Nicol",
+      "Tessa Hedstrand",
       "Heather Holligan"
     ],
     "B♭ Clarinet 3": [
-      "Tessa Hedstrand",
-      "Xiaochen Ma",
-      "Ellen MacRae",
-      "Georgia Vullinghs",
-      "Rachael Moffat",
-      "Jack Tait"
+      "Jack Tait",
+      "Eleanor Hutcheon"
     ],
     "B♭ Clarinet 4": [
-      "Miranda Jarrett",
-      "Eleanor Hutcheon",
-      "Peter Jones",
-      "Morgan Brougham",
+      "Ben Di Lorenzo",
+      "Matthew Johnson",
+      "James Shaw",
       "Karen Po",
       "Naomi Shilliday"
     ],
@@ -82,7 +81,7 @@
       "Rebecca Pimblett"
     ],
     "Bass Clarinet": [
-      "Elly Brookfield",
+      "Megan Campbell",
       "Nathan Russell"
     ]
   },

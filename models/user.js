@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bCrypt = require('bcrypt-nodejs');
+const bCrypt = require('bcryptjs');
 
 const isValidPassword = (user, password) => {
     return bCrypt.compareSync(password,user.password);

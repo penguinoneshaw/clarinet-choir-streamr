@@ -12,17 +12,15 @@
     "grunt-contrib-watch": "*",
     "grunt-sass": "*",
     "load-grunt-tasks": "*",
-    "node-sass": ">=4.10.0",
-    "nodemon": "*"
+    "node-sass": ">=4.10.0"
   },
   "dependencies": {
-    "bcrypt-nodejs": "^0.0.3",
+    "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
     "express": "*",
-    "express-session": "^1.15.6",
-    "hoek": ">=4.2.1",
-    "mongoose": "^5.4.20",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.11",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "*",
@@ -42,5 +40,8 @@
     "concert",
     "io"
   ],
+  "engines": {
+    "node": "13.x"
+  },
   "author": "James Shaw <penguinoneshaw@gmail.com>"
 }

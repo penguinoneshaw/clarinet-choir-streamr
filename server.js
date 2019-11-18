@@ -27,87 +27,87 @@ app.use(cookieParser());
 
 const expressSession = require('express-session');
 app.use(expressSession({
-  secret: process.env['SECRET_KEY'],
-  resave: true,
-  saveUninitialized: true
+    secret: process.env['SECRET_KEY'],
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser(function(user, done) {
-  done(null, user._id);
+    done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
 });
 
 passport.use(
     'login',
     new LocalStrategy(
         {passReqToCallback: true}, async (req, username, password, done) => {
-          try {
-            const user = await User.findOne({'username': username});
-            if (!user) {
-              console.error(`No user found with username ${username}`);
-              return done(null, false, req.flash('message', 'User not found.'));
-            } else if (!isValidPassword(user, password)) {
-              console.error(`Invalid password for user ${user.username}`);
-              return done(
-                  null, false, req.flash('message', 'Invalid Password'));
-            } else {
-              return done(null, user);
+            try {
+                const user = await User.findOne({'username': username});
+                if (!user) {
+                    console.error(`No user found with username ${username}`);
+                    return done(null, false, req.flash('message', 'User not found.'));
+                } else if (!isValidPassword(user, password)) {
+                    console.error(`Invalid password for user ${user.username}`);
+                    return done(
+                        null, false, req.flash('message', 'Invalid Password'));
+                } else {
+                    return done(null, user);
+                }
+            } catch (e) {
+                return done(e);
             }
-          } catch (e) {
-            return done(e);
-          }
         }));
 
 passport.use(
     'signup',
     new LocalStrategy(
         {passReqToCallback: true}, async (req, username, password, done) => {
-          const findOrCreateUser =
+            const findOrCreateUser =
               async function() {
-            try {
-              const user = await User.findOne({'username': username});
-              console.log(user)
-              if (user) {
-                console.log('User already exists');
-                if (!isValidPassword(user, password)) {
-                  console.error(`Invalid password for user ${user.username}`);
-                  return done(
-                      null, false, req.flash('message', 'Invalid Password'));
-                }
-                return done(null, user);
-              }
-              else {
-                let newUser = new User();
-                newUser.username = username;
-                newUser.password = hashPassword(password);
-                newUser.admin =
+                  try {
+                      const user = await User.findOne({'username': username});
+                      console.log(user);
+                      if (user) {
+                          console.log('User already exists');
+                          if (!isValidPassword(user, password)) {
+                              console.error(`Invalid password for user ${user.username}`);
+                              return done(
+                                  null, false, req.flash('message', 'Invalid Password'));
+                          }
+                          return done(null, user);
+                      }
+                      else {
+                          let newUser = new User();
+                          newUser.username = username;
+                          newUser.password = hashPassword(password);
+                          newUser.admin =
                     process.env['ADMIN_SECRET'] === req.param('secretkey');
 
-                newUser.save()
-                    .then((user) => {
-                      console.log(
-                          `User registration successful for ${user.username}`);
-                      return done(null, user);
-                    })
-                    .catch((err) => {
-                      console.error(`Error in saving new user: ${err}`);
-                      throw err;
-                    });
-              }
-            } catch (error) {
-              console.error(`Error in signup with username ${username}`);
-              return done(error);
-            }
-          }
+                          newUser.save()
+                              .then((user) => {
+                                  console.log(
+                                      `User registration successful for ${user.username}`);
+                                  return done(null, user);
+                              })
+                              .catch((err) => {
+                                  console.error(`Error in saving new user: ${err}`);
+                                  throw err;
+                              });
+                      }
+                  } catch (error) {
+                      console.error(`Error in signup with username ${username}`);
+                      return done(error);
+                  }
+              };
 
-              process.nextTick(findOrCreateUser);
+            process.nextTick(findOrCreateUser);
         }));
 
 const mongodburi = process.env['MONGODB_URI'];
@@ -125,66 +125,66 @@ concert.nowplaying = 'state-blank';
 var show_charity_notice = false;
 
 const isAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated() && req.user.admin) return next();
-  req.flash(
-      'message',
-      req.isAuthenticated() ? 'You are not an admin.' :
-                              'You are not authenticated.');
-  res.redirect('/login');
+    if (req.isAuthenticated() && req.user.admin) return next();
+    req.flash(
+        'message',
+        req.isAuthenticated() ? 'You are not an admin.' :
+            'You are not authenticated.');
+    res.redirect('/login');
 };
 
 app.get('/control-panel', isAuthenticated, function(req, res) {
-  res.render('control-panel', concert);
+    res.render('control-panel', concert);
 });
 
 app.get('/login', (req, res) => {
-  res.render('login', {...concert, message: req.flash('message')});
+    res.render('login', {...concert, message: req.flash('message')});
 });
 
 app.post('/login', passport.authenticate('signup', {
-  successRedirect: '/control-panel',
-  failureRedirect: '/login',
-  failureFlash: true
+    successRedirect: '/control-panel',
+    failureRedirect: '/login',
+    failureFlash: true
 }));
 
 app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
+    req.logout();
+    res.redirect('/');
 });
 
 app.get('/overlay', function(req, res) {
-  res.render('overlay', concert);
+    res.render('overlay', concert);
 });
 
 app.get('/', (req, res) => {
-  res.render('index', concert);
+    res.render('index', concert);
 });
 
 io.on('connection', function(socket) {
-  console.log('A page connected');
+    console.log('A page connected');
 
-  socket.emit('concert-details', concert);
-  socket.emit('charity-display-update', show_charity_notice);
+    socket.emit('concert-details', concert);
+    socket.emit('charity-display-update', show_charity_notice);
 
-  socket.on('nowplaying-update', function(nowPlaying) {
-    socket.broadcast.emit('nowplaying-update', nowPlaying);
-    concert.nowplaying = nowPlaying;
-  });
+    socket.on('nowplaying-update', function(nowPlaying) {
+        socket.broadcast.emit('nowplaying-update', nowPlaying);
+        concert.nowplaying = nowPlaying;
+    });
 
-  socket.on('charity-display-update', newState => {
-    if (show_charity_notice != newState) {
-      show_charity_notice = newState;
-      socket.broadcast.emit('charity-display-update', show_charity_notice);
-    }
-  });
+    socket.on('charity-display-update', newState => {
+        if (show_charity_notice != newState) {
+            show_charity_notice = newState;
+            socket.broadcast.emit('charity-display-update', show_charity_notice);
+        }
+    });
 
-  socket.on('disconnect', function() {
-    console.log('page disconnected');
-  });
+    socket.on('disconnect', function() {
+        console.log('page disconnected');
+    });
 });
 
 io.on('reconnect', socket => {
-  socket.emit('concert-details', concert);
+    socket.emit('concert-details', concert);
 });
 
 http.listen(PORT, () => console.log(`Listening on ${PORT}`));

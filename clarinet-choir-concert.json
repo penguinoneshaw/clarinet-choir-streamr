@@ -16,26 +16,6 @@
   },
   "pieces": [
     {
-      "title": "Pennsylvania 65000",
-      "composer": "Jerry Gray",
-      "arranger": "David Knox, trans. Rachael Moffat"
-    },
-    {
-      "title": "English Folk Song Suite",
-      "composer": "Ralph Vaughan Williams",
-      "arranger": "Matt Johnson"
-    },
-    {
-      "title": "Danse Macabre",
-      "composer": "Camille Saint-Saëns",
-      "arranger": "Rodney Parker & Rebecca Pimblett"
-    },
-    {
-      "title": "One in a Million",
-      "composer": "Sebastian Thott, Didrik Thott, Andreas Öberg, Danielle Senior, mr. cho",
-      "arranger": "F. Lichauco"
-    },
-    {
       "title": "Florentiner March",
       "arranger": "Rodney Parker",
       "composer": "Julius Fučík"
@@ -44,6 +24,36 @@
       "title": "The Cakewalk",
       "composer": "Claude Debussy",
       "arranger": "Rebecca Pimblett"
+    },
+    {
+      "title": "One in a Million",
+      "composer": "Sebastian Thott, Didrik Thott, Andreas Öberg, Danielle Senior, mr. cho",
+      "arranger": "Franz Lichauco"
+    },
+    {
+      "title": "Pennsylvania 6-5000",
+      "composer": "Jerry Gray",
+      "arranger": "David Knox, trans. Rachael Moffat"
+    },
+    {
+      "title": "Danse Macabre",
+      "composer": "Camille Saint-Saëns",
+      "arranger": "Rodney Parker & Rebecca Pimblett"
+    },
+    {
+      "title": "English Folk Song Suite",
+      "composer": "Ralph Vaughan Williams",
+      "arranger": "Matt Johnson"
+    },
+    {
+      "title": "Moon River",
+      "composer": "Henry Mancini",
+      "arranger": "Elin Pihl"
+    },
+    {
+      "title": "Africa",
+      "composer": "David Paich & Jeff Porcaro",
+      "arranger": "Beth Appelquist"
     },
     {
       "title": "Christmas Jingle",
@@ -65,14 +75,27 @@
       "Abigail Buchan"
     ],
     "B♭ Clarinet 2": [
+      "David Bruce",
+      "Skye Jamieson",
+      "Mariana Ochodkova",
+      "Sophie Walker",
       "Tessa Hedstrand",
       "Heather Holligan"
     ],
     "B♭ Clarinet 3": [
+      "Corrie Davidson",
+      "Javier Rodríguez Espinoza",
+      "George Hampton",
+      "Connall MacLennan",
       "Jack Tait",
+      "Megan Stewart",
+      "Eliza Snee",
       "Eleanor Hutcheon"
     ],
     "B♭ Clarinet 4": [
+      "Un leng Chan",
+      "Alexandra McBride",
+      "Peter Jones",
       "Ben Di Lorenzo",
       "Matthew Johnson",
       "James Shaw",

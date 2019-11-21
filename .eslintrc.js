@@ -5,26 +5,10 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        'plugin:prettier/recommended'],
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2018,
+        sourceType: 'module',  // Allows for the use of imports
     },
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
 };

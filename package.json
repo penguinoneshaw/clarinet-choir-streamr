@@ -8,11 +8,19 @@
     "url": "git+https://github.com/penguinoneshaw/clarinet-choir-streamr.git"
   },
   "devDependencies": {
+    "eslint": ">=6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "grunt": "*",
     "grunt-contrib-watch": "*",
     "grunt-sass": "*",
     "load-grunt-tasks": "*",
-    "node-sass": ">=4.10.0"
+    "node-sass": ">=4.10.0",
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -24,6 +32,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "*",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "socket.io": "*"
   },
   "scripts": {

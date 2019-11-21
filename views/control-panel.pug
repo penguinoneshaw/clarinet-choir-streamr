@@ -40,6 +40,4 @@ block content
           each person, index in committee
             a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`  
 append scripts
-  script(src='/socket.io/socket.io.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
-  script(src='/scripts/control-panel.js', defer)
+  script(src='/scripts/control-panel-bundle.js', defer, type='module')

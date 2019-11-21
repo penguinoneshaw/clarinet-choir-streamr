@@ -7,21 +7,23 @@ module.exports = function(grunt) {
       options: {
         implementation: sass,
         sourceMap: true,
-        outputStyle: "compressed"
+        outputStyle: 'compressed'
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: "src/",
-          src: ['*.scss'],
-          dest: "public/css",
-          ext: ".css"
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: ['*.scss'],
+            dest: 'public/css',
+            ext: '.css'
+          }
+        ]
       }
     },
     watch: {
       css: {
-        files: "src/*.scss",
+        files: 'src/*.scss',
         tasks: ['sass']
       }
     }

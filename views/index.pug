@@ -36,7 +36,7 @@ block content
       div.part
         span#partname=index
         .part-list
-          - part.sort()
+          - part.sort((a, b) => a.split(' ')[1] > b.split(' ')[1])
           each person in part
             span.name=person
   

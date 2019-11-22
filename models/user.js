@@ -2,15 +2,19 @@ const mongoose = require('mongoose');
 const bCrypt = require('bcryptjs');
 
 const isValidPassword = (user, password) => {
-    return bCrypt.compareSync(password,user.password);
+  return bCrypt.compareSync(password, user.password);
 };
 
-const hashPassword = (password) => {
-    return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+const hashPassword = password => {
+  return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 };
 
-module.exports = {User: mongoose.model('User', {
+module.exports = {
+  User: mongoose.model('User', {
     username: String,
     password: String,
     admin: Boolean
-}), isValidPassword, hashPassword};
+  }),
+  isValidPassword,
+  hashPassword
+};

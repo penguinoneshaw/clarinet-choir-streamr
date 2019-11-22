@@ -80,10 +80,11 @@ passport.use(
           }
           return done(null, user);
         } else {
-          let newUser = new User();
-          newUser.username = username;
-          newUser.password = hashPassword(password);
-          newUser.admin = process.env['ADMIN_SECRET'] === req.param('secretkey');
+          let newUser = new User({ username, password: hashPassword(password), admin: true });
+          if (process.env['ADMIN_SECRET'] !== req.param('secretkey')) {
+            req.flash('message', "You must provide the correct admin code in order to register!");
+            done("Incorrect/Missing admin code");
+          }
 
           newUser
             .save()
@@ -162,7 +163,7 @@ io.on('connection', function(socket) {
   console.log('A page connected');
 
   socket.emit('concert-details', concert);
-  socket.emit('nowplaying-update', concert.nowplaying);
+  socket.emit('nowplaying-update', concert.nowplaying ? concert.nowplaying || 'state-blank');
   socket.emit('charity-display-update', show_charity_notice);
 
   socket.on('nowplaying-update', function(nowPlaying) {

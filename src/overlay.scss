@@ -80,6 +80,8 @@ body {
   #nowplaying {
     overflow: hidden;
     text-align: center;
+    display: inline-flex;
+    flex-direction: column;
 
     #title {
       font-size: 18pt;
@@ -91,8 +93,6 @@ body {
 }
 
 div.central-item {
-  flex-grow: 1;
-  display: inline-block;
   overflow: hidden;
   text-align: center;
   align-items: center;

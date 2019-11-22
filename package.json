@@ -35,6 +35,7 @@
     "passport-local": "^1.0.0",
     "pug": "*",
     "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-svg": "^2.0.0",
     "socket.io": "*"
   },
   "scripts": {

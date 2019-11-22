@@ -2,6 +2,10 @@ import io from 'socket.io-client';
 import gsap from 'gsap';
 import { Concert } from './concert';
 import { ConcertDisplay } from './concert-display';
+import logo from '../images/logo.svg';
+
+console.log(logo);
+document.querySelector('#logo').innerHTML = logo;
 
 const socket = io();
 const general = gsap.timeline({ defaults: { duration: 0.5, ease: 'sine.inOut' } });

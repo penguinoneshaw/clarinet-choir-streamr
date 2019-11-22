@@ -35,7 +35,7 @@ body {
   bottom: 108px;
   left: 0;
   padding: 1ex 1em;
-  color: black;
+  color: $contrast-color;
   background: $highlights-color;
   border-top: 0.5ex $contrast-color solid;
   border-bottom: 0.5ex $contrast-color solid;
@@ -51,14 +51,14 @@ body {
   }
   #logo {
     $logo-size: $bar-height*0.7;
-    background: url("../images/logo.svg");
-    background-size: ($logo-size) ($logo-size);
     width: $logo-size;
     height: $logo-size;
-    text-indent: -9999px;
     overflow: hidden;
     flex-shrink: 0;
-    color: black;
+    > svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .vstack {

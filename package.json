@@ -36,8 +36,8 @@
     "socket.io": "*"
   },
   "scripts": {
-    "build": "grunt && rollup -c",
-    "postinstall": "build",
+    "build": "grunt && rollup -c --environment BUILD:production",
+    "postinstall": "yarn build",
     "start": "nodemon server.js clarinet-choir-programme.json"
   },
   "bugs": {

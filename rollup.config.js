@@ -1,7 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import builtins from 'rollup-plugin-node-builtins';
 
 const config = [
   {
@@ -14,7 +13,7 @@ const config = [
     plugins: [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
       commonjs(),
-      false && terser()
+      process.env.BUILD === 'production' && terser()
     ]
   },
   {
@@ -27,7 +26,7 @@ const config = [
     plugins: [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
       commonjs(),
-      false && terser()
+      process.env.BUILD === 'production' && terser()
     ]
   }
 ];

@@ -19,13 +19,26 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: "Neuton", serif;
+  font-family: "Vollkorn", serif;
   display: block;
   width: 1920px;
   height: 1080px;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   z-index: 10;
+}
+
+@keyframes color_change {
+  from {
+    color: darkred;
+    border-top: 0.7ex darkred solid;
+    border-bottom: 0.7ex darkred solid;
+  }
+  to {
+    border-top: 0.5ex $contrast-color solid;
+    border-bottom: 0.5ex $contrast-color solid;
+    color: $contrast-color;
+  }
 }
 
 #omnibar {
@@ -36,6 +49,7 @@ body {
   left: 0;
   padding: 1ex 1em;
   color: $contrast-color;
+  animation: color_change 3600s infinite alternate-reverse;
   background: $highlights-color;
   border-top: 0.5ex $contrast-color solid;
   border-bottom: 0.5ex $contrast-color solid;

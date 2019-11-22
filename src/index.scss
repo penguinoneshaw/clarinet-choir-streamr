@@ -6,7 +6,7 @@ $max-text-width: 900px;
 }
 
 body {
-  font-family: "Neuton", "Palatino Linotype", serif;
+  font-family: "Vollkorn", "Palatino Linotype", serif;
   background-color: $highlights-color;
   background-attachment: fixed;
   background-size: cover;
@@ -48,7 +48,7 @@ small,
 }
 
 .site-header {
-  font-family: "Neuton", "Palatino Linotype", serif;
+  font-family: "Vollkorn", "Palatino Linotype", serif;
 
   @include fixed-layout-width;
   display: block;
@@ -214,6 +214,7 @@ small,
     }
   }
 }
+
 
 .piece {
   @media screen and (min-width: 600px) {

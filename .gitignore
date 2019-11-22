@@ -63,6 +63,9 @@ typings/
 # Generated CSS files
 public/css
 
+# Generated js files
+public/scripts/*-bundle.js
+
 # Weird macos files
 .DS_Store
 */.DS_Store

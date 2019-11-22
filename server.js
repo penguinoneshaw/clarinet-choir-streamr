@@ -162,6 +162,7 @@ io.on('connection', function(socket) {
   console.log('A page connected');
 
   socket.emit('concert-details', concert);
+  socket.emit('nowplaying-update', concert.nowplaying);
   socket.emit('charity-display-update', show_charity_notice);
 
   socket.on('nowplaying-update', function(nowPlaying) {

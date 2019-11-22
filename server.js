@@ -108,7 +108,7 @@ passport.use(
 );
 
 const mongodburi = process.env['MONGODB_URI'];
-mongoose.connect(mongodburi);
+mongoose.connect(mongodburi, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const concert_file = process.argv[2];
 
@@ -167,8 +167,15 @@ io.on('connection', function(socket) {
   socket.emit('charity-display-update', show_charity_notice);
 
   socket.on('nowplaying-update', function(nowPlaying) {
-    socket.broadcast.emit('nowplaying-update', nowPlaying);
-    concert.nowplaying = nowPlaying;
+    if (concert.nowplaying !== nowPlaying) {
+      socket.broadcast.emit('nowplaying-update', nowPlaying);
+      concert.nowplaying = nowPlaying;
+    }
+  });
+
+  socket.on('change-video-link', newLink => {
+    concert.fbvideo = newLink;
+    socket.broadcast.emit('concert-details', concert);
   });
 
   socket.on('charity-display-update', newState => {

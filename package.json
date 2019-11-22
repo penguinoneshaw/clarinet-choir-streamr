@@ -28,6 +28,7 @@
     "cookie-parser": "^1.4.4",
     "express": "*",
     "express-session": "^1.17.0",
+    "formdata-polyfill": "^3.0.19",
     "gsap": "^3.0.1",
     "mongoose": "^5.7.11",
     "passport": "^0.4.0",

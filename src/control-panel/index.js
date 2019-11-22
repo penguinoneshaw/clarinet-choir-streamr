@@ -1,6 +1,6 @@
 import { Concert } from './concert';
 import io from 'socket.io-client';
-
+import 'formdata-polyfill';
 export class ConcertDisplay {
   static showCurrentStatus(status) {
     document.querySelectorAll('#controls a.active').forEach(element => element.classList.remove('active'));
@@ -26,3 +26,9 @@ document.querySelectorAll('#controls a').forEach(el =>
     _socket.emit('nowplaying-update', concert.status);
   })
 );
+
+document.querySelector('form#videoLink').addEventListener('submit', evt => {
+  evt.preventDefault();
+  const formData = new FormData(evt.target);
+  _socket.emit('change-video-link', formData.get('facebook_video_url'));
+});

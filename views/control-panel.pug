@@ -4,13 +4,9 @@ extends template.pug
 block title
   =concert + " Control Panel"
 
-block fbvideo
-  if fbvideo
-    div.video
-      iframe(src=fbvideo, style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width='400', height='400', frameborder='0')
-
 block content
   .container.controlpanel
+
     #controls
       #states
         h2 States
@@ -38,6 +34,15 @@ block content
         .list-group
           a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (Conductor)`
           each person, index in committee
-            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`  
+            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
+
+
+    #setup
+      h2 Setup System
+      form#videoLink
+        .form-group
+          label(for="facebook_video_url") Set live video url
+          input(type="url", name="facebook_video_url", placeholder="https://www.facebook.com/videos/...").form-control
+        button(type="submit").btn.btn-primary Submit
 append scripts
   script(src='/scripts/control-panel-bundle.js', defer, type='module')

@@ -1,1 +1,1 @@
-web: node server.js clarinet-choir-concert.json
+web: node server.js euwb-concert.json

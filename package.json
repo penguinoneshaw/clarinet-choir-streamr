@@ -26,6 +26,7 @@
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
     "express": "*",
     "express-session": "^1.17.0",
     "formdata-polyfill": "^3.0.19",
@@ -41,7 +42,7 @@
   "scripts": {
     "build": "grunt && rollup -c --environment BUILD:production",
     "postinstall": "yarn build",
-    "start": "nodemon server.js clarinet-choir-programme.json"
+    "start": "node -r dotenv/config server.js euwb-concert.json"
   },
   "bugs": {
     "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"

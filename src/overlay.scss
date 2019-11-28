@@ -30,13 +30,10 @@ body {
 
 @keyframes color_change {
   from {
-    color: darkred;
-    border-top: 0.7ex darkred solid;
-    border-bottom: 0.7ex darkred solid;
+    color: darken($contrast-color, 0
+    3);
   }
   to {
-    border-top: 0.5ex $contrast-color solid;
-    border-bottom: 0.5ex $contrast-color solid;
     color: $contrast-color;
   }
 }
@@ -51,8 +48,8 @@ body {
   color: $contrast-color;
   animation: color_change 3600s infinite alternate-reverse;
   background: $highlights-color;
-  border-top: 0.5ex $contrast-color solid;
-  border-bottom: 0.5ex $contrast-color solid;
+  border-top: 0.5ex currentColor solid;
+  border-bottom: 0.5ex currentColor solid;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -19,44 +19,73 @@
     "We have had an amazing first semester, but are looking forward to next year, which will be full of events such as our annual Scratch Rehearsal and Joint Music Societies Ceilidh with our sister societies Brass Band, Clarinet Choir and Female Voice Choir. We are also very excited to go on tour at the end of May, where we will play our favourite tunes while exploring one of Europe's finest cities (as yet undecided...)",
     "We hope you enjoy the concert!"
   ],
+  "charity": [
+    {
+      "name": "Mary's Meals",
+      "registrationNumber": "SC022140"
+    },
+    {
+      "name": "Health in Mind",
+      "registrationNumber": "SC022140"
+    }
+  ],
   "pieces": [
     {
+      "type": "piece",
       "title": "Festive Overture",
       "composer": "Dmitri Shostakovitch",
       "arranger": "Donald Hunsberger"
     },
     {
+      "type": "piece",
       "title": "Liberty Bell March",
       "composer": "John Phillip Sousa"
     },
     {
+      "type": "piece",
       "title": "The Blue and the Gray",
       "composer": "Clare Grundman"
     },
     {
+      "type": "piece",
       "title": "Music",
       "composer": "John Miles",
       "arranger": "Philip Sparke"
     },
     {
+      "type": "special",
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    {
+      "type": "piece",
       "title": "Cartoon",
       "composer": "Paul Hart"
     },
     {
+      "type": "special",
+      "stream": "Raffle",
+      "controls": "Show Raffle"
+    },
+    {
+      "type": "piece",
       "title": "Lion King Soundtrack Highlights",
       "arranger": "Calvin Custer"
     },
     {
+      "type": "piece",
       "title": "Pixar Movie Magic",
       "composer": "Michael Giacchino & Randy Newman",
       "arranger": "Michael Brown"
     },
     {
+      "type": "piece",
       "title": "How to Train Your Dragon",
       "composer": "John Powell",
       "arranger": "Sean O'Loughlin"
     },
     {
+      "type": "piece",
       "title": "ABBA on Broadway",
       "arranger": "Michael Brown"
     }
@@ -209,10 +238,6 @@
     "treasurer": "Jack Tait"
   },
   "otherStates": {
-    "interval": {
-      "stream": "Interval",
-      "controls": "Go to Interval"
-    },
     "preroll": {
       "stream": "We'll be starting soon",
       "controls": "Show Preroll"
@@ -224,10 +249,6 @@
     "blank": {
       "stream": "",
       "controls": "Show Blank"
-    },
-    "raffle": {
-      "stream": "Raffle: We are raising money for Mary's Meals (SC022140) and Health in Mind (SC004128)!",
-      "controls": "Show Raffle"
     }
   }
 }

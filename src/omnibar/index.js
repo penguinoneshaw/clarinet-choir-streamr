@@ -4,7 +4,6 @@ import { Concert } from './concert';
 import { ConcertDisplay } from './concert-display';
 import logo from '../images/logo.svg';
 
-console.log(logo);
 document.querySelector('#logo').innerHTML = logo;
 
 const socket = io();

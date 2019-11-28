@@ -2,8 +2,8 @@
 
 $bar-height: 108px;
 
-$window-height: 1080px;
-$window-width: 1920px;
+$window-height: 100vh;
+$window-width: 100vw;
 
 @mixin row {
   display: flex;
@@ -21,8 +21,8 @@ body {
   padding: 0;
   font-family: "Vollkorn", serif;
   display: block;
-  width: 1920px;
-  height: 1080px;
+  width: $window-width;
+  height: $window-height;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   z-index: 10;
@@ -43,7 +43,7 @@ body {
   width: 100%;
   height: $bar-height;
   position: absolute;
-  bottom: 108px;
+  bottom: 10%;
   left: 0;
   padding: 1ex 1em;
   color: $contrast-color;
@@ -126,7 +126,7 @@ div.central-item {
   position: absolute;
   background-color: $highlights-color;
   width: 500px;
-  max-height: ($window-height - 2 * $bar-height - 200px);
+  max-height: calc($window-height - 2 * $bar-height - 200px);
   top: 100px;
   left: 100px;
   border: 0.5ex $contrast-color solid;

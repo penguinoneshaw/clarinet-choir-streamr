@@ -77,44 +77,42 @@ small,
   box-sizing: border-box;
   @media screen and (min-width: $max-text-width) {
     padding: 1rem 3rem;
+    text-align: justify;
   }
   @include fixed-layout-width;
   padding: 10px;
   background-color: white;
 
-  blockquote {
-    border-left: 10px solid $highlights-color;
-    margin-left: 10px;
-    padding-left: 20px;
-  }
-  @media screen and (max-width: $max-text-width) {
-    text-align: justify;
-  }
-
-  table {
-    margin: 2ex auto;
-    border-collapse: collapse;
-    vertical-align: center;
-    min-width: 60%;
-    max-width: 95%;
-
-    td,
-    th {
-      padding: 0.5ex 1rem;
+}
+    blockquote {
+      border-left: 10px solid $highlights-color;
+      margin-left: 10px;
+      padding-left: 20px;
     }
-
-    thead {
-      border-bottom: thin solid $highlights-color;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: rgba($highlights-color, 0.2);
-    }
-
-    tfoot {
-      border-top: 4px double $highlights-color;
-    }
-  }
+  
+    table {
+      margin: 2ex auto;
+      border-collapse: collapse;
+      vertical-align: center;
+      min-width: 60%;
+      max-width: 95%;
+  
+      td,
+      th {
+        padding: 0.5ex 1rem;
+      }
+  
+      thead {
+        border-bottom: thin solid $highlights-color;
+      }
+  
+      tbody tr:nth-child(even) {
+        background-color: rgba($highlights-color, 0.2);
+      }
+  
+      tfoot {
+        border-top: 4px double $highlights-color;
+      }
 
   &:after {
     content: ".";

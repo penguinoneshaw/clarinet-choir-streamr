@@ -10,7 +10,9 @@ append header
 block content
   if fbvideo
     div.video
-      iframe(src="https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(fbvideo) + "&width=300&show_text=false&height=168&appId", style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width='300', height='168', frameborder='0')
+      - const width = 400
+      - const height = 400*0.75
+      iframe(src="https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(fbvideo) + `&width=${width}&show_text=false&height=${height}&appId`, style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width=width, height=height, frameborder='0')
       p
         | If nothing is showing above, Facebook tracking is probably being disabled by your browser. You can find the video feed 
         a(href=fbvideo) here

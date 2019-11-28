@@ -71,9 +71,7 @@ passport.use(
     const findOrCreateUser = async function() {
       try {
         const user = await User.findOne({ username: username });
-        console.log(user);
         if (user) {
-          console.log('User already exists');
           if (!isValidPassword(user, password)) {
             console.error(`Invalid password for user ${user.username}`);
             return done(null, false, req.flash('message', 'Invalid Password'));
@@ -81,7 +79,7 @@ passport.use(
           return done(null, user);
         } else {
           let newUser = new User({ username, password: hashPassword(password), admin: true });
-          if (process.env['ADMIN_SECRET'] !== req.param('secretkey')) {
+          if (process.env['ADMIN_SECRET'] !== req.params.get('secretkey')) {
             req.flash('message', 'You must provide the correct admin code in order to register!');
             done('Incorrect/Missing admin code');
           }
@@ -98,7 +96,7 @@ passport.use(
             });
         }
       } catch (error) {
-        console.error(`Error in signup with username ${username}`);
+        console.error(`Error in signup/signIn with username ${username}`);
         return done(error);
       }
     };

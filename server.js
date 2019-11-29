@@ -136,7 +136,7 @@ async function setupAndRun() {
 
   var show_charity_notice = false;
 
-  app.get('/control-panel', isAuthenticated, async function(req, res) {
+  app.get('/control-panel', async function(req, res) {
     const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
 
     res.render('control-panel', concert);

@@ -1,20 +1,25 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+
 const { User, isValidPassword, hashPassword } = require('./models/user');
+const { Concert } = require('./models/concert');
+const { Settings } = require('./models/settings');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
+const expressSession = require('express-session');
 
-const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static('public'));
 
-const flash = require('connect-flash');
 app.use(flash());
 
 app.set('view engine', 'pug');
@@ -24,7 +29,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const expressSession = require('express-session');
 app.use(
   expressSession({
     secret: process.env['SECRET_KEY'],
@@ -105,91 +109,100 @@ passport.use(
   })
 );
 
-const mongodburi = process.env['MONGODB_URI'];
-mongoose.connect(mongodburi, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const concert_file = process.argv[2];
-
-if (!concert_file) {
-  console.error('Please provide path to concert json file.');
-  process.exit(1);
-}
-let concert = JSON.parse(fs.readFileSync(concert_file, 'utf8'));
-
-console.log('This is the file for: ' + concert.concert + ' being held at ' + concert.venue + '.');
-concert.nowplaying = 'state-blank';
-
-var show_charity_notice = false;
-
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated() && req.user.admin) return next();
   req.flash('message', req.isAuthenticated() ? 'You are not an admin.' : 'You are not authenticated.');
   res.redirect('/login');
 };
 
-app.get('/control-panel', isAuthenticated, function(req, res) {
-  res.render('control-panel', concert);
-});
+const MONGO_DB_URI = process.env['MONGODB_URI'];
+mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-app.get('/login', (req, res) => {
-  if (req.flash('message')) res.render('login', { ...concert, message: req.flash('message') });
-});
+async function setupAndRun() {
+  const settings = await Settings.findById('5de10d2b7c213e56251b3cf4');
 
-app.post(
-  '/login',
-  passport.authenticate('signup', {
-    successRedirect: '/control-panel',
-    failureRedirect: '/login',
-    failureFlash: true
-  })
-);
+  const concert_file = process.argv[2];
 
-app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+  if (concert_file) {
+    const concertJson = await fs.readFile(concert_file, 'utf8');
+    const _new_concert = new Concert(JSON.parse(concertJson));
+    await _new_concert.save();
 
-app.get('/overlay', function(req, res) {
-  res.render('overlay', concert);
-});
+    settings.concert_info = _new_concert._id;
+    settings.save();
+  }
 
-app.get('/', (req, res) => {
-  res.render('index', concert);
-});
+  const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
 
-io.on('connection', function(socket) {
-  console.log('A page connected');
+  console.log(concert);
 
-  socket.emit('concert-details', concert);
-  socket.emit('nowplaying-update', concert.nowplaying ? concert.nowplaying : 'state-blank');
-  socket.emit('charity-display-update', show_charity_notice);
+  console.log('This is the file for: ' + concert.concert + ' being held at ' + concert.venue + '.');
 
-  socket.on('nowplaying-update', function(nowPlaying) {
-    if (concert.nowplaying !== nowPlaying) {
-      socket.broadcast.emit('nowplaying-update', nowPlaying);
-      concert.nowplaying = nowPlaying;
-    }
+  let nowPlayingState = 'state-blank';
+
+  var show_charity_notice = false;
+
+  app.get('/control-panel', isAuthenticated, function(req, res) {
+    res.render('control-panel', concert);
   });
 
-  socket.on('change-video-link', newLink => {
-    concert.fbvideo = newLink;
-    socket.broadcast.emit('concert-details', concert);
+  app.get('/login', (req, res) => {
+    if (req.flash('message')) res.render('login', { ...concert, message: req.flash('message') });
   });
 
-  socket.on('charity-display-update', newState => {
-    if (show_charity_notice != newState) {
-      show_charity_notice = newState;
-      socket.broadcast.emit('charity-display-update', show_charity_notice);
-    }
+  app.post(
+    '/login',
+    passport.authenticate('signup', {
+      successRedirect: '/control-panel',
+      failureRedirect: '/login',
+      failureFlash: true
+    })
+  );
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
   });
 
-  socket.on('disconnect', function() {
-    console.log('page disconnected');
+  app.get('/overlay', function(req, res) {
+    res.render('overlay', concert);
   });
-});
 
-io.on('reconnect', socket => {
-  socket.emit('concert-details', concert);
-});
+  app.get('/', (req, res) => {
+    res.render('index', concert);
+  });
 
-http.listen(PORT, () => console.log(`Listening on ${PORT}`));
+  io.on('connection', function(socket) {
+    socket.emit('concert-details', concert);
+    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
+    socket.emit('charity-display-update', show_charity_notice);
+
+    socket.on('nowplaying-update', function(nowPlaying) {
+      if (nowPlayingState !== nowPlaying) {
+        socket.broadcast.emit('nowplaying-update', nowPlaying);
+        nowPlayingState = nowPlaying;
+      }
+    });
+
+    socket.on('change-video-link', newLink => {
+      concert.fbvideo = newLink;
+      socket.broadcast.emit('concert-details', concert);
+      concert.save();
+    });
+
+    socket.on('charity-display-update', newState => {
+      if (show_charity_notice != newState) {
+        show_charity_notice = newState;
+        socket.broadcast.emit('charity-display-update', show_charity_notice);
+      }
+    });
+  });
+
+  io.on('reconnect', socket => {
+    socket.emit('concert-details', concert);
+  });
+
+  http.listen(PORT, () => console.log(`Listening on ${PORT}`));
+}
+
+setupAndRun();

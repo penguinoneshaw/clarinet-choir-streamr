@@ -11,8 +11,8 @@ block content
       #states
         h2 States
         .list-group
-          each state, index in otherStates
-            a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${index}` , href="#")= state.controls
+          each state, index in [...otherStates.entries()]
+            a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${state[0]}` , href="#")= state[1].controls
       
       #pieces
         h2 Pieces
@@ -41,8 +41,8 @@ block content
         p Each of these brings up a panel saying "Currently speaking: NAME (POSITION)". 
         .list-group
           a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (Conductor)`
-          each person, index in committee
-            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${index}` )= `${person} (${index})`
+          each person, index in [...committee.entries()]
+            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${person[0]}`)= `${person[1]} (${person[0]})`
 
 
     #setup

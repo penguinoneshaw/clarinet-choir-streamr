@@ -1,1 +1,1 @@
-web: node server.js euwb-concert.json
+web: node server.js

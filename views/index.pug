@@ -45,7 +45,8 @@ block content
         
   #performers.performers
     h2 Performers
-    each part, index in performers
+    each partobj in [...performers.entries()]
+      - const [index, part] = partobj
       div.part
         span#partname=index
         .part-list
@@ -66,9 +67,10 @@ block content
 
   if description
     #introduction.president-note
-      h2= `Note from the President (${committee.president})`
+      h2= `Note from the President`
       each paragraph in description
         p= paragraph  
+      p=committee.get('president')
   
   #conductor.md-note
     if conductor.description

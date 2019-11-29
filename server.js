@@ -36,12 +36,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser(function(user, done) {
-  done(null, user._id);
+  return done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
+  return User.findById(id, function(err, user) {
+    return done(err, user);
   });
 });
 
@@ -79,9 +79,9 @@ passport.use(
           return done(null, user);
         } else {
           let newUser = new User({ username, password: hashPassword(password), admin: true });
-          if (process.env['ADMIN_SECRET'] !== req.params.get('secretkey')) {
+          if (process.env['ADMIN_SECRET'] !== req.params['secretkey']) {
             req.flash('message', 'You must provide the correct admin code in order to register!');
-            done('Incorrect/Missing admin code');
+            return done(null, false, req.flash('message', 'Incorrect/Missing Admin Code'));
           }
 
           newUser
@@ -132,7 +132,7 @@ app.get('/control-panel', isAuthenticated, function(req, res) {
 });
 
 app.get('/login', (req, res) => {
-  res.render('login', { ...concert, message: req.flash('message') });
+  if (req.flash('message')) res.render('login', { ...concert, message: req.flash('message') });
 });
 
 app.post(

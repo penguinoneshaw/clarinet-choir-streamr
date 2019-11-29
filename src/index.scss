@@ -1,13 +1,12 @@
 @import "_imports";
 $max-text-width: 900px;
-@mixin fixed-layout-width {
-  margin: 0 auto;
-  max-width: $max-text-width;
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Vollkorn", "Palatino Linotype", serif;
-  background-color: $highlights-color;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,7 +49,6 @@ small,
 .site-header {
   font-family: "Vollkorn", "Palatino Linotype", serif;
 
-  @include fixed-layout-width;
   display: block;
   box-sizing: border-box;
   /* border-radius: 10px; */
@@ -75,44 +73,8 @@ small,
 
 .page-wrapper {
   box-sizing: border-box;
-  @media screen and (min-width: $max-text-width) {
-    padding: 1rem 3rem;
-    text-align: justify;
-  }
-  @include fixed-layout-width;
-  padding: 10px;
-  background-color: white;
-
-}
-    blockquote {
-      border-left: 10px solid $highlights-color;
-      margin-left: 10px;
-      padding-left: 20px;
-    }
-  
-    table {
-      margin: 2ex auto;
-      border-collapse: collapse;
-      vertical-align: center;
-      min-width: 60%;
-      max-width: 95%;
-  
-      td,
-      th {
-        padding: 0.5ex 1rem;
-      }
-  
-      thead {
-        border-bottom: thin solid $highlights-color;
-      }
-  
-      tbody tr:nth-child(even) {
-        background-color: rgba($highlights-color, 0.2);
-      }
-  
-      tfoot {
-        border-top: 4px double $highlights-color;
-      }
+  background: inherit;
+  display: grid;
 
   &:after {
     content: ".";
@@ -121,6 +83,42 @@ small,
     height: 0;
     clear: both;
   }
+
+  padding: 10px;
+
+}
+
+blockquote {
+  border-left: 10px solid $highlights-color;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+table {
+  margin: 2ex auto;
+  border-collapse: collapse;
+  vertical-align: center;
+  min-width: 60%;
+  max-width: 95%;
+
+  td,
+  th {
+    padding: 0.5ex 1rem;
+  }
+
+  thead {
+    border-bottom: thin solid $highlights-color;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: rgba($highlights-color, 0.2);
+  }
+
+  tfoot {
+    border-top: 4px double $highlights-color;
+  }
+}
+
 
   img {
     margin: 10px auto;
@@ -133,7 +131,10 @@ small,
     font-variant: small-caps;
     text-decoration: none;
   }
-}
+
+  .pieces {
+    text-align: center;
+  }
 
 .site-footer {
   clear: both;
@@ -144,7 +145,6 @@ small,
   }
   text-align: center;
   color: mix($highlights-color, white);
-  @include fixed-layout-width;
   @media print {
     display: none;
   }
@@ -163,6 +163,34 @@ small,
 }
 
 .main-content {
+  background-color: inherit;
+  display: grid;
+  width: 100%;
+  
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: minmax(300px, 1fr);
+    grid-auto-flow: dense;
+  }
+
+
+  > div {
+    background-color: $contrast-color;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 1rem $highlights-color;
+    display: flex;
+    flex-direction: column;
+
+    place-content: center start;
+    transition: box-shadow 0.5s ease-in-out;
+    @media screen and (max-width: 500px) {
+      box-shadow: none;
+    }
+  }
+
   h1 {
     font-size: xx-large;
     @media print {
@@ -215,9 +243,6 @@ small,
 
 
 .piece {
-  @media screen and (min-width: 600px) {
-    text-align: center;
-  }
 
   &:not(:last-child)::after {
     content: "";
@@ -275,13 +300,22 @@ small,
   }
 }
 
-.video {
-  margin: 0 auto;
-  width: 300px;
-
+.video 
   iframe {
+    position: sticky;
     border: none;
     overflow: hidden;
-    position: relative;
+    top: 1em;
+    margin: 0 auto;
+    background: white;
+    padding: 10px;
+  
+}
+
+.video {
+  grid-area: span 1/2;
+  @media screen and (max-width: 800px) {
+    grid-area: 1;
   }
 }
+

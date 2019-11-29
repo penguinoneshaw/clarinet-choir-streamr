@@ -16,6 +16,9 @@ html(lang='en')
         block header
           h1#title
             block title
+      p=message
+      if message
+        p.text-center.error-message=message
           
         
       .main-content

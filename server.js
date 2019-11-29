@@ -134,10 +134,6 @@ async function setupAndRun() {
 
   const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
 
-  console.log(concert);
-
-  console.log('This is the file for: ' + concert.concert + ' being held at ' + concert.venue + '.');
-
   let nowPlayingState = 'state-blank';
 
   var show_charity_notice = false;
@@ -147,7 +143,7 @@ async function setupAndRun() {
   });
 
   app.get('/login', (req, res) => {
-    if (req.flash('message')) res.render('login', { ...concert, message: req.flash('message') });
+    if (req.flash('message')) res.render('login', { concert: concert.concert, message: req.flash('message') });
   });
 
   app.post(

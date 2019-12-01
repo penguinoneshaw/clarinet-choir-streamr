@@ -20,8 +20,6 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.static('public'));
 
-app.use(flash());
-
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -38,15 +36,19 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 passport.serializeUser(function(user, done) {
   return done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
-  return User.findById(id, function(err, user) {
-    return done(err, user);
-  });
+passport.deserializeUser(async function(id, done) {
+  try {
+    const user = await User.findById(id);
+    return done(null, user);
+  } catch (e) {
+    return done(e);
+  }
 });
 
 passport.use(
@@ -56,10 +58,10 @@ passport.use(
       const user = await User.findOne({ username: username });
       if (!user) {
         console.error(`No user found with username ${username}`);
-        return done(null, false, req.flash('message', 'User not found.'));
+        return done(null, false, { message: 'User not found.' });
       } else if (!isValidPassword(user, password)) {
         console.error(`Invalid password for user ${user.username}`);
-        return done(null, false, req.flash('message', 'Invalid Password'));
+        return done(null, false, { message: 'Invalid Password' });
       } else {
         return done(null, user);
       }
@@ -71,21 +73,21 @@ passport.use(
 
 passport.use(
   'signup',
-  new LocalStrategy({ passReqToCallback: true }, async (req, username, password, done) => {
+  new LocalStrategy({ passReqToCallback: true }, ({ body }, username, password, done) => {
     const findOrCreateUser = async function() {
       try {
         const user = await User.findOne({ username: username });
         if (user) {
           if (!isValidPassword(user, password)) {
             console.error(`Invalid password for user ${user.username}`);
-            return done(null, false, req.flash('message', 'Invalid Password'));
+            return done(null, false, { message: 'Incorrect User Password' });
           }
           return done(null, user);
         } else {
           let newUser = new User({ username, password: hashPassword(password), admin: true });
-          if (process.env['ADMIN_SECRET'] !== req.params['secretkey']) {
-            req.flash('message', 'You must provide the correct admin code in order to register!');
-            return done(null, false, req.flash('message', 'Incorrect/Missing Admin Code'));
+          if (process.env['ADMIN_SECRET'] !== body['secretkey']) {
+            console.error('Incorrect admin secret', body.secretkey);
+            return done(null, false, { message: 'You must provide the correct admin code in order to register!' });
           }
 
           newUser
@@ -111,15 +113,16 @@ passport.use(
 
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated() && req.user.admin) return next();
-  req.flash('message', req.isAuthenticated() ? 'You are not an admin.' : 'You are not authenticated.');
+  req.flash('error', req.user && req.user.admin ? 'You are not an admin.' : 'You are not authenticated.');
   res.redirect('/login');
 };
 
 const MONGO_DB_URI = process.env['MONGODB_URI'];
+const SETTINGS_ID = process.env['SETTINGS_ID'];
 mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function setupAndRun() {
-  const settings = await Settings.findById('5de10d2b7c213e56251b3cf4');
+  const settings = await Settings.findById(SETTINGS_ID);
 
   const concert_file = process.argv[2];
 
@@ -136,16 +139,15 @@ async function setupAndRun() {
 
   var show_charity_notice = false;
 
-  app.get('/control-panel', async function(req, res) {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
+  app.get('/control-panel', isAuthenticated, async function(req, res) {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     res.render('control-panel', concert);
   });
 
   app.get('/login', async (req, res) => {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
-
-    if (req.flash('message')) res.render('login', { concert: concert.concert, message: req.flash('message') });
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info', 'concert');
+    res.render('login', { concert: concert.concert, message: req.flash('error')[0] });
   });
 
   app.post(
@@ -163,19 +165,19 @@ async function setupAndRun() {
   });
 
   app.get('/overlay', async function(req, res) {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     res.render('overlay', concert);
   });
 
   app.get('/', async (req, res) => {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     res.render('index', concert);
   });
 
   io.on('connection', async function(socket) {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     socket.emit('concert-details', concert);
     socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
@@ -203,7 +205,7 @@ async function setupAndRun() {
   });
 
   io.on('reconnect', async socket => {
-    const { concert_info: concert } = await Settings.findById('5de10d2b7c213e56251b3cf4').populate('concert_info');
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     socket.emit('concert-details', concert);
   });

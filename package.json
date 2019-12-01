@@ -42,7 +42,7 @@
   "scripts": {
     "build": "grunt && rollup -c --environment BUILD:production",
     "postinstall": "yarn build",
-    "start": "node -r dotenv/config server.js euwb-concert.json"
+    "start": "node -r dotenv/config server.js"
   },
   "bugs": {
     "url": "https://github.com/penguinoneshaw/clarinet-choir-streamr/issues"

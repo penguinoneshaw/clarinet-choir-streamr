@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import svg from 'rollup-plugin-svg';
+import pug from 'rollup-plugin-pug';
 
 const config = [
   {
@@ -14,6 +15,7 @@ const config = [
     plugins: [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
       commonjs(),
+      pug(),
       process.env.BUILD === 'production' && terser()
     ]
   },

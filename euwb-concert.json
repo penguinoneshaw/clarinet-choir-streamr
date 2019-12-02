@@ -1,0 +1,254 @@
+{
+  "group": "Edinburgh University Wind Band",
+  "concert": "EUWB Winter Concert 2019",
+  "venue": "Reid Concert Hall",
+  "price": "£6/£4 Students",
+  "conductor": {
+    "title": "Musical Director",
+    "name": "Morven Bell",
+    "description": [
+      "Morven's musical education began at primary school in Edinburgh and culminated in graduating from the Royal Scottish Academy of Music and Drama (now the Royal Conservatoire of Scotland) in Glasgow with a BA (Musical Performance) and a Certificate in Postgraduate Studies in Oboe and Cor Anglais.",
+      "Since leaving college, Morven has freelanced with most of the major Scottish orchestras, as well as some of the touring musical productions, including Les Misérables and the Fiddler on the Roof national tour. She now prefers to concentrate on the many diverse local gigs available. She is very proud to have played with the HM Royal Marine Band (Scotland).",
+      "She has a wide experience of musical teaching and orchestral coaching. She currently teaches oboe (and bassoon) at George Heriot's School, the Edinburgh Academy and Merchiston Castle School, as well as a number of private pupils of all ages.",
+      "Her experience of conducting EUWB has led to her conducting the Merchiston Castle School wind band, assisting the GHS Junior School Wind Ensemble and being asked to occasionally conduct other local community wind bands. Morven has been involved with the Edinburgh University Wind Band (or Edinburgh University Wind Ensemble as it was then known) since 1990, first as a player, then as Assistant Conductor and since 1993 as Musical Director.",
+      "Mo, as she is known to the band, still cannot believe that she is in her 27th year as Musical Director of this special bunch of people. She still enjoys the Wednesday night rehearsals and hearing the band go from strength to strength."
+    ]
+  },
+  "description": [
+    "I am delighted to welcome you to our annual winter concert! We had a fantastic start to the semester, with lots of new members joining us in September. Band has truly gone 'From Strength to Strength', with our largest rehearsal involving nearly 120 people! This semester we have celebrated our new Wind Band families on the Stags and Hens social and explored the pubs of Edinburgh in out 'tourist themed' pub crawl. Alongside out weekly rehearsals, we have also managed to fit in Family Building, many Wind Band weddings, and lovely sectional meals. We also ventured north to the great Loch Lochy for our annual weekend away, which was wonderful as always.",
+    "We have had an amazing first semester, but are looking forward to next year, which will be full of events such as our annual Scratch Rehearsal and Joint Music Societies Ceilidh with our sister societies Brass Band, Clarinet Choir and Female Voice Choir. We are also very excited to go on tour at the end of May, where we will play our favourite tunes while exploring one of Europe's finest cities (as yet undecided...)",
+    "We hope you enjoy the concert!"
+  ],
+  "charity": [
+    {
+      "name": "Mary's Meals",
+      "registrationNumber": "SC022140"
+    },
+    {
+      "name": "Health in Mind",
+      "registrationNumber": "SC022140"
+    }
+  ],
+  "pieces": [
+    {
+      "type": "piece",
+      "title": "Festive Overture",
+      "composer": "Dmitri Shostakovitch",
+      "arranger": "Donald Hunsberger"
+    },
+    {
+      "type": "piece",
+      "title": "Liberty Bell March",
+      "composer": "John Phillip Sousa"
+    },
+    {
+      "type": "piece",
+      "title": "The Blue and the Gray",
+      "composer": "Clare Grundman"
+    },
+    {
+      "type": "piece",
+      "title": "Music",
+      "composer": "John Miles",
+      "arranger": "Philip Sparke"
+    },
+    {
+      "type": "special",
+      "stream": "Interval",
+      "controls": "Go to Interval"
+    },
+    {
+      "type": "piece",
+      "title": "Cartoon",
+      "composer": "Paul Hart"
+    },
+    {
+      "type": "special",
+      "stream": "Raffle",
+      "controls": "Show Raffle"
+    },
+    {
+      "type": "piece",
+      "title": "Lion King Soundtrack Highlights",
+      "arranger": "Calvin Custer"
+    },
+    {
+      "type": "piece",
+      "title": "Pixar Movie Magic",
+      "composer": "Michael Giacchino & Randy Newman",
+      "arranger": "Michael Brown"
+    },
+    {
+      "type": "piece",
+      "title": "How to Train Your Dragon",
+      "composer": "John Powell",
+      "arranger": "Sean O'Loughlin"
+    },
+    {
+      "type": "piece",
+      "title": "ABBA on Broadway",
+      "arranger": "Michael Brown"
+    }
+  ],
+  "performers": {
+    "Piccolo": [
+      "Ellie Edwards",
+      "Emily Jacobs"
+    ],
+    "Flute": [
+      "Katie Watson",
+      "Lucy Morris",
+      "Michal Tkacz",
+      "Jiamei Doris Tang",
+      "Charis Duong",
+      "Carrie Hammond",
+      "Rachael Moffat",
+      "Anna Russell",
+      "Jingjing Wang",
+      "Navina Senthilkumar",
+      "Bethany Hickling",
+      "Sinead Mackay",
+      "Mairi Lodge",
+      "Sarah Kayser",
+      "Anna Mouat",
+      "Thazin Tan-Ya",
+      "Joanna Park",
+      "Lily Nisbet",
+      "Robert Phillips",
+      "Dom Sadczuk",
+      "Jack Mackay"
+    ],
+    "Oboe": [
+      "Imesha Alawattage",
+      "Milad Meth Sherzad"
+    ],
+    "Bassoon": [
+      "Elisa Ramil Brick",
+      "Felix Saward"
+    ],
+    "Clarinet": [
+      "Abigail Buchan",
+      "Megan Campbell",
+      "Rebecca Pimblett",
+      "Clare Harris",
+      "Abbie Lear",
+      "Tessa Hedstrand",
+      "David Bruce",
+      "Skye Jamieson",
+      "Megan Stewart",
+      "Isla Archibald",
+      "Javier Rodríguez Espinoza",
+      "Alissa Forsythe",
+      "Helen Jones",
+      "George Hampton",
+      "Connall MacLennan",
+      "Mhairi Paterson",
+      "Amy Buchan",
+      "Un leng Chan",
+      "Nick Taylor"
+    ],
+    "Bass Clarinet": [
+      "Morgan Brougham"
+    ],
+    "Alto Saxophone": [
+      "Matthew Johnson",
+      "Amy Cook",
+      "Emily Goddard",
+      "Claire Jameson",
+      "Ailsa Tucker",
+      "Molly Paton",
+      "Eleanor Hutcheon",
+      "Nathan Inatimi",
+      "Heather Dundas",
+      "Adam Grace",
+      "Helena Purvis",
+      "Ailsa Golightly",
+      "Lizzie Pickup",
+      "Ava Pennicott-Banks",
+      "Charlotte Bryan-Lambert",
+      "Eden Malca",
+      "Laura Clyne",
+      "Laura Baskett",
+      "Mack Reed",
+      "Jemimah Morris",
+      "Jack Tait",
+      "Dan Johnston",
+      "Catriona Gilbertson"
+    ],
+    "Tenor Saxophone": [
+      "Peter Jones",
+      "Katharine Gwynne",
+      "Aditya Rudrapatna",
+      "Lotte Tyndale-Hardy"
+    ],
+    "Baritone Saxophone": [
+      "Lydia Zioupos",
+      "Alexandra McBride"
+    ],
+    "Trumpet/Cornet": [
+      "Richard York",
+      "Finley McDougall",
+      "Will Maclean",
+      "Naomi Shilliday",
+      "James Shaw",
+      "Mia Hashimoto",
+      "Nathan Rockley",
+      "Ruaridh Alexander",
+      "Oliver Eadie-Catling",
+      "Hannah Duncan"
+    ],
+    "French Horn": [
+      "Gonda Metzger",
+      "Mairi Hull",
+      "Emma Walker",
+      "Ella Cronkshaw",
+      "Alexander Gordon"
+    ],
+    "Tenor Horn": [
+      "Molly Lees"
+    ],
+    "Euphonium": [
+      "Mhairi Maxwell",
+      "Eve Yagual Goolden"
+    ],
+    "Trombone": [
+      "Ed Whyton",
+      "Ben Di Lorenzo",
+      "Nathan Russell",
+      "Ben Orton",
+      "Becca Puxley"
+    ],
+    "Tuba": [
+      "Marcello Rufo",
+      "Jordan Iga"
+    ],
+    "Percussion": [
+      "Fyntan Shaw",
+      "Ana Stewart Tamaríz",
+      "Rachel Ball",
+      "Hibiki Kono",
+      "Stuart Coleman",
+      "Grace Moran",
+      "Anna Lynch"
+    ]
+  },
+  "committee": {
+    "president": "Katie Watson",
+    "secretary": "Eleanor Hutcheon",
+    "treasurer": "Jack Tait"
+  },
+  "otherStates": {
+    "preroll": {
+      "stream": "We'll be starting soon",
+      "controls": "Show Preroll"
+    },
+    "postroll": {
+      "stream": "Thanks for Watching!",
+      "controls": "Show Postroll"
+    },
+    "blank": {
+      "stream": "",
+      "controls": "Show Blank"
+    }
+  }
+}

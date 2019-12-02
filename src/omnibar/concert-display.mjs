@@ -46,14 +46,22 @@ export class ConcertDisplay {
 
         break;
       case 'piece': {
-        elem = document.querySelector('#nowplaying');
-
         const piece = concert.pieces[parseInt(state[0], 10)];
-        const { credits, title } = updateNowPlaying(piece);
-        this.timeline.call(() => {
-          elem.querySelector('#title').textContent = title;
-          elem.querySelector('#composer').textContent = credits;
-        });
+        if (piece.type == 'piece') {
+          elem = document.querySelector('#nowplaying');
+
+          const { credits, title } = updateNowPlaying(piece);
+          this.timeline.call(() => {
+            elem.querySelector('#title').textContent = title;
+            elem.querySelector('#composer').textContent = credits;
+          });
+        } else {
+          elem = document.querySelector('#other-states');
+
+          this.timeline.call(() => {
+            elem.textContent = piece.stream;
+          });
+        }
 
         break;
       }

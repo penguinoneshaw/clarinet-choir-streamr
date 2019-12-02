@@ -11,7 +11,7 @@ const hashPassword = password => {
 
 module.exports = {
   User: mongoose.model('User', {
-    username: String,
+    username: { type: String, index: true },
     password: String,
     admin: Boolean
   }),

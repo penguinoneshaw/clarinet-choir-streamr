@@ -7,9 +7,6 @@ block title
   =concert + " Control Panel Login"
 
 block content
-    if message
-        div
-            h1.text-center.error-message #{message}
     form.form-group(action="/login", method="POST")
         p To sign up and gain admin access, you must provide the Registration Key
         label(for="username") Username

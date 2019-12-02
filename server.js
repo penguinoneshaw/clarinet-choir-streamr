@@ -1,21 +1,24 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+
 const { User, isValidPassword, hashPassword } = require('./models/user');
+const { Concert } = require('./models/concert');
+const { Settings } = require('./models/settings');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
+const expressSession = require('express-session');
 
-const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static('public'));
-
-const flash = require('connect-flash');
-app.use(flash());
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -24,7 +27,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const expressSession = require('express-session');
 app.use(
   expressSession({
     secret: process.env['SECRET_KEY'],
@@ -34,15 +36,19 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 passport.serializeUser(function(user, done) {
-  done(null, user._id);
+  return done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(async function(id, done) {
+  try {
+    const user = await User.findById(id);
+    return done(null, user);
+  } catch (e) {
+    return done(e);
+  }
 });
 
 passport.use(
@@ -52,10 +58,10 @@ passport.use(
       const user = await User.findOne({ username: username });
       if (!user) {
         console.error(`No user found with username ${username}`);
-        return done(null, false, req.flash('message', 'User not found.'));
+        return done(null, false, { message: 'User not found.' });
       } else if (!isValidPassword(user, password)) {
         console.error(`Invalid password for user ${user.username}`);
-        return done(null, false, req.flash('message', 'Invalid Password'));
+        return done(null, false, { message: 'Invalid Password' });
       } else {
         return done(null, user);
       }
@@ -67,23 +73,21 @@ passport.use(
 
 passport.use(
   'signup',
-  new LocalStrategy({ passReqToCallback: true }, async (req, username, password, done) => {
+  new LocalStrategy({ passReqToCallback: true }, ({ body }, username, password, done) => {
     const findOrCreateUser = async function() {
       try {
         const user = await User.findOne({ username: username });
-        console.log(user);
         if (user) {
-          console.log('User already exists');
           if (!isValidPassword(user, password)) {
             console.error(`Invalid password for user ${user.username}`);
-            return done(null, false, req.flash('message', 'Invalid Password'));
+            return done(null, false, { message: 'Incorrect User Password' });
           }
           return done(null, user);
         } else {
           let newUser = new User({ username, password: hashPassword(password), admin: true });
-          if (process.env['ADMIN_SECRET'] !== req.param('secretkey')) {
-            req.flash('message', 'You must provide the correct admin code in order to register!');
-            done('Incorrect/Missing admin code');
+          if (process.env['ADMIN_SECRET'] !== body['secretkey']) {
+            console.error('Incorrect admin secret', body.secretkey);
+            return done(null, false, { message: 'You must provide the correct admin code in order to register!' });
           }
 
           newUser
@@ -98,7 +102,7 @@ passport.use(
             });
         }
       } catch (error) {
-        console.error(`Error in signup with username ${username}`);
+        console.error(`Error in signup/signIn with username ${username}`);
         return done(error);
       }
     };
@@ -107,91 +111,114 @@ passport.use(
   })
 );
 
-const mongodburi = process.env['MONGODB_URI'];
-mongoose.connect(mongodburi, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const concert_file = process.argv[2];
-
-if (!concert_file) {
-  console.error('Please provide path to concert json file.');
-  process.exit(1);
-}
-let concert = JSON.parse(fs.readFileSync(concert_file, 'utf8'));
-
-console.log('This is the file for: ' + concert.concert + ' being held at ' + concert.venue + '.');
-concert.nowplaying = 'state-blank';
-
-var show_charity_notice = false;
-
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated() && req.user.admin) return next();
-  req.flash('message', req.isAuthenticated() ? 'You are not an admin.' : 'You are not authenticated.');
+  req.flash('error', req.user && !req.user.admin ? 'You are not an admin.' : 'You are not authenticated.');
   res.redirect('/login');
 };
 
-app.get('/control-panel', isAuthenticated, function(req, res) {
-  res.render('control-panel', concert);
-});
+const redirectToControlPanel = (req, res, next) => {
+  if (req.user && req.user.admin) return res.redirect('/control-panel');
+  return next();
+};
 
-app.get('/login', (req, res) => {
-  res.render('login', { ...concert, message: req.flash('message') });
-});
+const MONGO_DB_URI = process.env['MONGODB_URI'];
+const SETTINGS_ID = process.env['SETTINGS_ID'];
+mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-app.post(
-  '/login',
-  passport.authenticate('signup', {
-    successRedirect: '/control-panel',
-    failureRedirect: '/login',
-    failureFlash: true
-  })
-);
+async function setupAndRun() {
+  const settings = await Settings.findById(SETTINGS_ID);
 
-app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+  const concert_file = process.argv[2];
 
-app.get('/overlay', function(req, res) {
-  res.render('overlay', concert);
-});
+  if (concert_file) {
+    const concertJson = await fs.readFile(concert_file, 'utf8');
+    const _new_concert = new Concert(JSON.parse(concertJson));
+    await _new_concert.save();
 
-app.get('/', (req, res) => {
-  res.render('index', concert);
-});
+    settings.concert_info = _new_concert._id;
+    settings.save();
+  }
 
-io.on('connection', function(socket) {
-  console.log('A page connected');
+  let nowPlayingState = 'state-blank';
 
-  socket.emit('concert-details', concert);
-  socket.emit('nowplaying-update', concert.nowplaying ? concert.nowplaying : 'state-blank');
-  socket.emit('charity-display-update', show_charity_notice);
+  var show_charity_notice = false;
 
-  socket.on('nowplaying-update', function(nowPlaying) {
-    if (concert.nowplaying !== nowPlaying) {
-      socket.broadcast.emit('nowplaying-update', nowPlaying);
-      concert.nowplaying = nowPlaying;
-    }
+  app.get('/control-panel', isAuthenticated, async function(req, res) {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
+
+    res.render('control-panel', concert);
   });
 
-  socket.on('change-video-link', newLink => {
-    concert.fbvideo = newLink;
-    socket.broadcast.emit('concert-details', concert);
+  app.get('/login', redirectToControlPanel, async (req, res) => {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info', 'concert');
+    res.render('login', { concert: concert.concert, message: req.flash('error')[0] });
   });
 
-  socket.on('charity-display-update', newState => {
-    if (show_charity_notice != newState) {
-      show_charity_notice = newState;
-      socket.broadcast.emit('charity-display-update', show_charity_notice);
-    }
+  app.post(
+    '/login',
+    passport.authenticate('signup', {
+      successRedirect: '/control-panel',
+      failureRedirect: '/login',
+      failureFlash: true
+    })
+  );
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
   });
 
-  socket.on('disconnect', function() {
-    console.log('page disconnected');
+  app.get('/overlay', async function(req, res) {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
+
+    res.render('overlay', concert);
   });
-});
 
-io.on('reconnect', socket => {
-  socket.emit('concert-details', concert);
-});
+  app.get('/', async (req, res) => {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
-http.listen(PORT, () => console.log(`Listening on ${PORT}`));
+    res.render('index', concert);
+  });
+
+  io.on('connection', async function(socket) {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
+
+    socket.emit('concert-details', concert);
+    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
+    socket.emit('charity-display-update', show_charity_notice);
+
+    socket.on('nowplaying-update', function(nowPlaying) {
+      if (nowPlayingState !== nowPlaying) {
+        socket.broadcast.emit('nowplaying-update', nowPlaying);
+        nowPlayingState = nowPlaying;
+      }
+    });
+
+    socket.on('change-video-link', newLink => {
+      if (concert.fbvideo === newLink || newLink === '') return false;
+      concert.fbvideo = newLink;
+      concert.save();
+      socket.broadcast.emit('concert-details', concert);
+      socket.emit('concert-details', concert);
+    });
+
+    socket.on('charity-display-update', newState => {
+      if (show_charity_notice != newState) {
+        show_charity_notice = newState;
+        socket.broadcast.emit('charity-display-update', show_charity_notice);
+      }
+    });
+  });
+
+  io.on('reconnect', async socket => {
+    const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
+    socket.emit('concert-details', concert);
+    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
+    socket.emit('charity-display-update', show_charity_notice);
+  });
+
+  http.listen(PORT, () => console.log(`Listening on ${PORT}`));
+}
+
+setupAndRun();

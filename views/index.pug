@@ -8,33 +8,37 @@ append header
   h2= group
 
 block content
-  if fbvideo
-    div.video
-      iframe(src="https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(fbvideo) + "&width=300&show_text=false&height=168&appId", style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width='300', height='168', frameborder='0')
-      p
-        | If nothing is showing above, Facebook tracking is probably being disabled by your browser. You can find the video feed 
-        a(href=fbvideo) here
-        | .
+  #pieces.pieces
+    h1 Running Order
+    each piece, index in pieces
+      .piece(data-piece=`piece-${index}`)
+        if piece.type == 'piece'
+          if piece.subtitle
+            h1=`${piece.title} (${piece.subtitle})`
+          else
+            h1=`${piece.title}`
+            
+          if piece.composer && piece.arranger
+            h2=`${piece.composer} arr. ${piece.arranger}`
+          else if piece.composer
+            h2=`${piece.composer}`
+          else if piece.arranger
+            h2=`arr. ${piece.arranger}`
+            
+          if piece.description
+            .description
+              each part in piece.description
+                p= part
+        else
+          h1=piece.stream
 
-  h1 Programme
-  if description
-    #introduction
-      h2= `Note from the President (${committee.president})`
-      each paragraph in description
-        p= paragraph  
-  
-  #conductor
-    if conductor.description
-      h2= `${conductor.name} (${conductor.title})`
-      each paragraph in conductor.description
-        p= paragraph
-    else
-      h2=conductor.title
-      h3=conductor.name
+  if fbvideo
+    include partials/fbvideo.pug
         
-  #performers
+  #performers.performers
     h2 Performers
-    each part, index in performers
+    each partobj in [...performers.entries()]
+      - const [index, part] = partobj
       div.part
         span#partname=index
         .part-list
@@ -42,35 +46,29 @@ block content
           each person in part
             span.name=person
   
-  #charity
+  #charity.charity-note
     if charity
       h2=`Charity`
-      p
-        | With this concert, we are raising money for the charity 
-        = `${charity.name} `
-        | (registered Scottish charity
-        = " " + charity.registration_number
-        | ). Please consider making a donation to them or a similar charity in your area; more details can be found at 
-        a(href=charity.url)= charity.url
-        | !
+
+      - const charityString = !Array.isArray(charity) ? `With this concert, we are raising money for the charity ${charity.name} (registered Scottish charity ${charity.registrationNumber}).` : `With this concert, we are raising money for the charities ${charity.map(char => `${char.name} (registered Scottish charity ${char.registrationNumber})`).join(' and ')}.`
+      p=charityString
+      p Please consider making a donation to them or a similar charity in your area!
   
-  #pieces
-    h1 Running Order
-    each piece, index in pieces
-      .piece(data-piece=`piece-${index}`)
-        if piece.subtitle
-          h1=`${piece.title} (${piece.subtitle})`
-        else
-          h1=`${piece.title}`
-          
-        if piece.composer && piece.arranger
-          h2=`${piece.composer} arr. ${piece.arranger}`
-        else if piece.composer
-          h2=`${piece.composer}`
-        else if piece.arranger
-          h2=`arr. ${piece.arranger}`
-          
-        if piece.description
-          .description
-            each part in piece.description
-              p= part
+  
+
+
+  if description
+    #introduction.president-note
+      h2= `Note from the President`
+      each paragraph in description
+        p= paragraph  
+      p=committee.get('president')
+  
+  #conductor.md-note
+    if conductor.description
+      h2= `${conductor.name} (${conductor.title})`
+      each paragraph in conductor.description
+        p= paragraph
+    else
+      h2=conductor.title
+      h3=conductor.name

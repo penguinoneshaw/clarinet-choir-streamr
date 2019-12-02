@@ -49,13 +49,9 @@ small,
 .site-header {
   font-family: "Vollkorn", "Palatino Linotype", serif;
 
-  display: block;
-  box-sizing: border-box;
-  /* border-radius: 10px; */
+  grid-column: 1/-1;
+
   text-align: center;
-  border-bottom: double $highlights-color 5px;
-  padding: 1rem;
-  margin-bottom: 10px;
 
   h1,
   h2 {
@@ -138,8 +134,6 @@ table {
   }
 
 .site-footer {
-  clear: both;
-
   a {
     color: $highlights-color;
     text-decoration: none;
@@ -149,6 +143,8 @@ table {
   @media print {
     display: none;
   }
+
+  grid-column: 1/-1;
 }
 
 .jumbotron {
@@ -163,7 +159,7 @@ table {
   }
 }
 
-.main-content {
+.page-wrapper {
   background-color: inherit;
   display: grid;
   width: 100%;
@@ -177,14 +173,13 @@ table {
   }
 
 
-  > div {
+  > div, > section, > header, > footer, > aside {
     background-color: $contrast-color;
     padding: 1rem;
     border-radius: 0.2rem;
     box-shadow: 0 0 1rem $highlights-color;
     display: flex;
     flex-direction: column;
-
     place-content: center start;
     transition: box-shadow 0.5s ease-in-out;
     @media screen and (max-width: 500px) {

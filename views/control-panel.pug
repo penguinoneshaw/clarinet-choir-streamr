@@ -1,8 +1,10 @@
 extends template.pug
 
-    
 block title
-  =concert + " Control Panel"
+  =concert
+
+append header
+  h2 Concert Control Panel
 
 block content
   #states.controls
@@ -51,6 +53,7 @@ block content
       button(type="submit").btn.btn-primary Set URL
     if fbvideo
       include partials/fbvideo.pug
-        
+
+
 append scripts
   script(src='/scripts/control-panel-bundle.js', defer, type='module')

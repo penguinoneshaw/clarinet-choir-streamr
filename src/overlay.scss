@@ -30,11 +30,11 @@ body {
 
 @keyframes color_change {
   from {
-    color: darken($contrast-color, 50%);
+    border-color: darken($contrast-color, 25%);
     border-width: 0.6ex;
   }
   to {
-    color: $contrast-color;
+    border-color: $contrast-color;
     border-width:0.4ex;
   }
 }

@@ -5,52 +5,52 @@ block title
   =concert + " Control Panel"
 
 block content
-  .container.controlpanel
+  #states.controls
+    h2 States
+    .list-group
+      each state, index in [...otherStates.entries()]
+        a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${state[0]}` , href="#")= state[1].controls
+  
+  #pieces.controls
+    h2 Pieces
+    .list-group
+      each piece, index in pieces
+        - let string = '';
+        if piece.type == 'piece'
+          - let comp
+          if piece.composer && piece.arranger
+            - comp = `${piece.composer} arr. ${piece.arranger}`
+          else if piece.composer
+            - comp = piece.composer
+          else if piece.arranger
+            - comp = `arr. ${piece.arranger}`
+          - string = `${piece.title}: ${comp}`
 
-    #controls
-      #states
-        h2 States
-        .list-group
-          each state, index in [...otherStates.entries()]
-            a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${state[0]}` , href="#")= state[1].controls
-      
-      #pieces
-        h2 Pieces
-        .list-group
-          each piece, index in pieces
-            - let string = '';
-            if piece.type == 'piece'
-              - let comp
-              if piece.composer && piece.arranger
-                - comp = `${piece.composer} arr. ${piece.arranger}`
-              else if piece.composer
-                - comp = piece.composer
-              else if piece.arranger
-                - comp = `arr. ${piece.arranger}`
-              - string = `${piece.title}: ${comp}`
-
-            else
-              - string = piece.controls
-            
-            a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= string
-              
+        else
+          - string = piece.controls
+        
+        a.list-group-item.list-group-item-action.list-group-item-secondary(href="#", data-selector=`piece-${index}`)= string
           
       
-      #committee
-        h2 Committee
-        p Each of these brings up a panel saying "Currently speaking: NAME (POSITION)". 
-        .list-group
-          a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (Conductor)`
-          each person, index in [...committee.entries()]
-            a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${person[0]}`)= `${person[1]} (${person[0]})`
+  
+  #committee.controls
+    h2 Committee
+    p Each of these brings up a panel saying "Currently speaking: NAME (POSITION)". 
+    .list-group
+      a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`conductor` )= `${conductor.name} (${conductor.title})`
+      each person, index in [...committee.entries()]
+        a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${person[0]}`)= `${person[1]} (${person[0]})`
 
 
-    #setup
-      h2 Setup System
-      form#videoLink
-        .form-group
-          label(for="facebook_video_url") Set live video url
-          input(type="url", name="facebook_video_url", placeholder="https://www.facebook.com/videos/...").form-control
-        button(type="submit").btn.btn-primary Submit
+  #setup
+    h2 Video Embed
+    form#videoLink
+      .form-group
+        label(for="facebook_video_url") Set live video url
+        input(type="url", name="facebook_video_url", placeholder=fbvideo ? fbvideo : "https://www.facebook.com/videos/...").form-control
+      button(type="submit").btn.btn-primary Set URL
+    if fbvideo
+      include partials/fbvideo.pug
+        
 append scripts
   script(src='/scripts/control-panel-bundle.js', defer, type='module')

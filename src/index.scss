@@ -134,6 +134,7 @@ table {
 
   .pieces {
     text-align: center;
+    grid-area: span 2;
   }
 
 .site-footer {
@@ -274,10 +275,6 @@ table {
   .description {
     overflow: hidden;
   }
-}
-
-.controls div {
-  margin-top: 3rem;
 }
 
 .list-group {

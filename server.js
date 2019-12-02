@@ -113,8 +113,13 @@ passport.use(
 
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated() && req.user.admin) return next();
-  req.flash('error', req.user && req.user.admin ? 'You are not an admin.' : 'You are not authenticated.');
+  req.flash('error', req.user && !req.user.admin ? 'You are not an admin.' : 'You are not authenticated.');
   res.redirect('/login');
+};
+
+const redirectToControlPanel = (req, res, next) => {
+  if (req.user && req.user.admin) return res.redirect('/control-panel');
+  return next();
 };
 
 const MONGO_DB_URI = process.env['MONGODB_URI'];
@@ -145,7 +150,7 @@ async function setupAndRun() {
     res.render('control-panel', concert);
   });
 
-  app.get('/login', async (req, res) => {
+  app.get('/login', redirectToControlPanel, async (req, res) => {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info', 'concert');
     res.render('login', { concert: concert.concert, message: req.flash('error')[0] });
   });
@@ -191,9 +196,11 @@ async function setupAndRun() {
     });
 
     socket.on('change-video-link', newLink => {
+      if (concert.fbvideo === newLink || newLink === '') return false;
       concert.fbvideo = newLink;
-      socket.broadcast.emit('concert-details', concert);
       concert.save();
+      socket.broadcast.emit('concert-details', concert);
+      socket.emit('concert-details', concert);
     });
 
     socket.on('charity-display-update', newState => {
@@ -206,8 +213,9 @@ async function setupAndRun() {
 
   io.on('reconnect', async socket => {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
-
     socket.emit('concert-details', concert);
+    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
+    socket.emit('charity-display-update', show_charity_notice);
   });
 
   http.listen(PORT, () => console.log(`Listening on ${PORT}`));

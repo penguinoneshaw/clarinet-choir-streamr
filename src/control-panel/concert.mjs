@@ -1,7 +1,7 @@
 export class Concert {
   constructor(ConcertDisplay) {
     this.ConcertDisplay = ConcertDisplay;
-    this.concert = undefined;
+    this._concert = undefined;
     this.status = 'state-blank';
   }
   set status(status) {
@@ -10,5 +10,12 @@ export class Concert {
   }
   get status() {
     return this._status;
+  }
+  set concert(concert) {
+    this._concert = concert;
+    this.ConcertDisplay.updateConcertInfo(this._concert);
+  }
+  get concert() {
+    return this._concert;
   }
 }

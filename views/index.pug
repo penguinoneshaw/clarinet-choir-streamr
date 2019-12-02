@@ -33,15 +33,7 @@ block content
           h1=piece.stream
 
   if fbvideo
-    div.video
-      - const width = 400
-      - const height = 400*0.75
-      iframe(src="https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(fbvideo) + `&width=${width}&show_text=false&height=${height}&appId`, style='', scrolling='no', allowtransparency='true', allowfullscreen='true', width=width, height=height, frameborder='0')
-      p
-        | If nothing is showing above, Facebook tracking is probably being disabled by your browser. You can find the video feed 
-        a(href=fbvideo) here
-        | .
-
+    include partials/fbvideo.pug
         
   #performers.performers
     h2 Performers

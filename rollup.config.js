@@ -3,6 +3,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import svg from 'rollup-plugin-svg';
 import pug from 'rollup-plugin-pug';
+import scss from 'rollup-plugin-scss';
+import copy from 'rollup-plugin-copy';
 
 const config = [
   {
@@ -16,13 +18,22 @@ const config = [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
       commonjs(),
       pug(),
-      process.env.BUILD === 'production' && terser()
+      process.env.BUILD === 'production' && terser(),
+      scss({ output: 'public/css/index.css' }),
+      copy({
+        targets: [
+          {
+            src: 'src/images/**/*',
+            dest: 'public/images'
+          }
+        ]
+      })
     ]
   },
   {
-    input: 'src/omnibar/index.js',
+    input: 'src/overlay/index.js',
     output: {
-      file: 'public/scripts/omnibar-bundle.js',
+      file: 'public/scripts/overlay-bundle.js',
       format: 'module',
       name: 'baseModule'
     },
@@ -30,7 +41,8 @@ const config = [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
       commonjs(),
       svg(),
-      process.env.BUILD === 'production' && terser()
+      process.env.BUILD === 'production' && terser(),
+      scss({ output: 'public/css/overlay.css' })
     ]
   }
 ];

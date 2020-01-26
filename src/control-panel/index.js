@@ -2,6 +2,7 @@ import { Concert } from './concert';
 import io from 'socket.io-client';
 import 'formdata-polyfill';
 import { ConcertDisplay } from './concert-display';
+import '../styles/index.scss';
 
 const _socket = io();
 const concert = new Concert(ConcertDisplay);

@@ -60,11 +60,8 @@ typings/
 # next.js build output
 .next
 
-# Generated CSS files
-public/css
-
-# Generated js files
-public/scripts/*-bundle.js
+# Generated public files
+public/**/*
 
 # Weird macos files
 .DS_Store

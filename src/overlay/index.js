@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { Concert } from './concert';
 import { ConcertDisplay } from './concert-display';
 import logo from '../images/logo.svg';
+import '../styles/overlay.scss';
 
 document.querySelector('#logo').innerHTML = logo;
 

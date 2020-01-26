@@ -11,17 +11,13 @@
     "eslint": ">=6.6.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-sass": "*",
-    "load-grunt-tasks": "*",
     "node-sass": ">=4.10.0",
     "prettier": "^1.19.1",
     "rollup": "^1.27.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-pug": "^1.1.1",
-    "rollup-plugin-terser": "^5.1.2"
+    "rollup-plugin-terser": "^5.2.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -31,17 +27,21 @@
     "express": "*",
     "express-session": "^1.17.0",
     "formdata-polyfill": "^3.0.19",
-    "gsap": "^3.0.1",
-    "mongoose": "^5.7.11",
+    "gsap": "^3.1.1",
+    "lowdb": "^1.0.0",
+    "mongoose": "^5.8.9",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "*",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-scss": "^2.1.0",
     "rollup-plugin-svg": "^2.0.0",
     "socket.io": "*"
   },
   "scripts": {
-    "build": "grunt && rollup -c --environment BUILD:production",
+    "build": "rollup -c --environment BUILD:production",
     "postinstall": "yarn build",
     "start": "node -r dotenv/config server.js"
   },

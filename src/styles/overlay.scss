@@ -1,4 +1,4 @@
-@import "_imports";
+@import '_imports';
 
 $bar-height: 108px;
 
@@ -11,7 +11,7 @@ $window-width: 100vw;
   align-items: center;
 }
 
-* { 
+* {
   box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: "Vollkorn", serif;
+  font-family: 'Vollkorn', serif;
   display: block;
   width: $window-width;
   height: $window-height;
@@ -35,7 +35,7 @@ body {
   }
   to {
     border-color: $contrast-color;
-    border-width:0.4ex;
+    border-width: 0.4ex;
   }
 }
 
@@ -62,7 +62,7 @@ body {
     justify-content: space-between;
   }
   #logo {
-    $logo-size: $bar-height*0.7;
+    $logo-size: $bar-height * 0.7;
     width: $logo-size;
     height: $logo-size;
     overflow: hidden;
@@ -84,7 +84,7 @@ body {
 
   #conductor {
     &:before {
-      content: "Musical Director: ";
+      content: 'Musical Director: ';
       font-variant: small-caps;
     }
   }

@@ -60,8 +60,8 @@ typings/
 # next.js build output
 .next
 
-# Generated public files
-public/**/*
+# Generated Files
+dist/**/*
 
 # Weird macos files
 .DS_Store

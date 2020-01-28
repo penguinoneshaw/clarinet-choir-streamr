@@ -1,24 +1,30 @@
-const fs = require('fs').promises;
-const express = require('express');
+/* eslint-disable @typescript-eslint/camelcase */
+import { promises as fs } from 'fs';
+
+import express, { NextFunction, Response, Request } from 'express';
+import httpModule from 'http';
+import ioModule from 'socket.io';
+import passport from 'passport';
+import { Strategy as LocalStrategy } from 'passport-local';
+import mongoose from 'mongoose';
+
 const app = express();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const mongoose = require('mongoose');
+const http = new httpModule.Server(app);
+const io = ioModule(http);
 
-const { User, isValidPassword, hashPassword } = require('./models/user');
-const { Concert } = require('./models/concert');
-const { Settings } = require('./models/settings');
+import { User, isValidPassword, hashPassword, UserType } from './models/user';
+import { Concert } from './models/concert';
+import { Settings } from './models/settings';
 
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const flash = require('connect-flash');
-const expressSession = require('express-session');
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import flash from 'connect-flash';
+import expressSession from 'express-session';
+
+const SETTINGS_ID = process.env['SETTINGS_ID'];
 
 const PORT = process.env.PORT || 5000;
-
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/../public'));
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -38,11 +44,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser<UserType, string>((user, done) => {
   return done(null, user._id);
 });
 
-passport.deserializeUser(async function(id, done) {
+passport.deserializeUser<UserType, string>(async (id, done) => {
   try {
     const user = await User.findById(id);
     return done(null, user);
@@ -74,7 +80,7 @@ passport.use(
 passport.use(
   'signup',
   new LocalStrategy({ passReqToCallback: true }, ({ body }, username, password, done) => {
-    const findOrCreateUser = async function() {
+    const findOrCreateUser = async function(): Promise<void> {
       try {
         const user = await User.findOne({ username: username });
         if (user) {
@@ -84,8 +90,8 @@ passport.use(
           }
           return done(null, user);
         } else {
-          let newUser = new User({ username, password: hashPassword(password), admin: true });
-          if (process.env['ADMIN_SECRET'] !== body['secretkey']) {
+          const newUser = new User({ username, password: hashPassword(password), admin: true });
+          if ((await Settings.findById(SETTINGS_ID)).admin_secret !== body['secretkey']) {
             console.error('Incorrect admin secret', body.secretkey);
             return done(null, false, { message: 'You must provide the correct admin code in order to register!' });
           }
@@ -111,38 +117,42 @@ passport.use(
   })
 );
 
-const isAuthenticated = (req, res, next) => {
+const isAuthenticated = (
+  req: Request & { user: UserType; isAuthenticated: () => boolean },
+  res: Response,
+  next: NextFunction
+): void => {
   if (req.isAuthenticated() && req.user.admin) return next();
   req.flash('error', req.user && !req.user.admin ? 'You are not an admin.' : 'You are not authenticated.');
   res.redirect('/login');
 };
 
-const redirectToControlPanel = (req, res, next) => {
+const redirectToControlPanel = (req: any, res: Response, next: NextFunction): void => {
   if (req.user && req.user.admin) return res.redirect('/control-panel');
   return next();
 };
 
 const MONGO_DB_URI = process.env['MONGODB_URI'];
-const SETTINGS_ID = process.env['SETTINGS_ID'];
+
 mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-async function setupAndRun() {
+async function setupAndRun(): Promise<void> {
   const settings = await Settings.findById(SETTINGS_ID);
 
-  const concert_file = process.argv[2];
+  const concertFile = process.argv[2];
 
-  if (concert_file) {
-    const concertJson = await fs.readFile(concert_file, 'utf8');
-    const _new_concert = new Concert(JSON.parse(concertJson));
-    await _new_concert.save();
+  if (concertFile) {
+    const concertJson = await fs.readFile(concertFile, 'utf8');
+    const _newConcert = new Concert(JSON.parse(concertJson));
+    await _newConcert.save();
 
-    settings.concert_info = _new_concert._id;
+    settings.concert_info = _newConcert._id;
     settings.save();
   }
 
   let nowPlayingState = 'state-blank';
 
-  var show_charity_notice = false;
+  let show_charity_notice = false;
 
   app.get('/control-panel', isAuthenticated, async function(req, res) {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
@@ -218,7 +228,7 @@ async function setupAndRun() {
     socket.emit('charity-display-update', show_charity_notice);
   });
 
-  http.listen(PORT, () => console.log(`Listening on ${PORT}`));
+  http.listen(PORT, () => console.log(`Listening on ${PORT}\nThe Admin code is "${settings.admin_secret}"`));
 }
 
 setupAndRun();

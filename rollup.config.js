@@ -17,9 +17,7 @@ const config = [
     },
     plugins: [
       resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true, extensions: ['.js', '.ts'] }),
-
       pug(),
-      process.env.BUILD === 'production' && terser(),
       scss({ output: 'dist/public/css/index.css' }),
       copy({
         targets: [
@@ -30,22 +28,24 @@ const config = [
         ]
       }),
       sucrase({ exclude: ['node_modules/**'], transforms: ['typescript'] }),
-      commonjs({ extensions: ['.js', '.ts'] })
+      commonjs({ extensions: ['.js', '.ts'] }),
+      process.env.BUILD === 'production' && terser()
     ]
   },
   {
-    input: 'src/overlay/index.js',
+    input: 'src/overlay/index.ts',
     output: {
       file: 'dist/public/scripts/overlay-bundle.js',
       format: 'module',
       name: 'overlaysModule'
     },
     plugins: [
-      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
-      commonjs(),
+      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true, extensions: ['.js', '.ts'] }),
       svg(),
-      process.env.BUILD === 'production' && terser(),
-      scss({ output: 'dist/public/css/overlay.css' })
+      scss({ output: 'dist/public/css/overlay.css' }),
+      sucrase({ exclude: ['node_modules/**'], transforms: ['typescript'] }),
+      commonjs({ extensions: ['.js', '.ts'] }),
+      process.env.BUILD === 'production' && terser()
     ]
   }
 ];

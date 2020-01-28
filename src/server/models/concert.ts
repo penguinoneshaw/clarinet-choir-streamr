@@ -4,6 +4,7 @@ import { PieceOrOtherState, Concert } from '../../interfaces';
 const pieceSchema = new mongoose.Schema<PieceOrOtherState>({
   type: String,
   title: String,
+  subtitle: String,
   composer: String,
   arranger: String,
   stream: String,

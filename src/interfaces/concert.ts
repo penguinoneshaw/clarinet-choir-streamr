@@ -7,8 +7,13 @@ export interface OtherState {
 export interface Piece {
   type: 'piece';
   title: string;
+  subtitle: string;
   composer?: string;
   arranger?: string;
+}
+
+export function isPiece(state: PieceOrOtherState): state is Piece {
+  return state.type === 'piece';
 }
 
 export type PieceOrOtherState = Piece | OtherState;

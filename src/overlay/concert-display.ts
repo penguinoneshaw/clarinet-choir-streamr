@@ -1,4 +1,6 @@
-function updateNowPlaying(piece) {
+import { ConcertDisplay, Concert, Piece, isPiece } from '../interfaces';
+
+function updateNowPlaying(piece: Piece): { title: string; credits: string } {
   const title = piece.subtitle ? piece.title + ' (' + piece.subtitle + ')' : piece.title;
 
   const credits = [];
@@ -8,67 +10,65 @@ function updateNowPlaying(piece) {
   return { title, credits: credits.join(' ') };
 }
 
-function titleCase(str) {
-  const splitStr = str.toLowerCase().split(' ');
+function titleCase(str: string): string {
+  const splitStr = str.toLowerCase().split(/[ 0-9]/);
   for (let i = 0; i < splitStr.length; i++) {
-    // You do not need to check if i is larger than splitStr length, as your for does that for you
-    // Assign it back to the array
     splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
   }
   // Directly return the joined string
-  return splitStr.join(' ');
+  return splitStr.join(' ').trim();
 }
 
-export class ConcertDisplay {
-  constructor(timeline) {
+export class OverlayConcertDisplay implements ConcertDisplay {
+  updateConcertInfo(concert: Concert): void {
+    this.concert = concert;
+  }
+  private concert: Concert;
+  private timeline: gsap.core.Timeline;
+
+  constructor(timeline: gsap.core.Timeline) {
     this.timeline = timeline;
   }
 
-  updatePiece(concert, nowplaying) {
-    const currentactive = document.querySelector('.active');
+  updateState(stateString: string): void {
+    const currentActive = document.querySelector('.active');
 
-    if (currentactive) {
+    if (currentActive) {
       this.timeline
-        .to(currentactive, {
+        .to(currentActive, 0.3, {
           opacity: 0,
           className: '-=active'
         })
-        .set(currentactive, { clearProps: 'all', className: '+=hidden' })
+        .set(currentActive, { clearProps: 'all', className: '+=hidden' })
         .add('fade-out-complete');
     }
-    let elem;
+    let elem: HTMLElement = document.querySelector('#other-states');
 
-    const state = nowplaying.split('-');
+    const state = stateString.split('-');
 
     switch (state.shift()) {
       case 'state':
-        elem = document.querySelector('#other-states');
-
         this.timeline.call(() => {
-          elem.textContent = concert.otherStates[state.join()].stream;
+          elem.textContent = this.concert.otherStates[state.join()].stream;
         });
         break;
 
       case 'committee':
-        elem = document.querySelector('#other-states');
-
         this.timeline.call(() => {
-          elem.textContent = `Currently Speaking: ${concert.committee[state.join()]} (${titleCase(state.join())})`;
+          elem.textContent = `Currently Speaking: ${this.concert.committee[state.join()]} (${titleCase(state.join())})`;
         });
 
         break;
 
       case 'conductor':
-        elem = document.querySelector('#other-states');
-
         this.timeline.call(() => {
-          elem.textContent = `Currently Speaking: ${concert.conductor.name} (${concert.conductor.title})`;
+          elem.textContent = `Currently Speaking: ${this.concert.conductor.name} (${this.concert.conductor.title})`;
         });
 
         break;
       case 'piece': {
-        const piece = concert.pieces[parseInt(state[0], 10)];
-        if (piece.type == 'piece') {
+        const piece = this.concert.pieces[parseInt(state[0], 10)];
+        if (isPiece(piece)) {
           elem = document.querySelector('#nowplaying');
 
           const { credits, title } = updateNowPlaying(piece);
@@ -77,8 +77,6 @@ export class ConcertDisplay {
             elem.querySelector('#composer').textContent = credits;
           });
         } else {
-          elem = document.querySelector('#other-states');
-
           this.timeline.call(() => {
             elem.textContent = piece.stream;
           });
@@ -99,7 +97,7 @@ export class ConcertDisplay {
         },
         'fade-out-complete'
       )
-      .to(elem, {
+      .to(elem, 0.3, {
         opacity: 1,
         className: '+=active'
       })

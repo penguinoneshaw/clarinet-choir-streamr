@@ -1,4 +1,4 @@
-@import '_imports';
+@import "_imports";
 
 $bar-height: 108px;
 
@@ -19,24 +19,13 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Vollkorn', serif;
+  font-family: "Vollkorn", serif;
   display: block;
   width: $window-width;
   height: $window-height;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   z-index: 10;
-}
-
-@keyframes color_change {
-  from {
-    border-color: darken($contrast-color, 25%);
-    border-width: 0.6ex;
-  }
-  to {
-    border-color: $contrast-color;
-    border-width: 0.4ex;
-  }
 }
 
 #omnibar {
@@ -47,7 +36,6 @@ body {
   left: 0;
   padding: 1ex 1em;
   color: $contrast-color;
-  animation: color_change 3600s infinite alternate-reverse;
   background: $highlights-color;
   border-top: 0.5ex currentColor solid;
   border-bottom: 0.5ex currentColor solid;
@@ -61,6 +49,7 @@ body {
     @include row;
     justify-content: space-between;
   }
+
   #logo {
     $logo-size: $bar-height * 0.7;
     width: $logo-size;
@@ -84,7 +73,7 @@ body {
 
   #conductor {
     &:before {
-      content: 'Musical Director: ';
+      content: "Musical Director: ";
       font-variant: small-caps;
     }
   }

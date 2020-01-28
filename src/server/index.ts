@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { promises as fs } from 'fs';
 import express, { NextFunction, Response, Request } from 'express';
-import httpModule from 'http';
-import ioModule from 'socket.io';
+import { Server } from 'http';
+import ioModule, { Socket } from 'socket.io';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import mongoose from 'mongoose';
@@ -19,7 +19,7 @@ import { Settings } from './models/settings';
 import { isString, isBoolean } from 'util';
 
 const app = express();
-const http = new httpModule.Server(app);
+const http = new Server(app);
 const io = ioModule(http);
 
 interface State {
@@ -232,7 +232,7 @@ async function setupAndRun(): Promise<void> {
     });
   });
 
-  io.on('reconnect', async socket => {
+  io.on('reconnect', async (socket: Socket) => {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
     socket.emit('concert-details', concert);
     socket.emit('nowplaying-update', state.get('nowPlayingState').value());

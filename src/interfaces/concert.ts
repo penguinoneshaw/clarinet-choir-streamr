@@ -7,7 +7,7 @@ export interface OtherState {
 export interface Piece {
   type: 'piece';
   title: string;
-  subtitle: string;
+  subtitle?: string;
   composer?: string;
   arranger?: string;
 }
@@ -24,12 +24,12 @@ export interface Concert {
   fbvideo: string;
   venue: string;
   price: string;
+  description: string[];
   conductor: {
     title: string;
     name: string;
     description: string[];
   };
-  description: string[];
   charity: [
     {
       name: string;

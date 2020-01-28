@@ -14,7 +14,7 @@ block content
         a.list-group-item-action.list-group-item.list-group-item-primary(data-selector=`state-${state[0]}` , href="#")= state[1].controls
   
   #pieces.controls
-    h2 Pieces
+    h2 Running Order
     .list-group
       each piece, index in pieces
         - let string = '';
@@ -44,7 +44,7 @@ block content
         a.list-group-item.list-group-item-action.list-group-item-primary(href="#", data-selector=`committee-${person[0]}`)= `${person[1]} (${person[0]})`
 
 
-  #setup
+  #set-video
     h2 Video Embed
     form#videoLink
       .form-group
@@ -54,6 +54,6 @@ block content
     if fbvideo
       include partials/fbvideo.pug
 
-
+  #set-titles
 append scripts
   script(src='/scripts/control-panel-bundle.js', defer, type='module')

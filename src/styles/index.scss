@@ -1,4 +1,6 @@
 @import '_imports';
+
+@import '../../node_modules/normalize.css/normalize';
 $max-text-width: 900px;
 
 * {
@@ -137,24 +139,12 @@ a {
     text-decoration: none;
   }
   text-align: center;
-  color: mix($highlights-color, white);
+  color: white;
   @media print {
     display: none;
   }
 
   grid-column: 1/-1;
-}
-
-.jumbotron {
-  margin: 1ex auto;
-  max-width: $max-text-width - 150px;
-  padding: 2ex 4rem;
-  border: 2px solid $highlights-color;
-  display: block;
-  text-align: center;
-  @media print {
-    display: none;
-  }
 }
 
 .page-wrapper {
@@ -310,4 +300,28 @@ a {
 
 .performers {
   grid-area: span 2;
+}
+
+.login-form {
+  grid-column: 1/-1;
+  place-self: center;
+  max-width: $max-text-width/2;
+}
+
+button {
+  display: block;
+  width: 80%;
+  margin: 1ex auto;
+}
+
+input,
+button {
+  display: block;
+  margin: 1ex auto;
+  padding: 1em;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
 }

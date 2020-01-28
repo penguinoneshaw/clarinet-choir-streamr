@@ -25,6 +25,7 @@
     "@types/socket.io": "^2.1.4",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
+    "concurrently": "^5.1.0",
     "eslint": ">=6.6.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
@@ -54,14 +55,18 @@
     "gsap": "^3.1.1",
     "lowdb": "^1.0.0",
     "mongoose": "^5.8.9",
+    "normalize.css": "^8.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "*",
     "socket.io": "*"
   },
   "scripts": {
-    "build-clients": "rollup -c --environment BUILD:production",
+    "build-clients": "rollup -c --environment BUILD:production --treeshake",
     "build-server": "tsc",
+    "watch-clients": "rollup -cw",
+    "watch-server": "tsc -w",
+    "watch-build": "concurrently npm:watch-clients npm:watch-server",
     "postinstall": "yarn build-clients && yarn build-server",
     "start": "node -r dotenv/config dist/server/index.js"
   },

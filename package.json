@@ -62,7 +62,7 @@
   "scripts": {
     "build-clients": "rollup -c --environment BUILD:production",
     "build-server": "tsc",
-    "prestart": "yarn build-clients && yarn build-server",
+    "postinstall": "yarn build-clients && yarn build-server",
     "start": "node -r dotenv/config dist/server/index.js"
   },
   "bugs": {

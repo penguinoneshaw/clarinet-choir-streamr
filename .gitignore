@@ -63,6 +63,9 @@ typings/
 # Generated Files
 dist/**/*
 
+# State store file
+state.json
+
 # Weird macos files
 .DS_Store
 */.DS_Store

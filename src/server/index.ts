@@ -7,19 +7,26 @@ import ioModule from 'socket.io';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import mongoose from 'mongoose';
-
-const app = express();
-const http = new httpModule.Server(app);
-const io = ioModule(http);
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import flash from 'connect-flash';
+import expressSession from 'express-session';
+import lowdb from 'lowdb';
+import FileAsync from 'lowdb/adapters/FileAsync';
 
 import { User, isValidPassword, hashPassword, UserType } from './models/user';
 import { Concert } from './models/concert';
 import { Settings } from './models/settings';
 
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import flash from 'connect-flash';
-import expressSession from 'express-session';
+const app = express();
+const http = new httpModule.Server(app);
+const io = ioModule(http);
+
+interface State {
+  showCharityNotice: boolean;
+  nowPlayingState: string;
+}
+const stateAdapter = new FileAsync<State>('state.json');
 
 const SETTINGS_ID = process.env['SETTINGS_ID'];
 
@@ -147,12 +154,16 @@ async function setupAndRun(): Promise<void> {
     await _newConcert.save();
 
     settings.concert_info = _newConcert._id;
-    settings.save();
+    await settings.save();
   }
 
-  let nowPlayingState = 'state-blank';
-
-  let show_charity_notice = false;
+  const state = await lowdb(stateAdapter);
+  await state
+    .defaults<State>({
+      nowPlayingState: 'state-blank',
+      showCharityNotice: false
+    })
+    .write();
 
   app.get('/control-panel', isAuthenticated, async function(req, res) {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
@@ -195,13 +206,13 @@ async function setupAndRun(): Promise<void> {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     socket.emit('concert-details', concert);
-    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
-    socket.emit('charity-display-update', show_charity_notice);
+    socket.emit('nowplaying-update', state.get('nowPlayingState').value());
+    socket.emit('charity-display-update', state.get('showCharityNotice').value());
 
-    socket.on('nowplaying-update', function(nowPlaying) {
-      if (nowPlayingState !== nowPlaying) {
+    socket.on('nowplaying-update', async nowPlaying => {
+      if (nowPlaying !== state.get('nowPlayingState').value()) {
+        await state.set('nowPlayingState', nowPlaying).write();
         socket.broadcast.emit('nowplaying-update', nowPlaying);
-        nowPlayingState = nowPlaying;
       }
     });
 
@@ -213,10 +224,10 @@ async function setupAndRun(): Promise<void> {
       socket.emit('concert-details', concert);
     });
 
-    socket.on('charity-display-update', newState => {
-      if (show_charity_notice != newState) {
-        show_charity_notice = newState;
-        socket.broadcast.emit('charity-display-update', show_charity_notice);
+    socket.on('charity-display-update', async newState => {
+      if (state.get('showCharityNotice').value() != newState) {
+        await state.set('showCharityNotice', newState).write();
+        socket.broadcast.emit('charity-display-update', newState);
       }
     });
   });
@@ -224,8 +235,8 @@ async function setupAndRun(): Promise<void> {
   io.on('reconnect', async socket => {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
     socket.emit('concert-details', concert);
-    socket.emit('nowplaying-update', nowPlayingState ? nowPlayingState : 'state-blank');
-    socket.emit('charity-display-update', show_charity_notice);
+    socket.emit('nowplaying-update', state.get('nowPlayingState').value());
+    socket.emit('charity-display-update', state.get('showCharityNotice').value());
   });
 
   http.listen(PORT, () => console.log(`Listening on ${PORT}\nThe Admin code is "${settings.admin_secret}"`));

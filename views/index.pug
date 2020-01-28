@@ -53,9 +53,6 @@ block content
       - const charityString = !Array.isArray(charity) ? `With this concert, we are raising money for the charity ${charity.name} (registered Scottish charity ${charity.registrationNumber}).` : `With this concert, we are raising money for the charities ${charity.map(char => `${char.name} (registered Scottish charity ${char.registrationNumber})`).join(' and ')}.`
       p=charityString
       p Please consider making a donation to them or a similar charity in your area!
-  
-  
-
 
   if description
     #introduction.president-note

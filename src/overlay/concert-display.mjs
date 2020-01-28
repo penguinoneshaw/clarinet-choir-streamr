@@ -1,10 +1,31 @@
+function updateNowPlaying(piece) {
+  const title = piece.subtitle ? piece.title + ' (' + piece.subtitle + ')' : piece.title;
+
+  const credits = [];
+  if (piece.composer) credits.push(piece.composer);
+  if (piece.arranger) credits.push('arr. ' + piece.arranger);
+
+  return { title, credits: credits.join(' ') };
+}
+
+function titleCase(str) {
+  const splitStr = str.toLowerCase().split(' ');
+  for (let i = 0; i < splitStr.length; i++) {
+    // You do not need to check if i is larger than splitStr length, as your for does that for you
+    // Assign it back to the array
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  // Directly return the joined string
+  return splitStr.join(' ');
+}
+
 export class ConcertDisplay {
   constructor(timeline) {
     this.timeline = timeline;
   }
 
   updatePiece(concert, nowplaying) {
-    let currentactive = document.querySelector('.active');
+    const currentactive = document.querySelector('.active');
 
     if (currentactive) {
       this.timeline
@@ -17,7 +38,7 @@ export class ConcertDisplay {
     }
     let elem;
 
-    let state = nowplaying.split('-');
+    const state = nowplaying.split('-');
 
     switch (state.shift()) {
       case 'state':
@@ -84,25 +105,4 @@ export class ConcertDisplay {
       })
       .set(elem, { clearProps: 'all' });
   }
-}
-
-function updateNowPlaying(piece) {
-  let title = piece.subtitle ? piece.title + ' (' + piece.subtitle + ')' : piece.title;
-
-  let credits = [];
-  if (piece.composer) credits.push(piece.composer);
-  if (piece.arranger) credits.push('arr. ' + piece.arranger);
-
-  return { title, credits: credits.join(' ') };
-}
-
-function titleCase(str) {
-  var splitStr = str.toLowerCase().split(' ');
-  for (var i = 0; i < splitStr.length; i++) {
-    // You do not need to check if i is larger than splitStr length, as your for does that for you
-    // Assign it back to the array
-    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-  }
-  // Directly return the joined string
-  return splitStr.join(' ');
 }

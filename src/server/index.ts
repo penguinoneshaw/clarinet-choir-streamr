@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { promises as fs } from 'fs';
-
 import express, { NextFunction, Response, Request } from 'express';
 import httpModule from 'http';
 import ioModule from 'socket.io';
@@ -15,8 +14,9 @@ import lowdb from 'lowdb';
 import FileAsync from 'lowdb/adapters/FileAsync';
 
 import { User, isValidPassword, hashPassword, UserType } from './models/user';
-import { Concert } from './models/concert';
+import { ConcertModel } from './models/concert';
 import { Settings } from './models/settings';
+import { isString, isBoolean } from 'util';
 
 const app = express();
 const http = new httpModule.Server(app);
@@ -150,7 +150,7 @@ async function setupAndRun(): Promise<void> {
 
   if (concertFile) {
     const concertJson = await fs.readFile(concertFile, 'utf8');
-    const _newConcert = new Concert(JSON.parse(concertJson));
+    const _newConcert = new ConcertModel(JSON.parse(concertJson));
     await _newConcert.save();
 
     settings.concert_info = _newConcert._id;
@@ -202,30 +202,30 @@ async function setupAndRun(): Promise<void> {
     res.render('index', concert);
   });
 
-  io.on('connection', async function(socket) {
+  io.on('connection', async socket => {
     const { concert_info: concert } = await Settings.findById(SETTINGS_ID).populate('concert_info');
 
     socket.emit('concert-details', concert);
     socket.emit('nowplaying-update', state.get('nowPlayingState').value());
     socket.emit('charity-display-update', state.get('showCharityNotice').value());
 
-    socket.on('nowplaying-update', async nowPlaying => {
-      if (nowPlaying !== state.get('nowPlayingState').value()) {
+    socket.on('nowplaying-update', async (nowPlaying: unknown) => {
+      if (nowPlaying !== state.get('nowPlayingState').value() && isString(nowPlaying)) {
         await state.set('nowPlayingState', nowPlaying).write();
         socket.broadcast.emit('nowplaying-update', nowPlaying);
       }
     });
 
-    socket.on('change-video-link', newLink => {
-      if (concert.fbvideo === newLink || newLink === '') return false;
+    socket.on('change-video-link', async (newLink: unknown) => {
+      if (concert.fbvideo === newLink || newLink === '' || !isString(newLink)) return false;
       concert.fbvideo = newLink;
-      concert.save();
+      await concert.save();
       socket.broadcast.emit('concert-details', concert);
       socket.emit('concert-details', concert);
     });
 
-    socket.on('charity-display-update', async newState => {
-      if (state.get('showCharityNotice').value() != newState) {
+    socket.on('charity-display-update', async (newState: unknown) => {
+      if (state.get('showCharityNotice').value() != newState && isBoolean(newState)) {
         await state.set('showCharityNotice', newState).write();
         socket.broadcast.emit('charity-display-update', newState);
       }

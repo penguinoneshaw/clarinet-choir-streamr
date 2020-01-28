@@ -1,5 +1,5 @@
 import { model, Schema, Document } from 'mongoose';
-import { Concert } from './concert';
+import { Concert } from '../../interfaces';
 
 export const settingsSchema = new Schema({
   // eslint-disable-next-line @typescript-eslint/camelcase
@@ -9,7 +9,7 @@ export const settingsSchema = new Schema({
 });
 
 export interface SettingsType extends Document {
-  concert_info: Concert;
+  concert_info: Concert & Document;
   admin_secret: string;
 }
 

@@ -5,18 +5,19 @@ import svg from 'rollup-plugin-svg';
 import pug from 'rollup-plugin-pug';
 import scss from 'rollup-plugin-scss';
 import copy from 'rollup-plugin-copy';
+import sucrase from '@rollup/plugin-sucrase';
 
 const config = [
   {
-    input: 'src/control-panel/index.js',
+    input: 'src/control-panel/index.ts',
     output: {
       file: 'dist/public/scripts/control-panel-bundle.js',
       format: 'module',
       name: 'baseModule'
     },
     plugins: [
-      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
-      commonjs(),
+      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true, extensions: ['.js', '.ts'] }),
+
       pug(),
       process.env.BUILD === 'production' && terser(),
       scss({ output: 'dist/public/css/index.css' }),
@@ -27,7 +28,9 @@ const config = [
             dest: 'dist/public/images'
           }
         ]
-      })
+      }),
+      sucrase({ exclude: ['node_modules/**'], transforms: ['typescript'] }),
+      commonjs({ extensions: ['.js', '.ts'] })
     ]
   },
   {

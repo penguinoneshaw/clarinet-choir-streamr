@@ -1,48 +1,51 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import svg from 'rollup-plugin-svg';
 import pug from 'rollup-plugin-pug';
 import scss from 'rollup-plugin-scss';
 import copy from 'rollup-plugin-copy';
+import sucrase from '@rollup/plugin-sucrase';
 
 const config = [
   {
-    input: 'src/control-panel/index.js',
+    input: 'src/control-panel/index.ts',
     output: {
-      file: 'public/scripts/control-panel-bundle.js',
+      file: 'dist/public/scripts/control-panel-bundle.js',
       format: 'module',
       name: 'baseModule'
     },
     plugins: [
-      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
-      commonjs(),
+      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true, extensions: ['.js', '.ts'] }),
       pug(),
-      process.env.BUILD === 'production' && terser(),
-      scss({ output: 'public/css/index.css' }),
+      scss({ output: 'dist/public/css/index.css' }),
       copy({
         targets: [
           {
             src: 'src/images/**/*',
-            dest: 'public/images'
+            dest: 'dist/public/images'
           }
         ]
-      })
+      }),
+      sucrase({ exclude: ['node_modules/**'], transforms: ['typescript'] }),
+      commonjs({ extensions: ['.js', '.ts'] }),
+      process.env.BUILD === 'production' && terser()
     ]
   },
   {
-    input: 'src/overlay/index.js',
+    input: 'src/overlay/index.ts',
     output: {
-      file: 'public/scripts/overlay-bundle.js',
+      file: 'dist/public/scripts/overlay-bundle.js',
       format: 'module',
-      name: 'baseModule'
+      name: 'overlaysModule'
     },
     plugins: [
-      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true }),
-      commonjs(),
+      resolve({ mainFields: ['module', 'jsnext:main', 'browser'], preferBuiltins: true, extensions: ['.js', '.ts'] }),
       svg(),
-      process.env.BUILD === 'production' && terser(),
-      scss({ output: 'public/css/overlay.css' })
+      scss({ output: 'dist/public/css/overlay.css' }),
+      sucrase({ exclude: ['node_modules/**'], transforms: ['typescript'] }),
+      commonjs({ extensions: ['.js', '.ts'] }),
+      process.env.BUILD === 'production' && terser()
     ]
   }
 ];

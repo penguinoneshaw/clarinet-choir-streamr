@@ -1,22 +1,23 @@
 import io from 'socket.io-client';
 import gsap from 'gsap';
-import { Concert } from './concert';
-import { ConcertDisplay } from './concert-display';
+import { ConcertState } from '../shared/concert_state';
+import { OverlayConcertDisplay } from './concert-display';
 import logo from '../images/logo.svg';
 import '../styles/overlay.scss';
+import { Concert } from '../interfaces';
 
 document.querySelector('#logo').innerHTML = logo;
 
 const socket = io();
 const general = gsap.timeline({ defaults: { duration: 0.5, ease: 'sine.inOut' } });
-const concert = new Concert(new ConcertDisplay(general));
+const concert = new ConcertState(new OverlayConcertDisplay(general));
 
-socket.on('concert-details', function(_concert) {
+socket.on('concert-details', (_concert: Concert) => {
   concert.concert = _concert;
 });
 
-socket.on('nowplaying-update', function(nowplaying) {
-  concert.status = nowplaying;
+socket.on('nowplaying-update', (nowPlaying: string) => {
+  concert.status = nowPlaying;
 });
 
 document.addEventListener('keypress', ev => {

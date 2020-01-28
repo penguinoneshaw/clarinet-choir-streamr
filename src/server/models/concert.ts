@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose, { Document } from 'mongoose';
+import { PieceOrOtherState, Concert } from '../../interfaces';
 
-const pieceSchema = new mongoose.Schema({
+const pieceSchema = new mongoose.Schema<PieceOrOtherState>({
   type: String,
   title: String,
+  subtitle: String,
   composer: String,
   arranger: String,
   stream: String,
@@ -45,4 +47,4 @@ const schema = new mongoose.Schema({
   }
 });
 
-module.exports.Concert = mongoose.model('Concert', schema);
+export const ConcertModel = mongoose.model<Concert & Document>('Concert', schema);
